@@ -1,16 +1,137 @@
+:root {
+  --flex-display: flex;
+  --bg-color: rgb(233, 233, 233);
+  --navbar-bg-color: rgb(29, 29, 29);
+  --primary-txt-color: black;
+  --navbar-txt-color: whitesmoke;
+  --font-main: arbotek, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--font-main);
+  font-weight: 300;
+  font-style: normal;
+}
+
+span {
+  display: inherit;
+  width: 100%;
+  justify-content: center;
+}
+
+p {
+  color: var(--primary-txt-color);
+}
+
+form {
+  display: inherit;
+  flex-wrap: inherit;
+  width: 100%;
+  padding: 2em 0em;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 1em;
+  margin: 1em 0;
+  background: none;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border-bottom: 1px solid black;
+}
+button {
+  padding: 1em;
+  background-color: var(--navbar-bg-color);
+  color: var(--navbar-txt-color);
+  border-style: none;
+  border-radius: 1rem;
+}
+button:hover {
+  color: rgb(0, 162, 255);
+}
+button:active {
+  background-color: rgb(0, 162, 255);
+}
+/*---Beginning of navbar styling---*/
 .nav-bar {
-  display: flex;
-  justify-content: space-around;
+  display: var(--flex-display);
+  justify-content: space-between;
   align-items: center;
-  background-color: rgb(54, 54, 54);
-  color: whitesmoke;
-  padding: 2vh 0vh;
+  background-color: var(--navbar-bg-color);
+  padding: 1rem;
 }
 
 .nav-links {
-  display: inherit;
-  width: 40%;
-  justify-content: inherit;
-  align-items: inherit;
+  display: var(--flex-display);
+  flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: space-evenly;
   list-style: none;
+}
+.nav-links .icon {
+  display: none;
+}
+/*---End of navbar styling---*/
+.container-primary {
+  display: var(--flex-display);
+  flex-wrap: wrap;
+  color: var(--primary-txt-color);
+  width: 80%;
+  margin: 0 auto; /*center the section*/
+  padding: 1em 2em;
+}
+
+#home-page {
+  display: var(--flex-display);
+  padding: 1rem;
+  font-size: 200%;
+}
+
+#sm-logos {
+  display: inherit;
+  width: 30%;
+  margin: 0 auto;
+  padding: 1em;
+  justify-content: space-evenly;
+}
+
+#sm-logos a {
+  color: var(--primary-txt-color);
+}
+
+#message {
+  height: 10rem;
+  max-width: 100%;
+  font-family: var(--font-main);
+}
+#submit-form button {
+  margin-left: auto;
+}
+/*~~~~~~~~~~Collapsible navbar items for smaller mobile displays~~~~~~~~~~~~~*/
+@media screen and (max-width: 600px) {
+  .nav-links a {
+    display: none;
+  }
+  .nav-links a.icon {
+    float: right;
+    display: block;
+  }
+}
+@media screen and (max-width: 600px) {
+  .nav-links.responsive {
+    position: relative;
+    width: 75%;
+  }
+  .nav-links.responsive a {
+    display: block;
+    text-align: left;
+  }
+  .nav-links.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }

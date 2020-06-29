@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import logo from "../cyberart_by_justin_name_1.png";
 
 const Navbar = () => {
   //toggle the dropdown menu on a mobile display
@@ -17,19 +18,16 @@ const Navbar = () => {
 
   return (
     <nav className="nav-bar">
-      <Link style={navStyle} to="/">
-        Logo
+      <Link to="/">
+        <img src={logo} alt="cyberart_by_justin" id="nav-logo" />
       </Link>
+      {/*These shoudl be hidden and collapsible in mobile view */}
       <div className="nav-links" id="theNavBar">
-        <Link style={navStyle} to="/">
-          Home
-        </Link>
-        <Link style={navStyle} to="/about">
-          About
-        </Link>
-        <Link style={navStyle} to="/contact">
-          Contact
-        </Link>
+        {/*Gallery dropdown */}
+        <Link to="/gallery">Gallery</Link>
+        {/*End of dropdown*/}
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
         <a
           href="javascript:void(0);"
           onClick={dropDown}

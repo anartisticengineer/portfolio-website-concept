@@ -5,8 +5,13 @@ import {
   faInstagram,
   faBehance,
 } from "@fortawesome/free-brands-svg-icons";
+import { useEffect } from "react";
 
 const ContactPage = () => {
+  useEffect(() => {
+    document.title = "Contact - cyberart_by_justin";
+  });
+
   const handleSubmit = (event) => {
     event.preventDefault();
     //console.log(event.target.id);
@@ -19,17 +24,34 @@ const ContactPage = () => {
         <h1>Contact</h1>
       </span>
       <p>
-        Wanna get in touch? Send me an email with the form below, and/or follow
-        me on social media!
+        Wanna get in touch? Commissions, collaborations, or just wanna say hi?
+        Send me an email with the form below, and/or follow me online. :)
       </p>
       {/*Contact form */}
       <form onSubmit={handleSubmit} id="submit-form" autoComplete="off">
+        <label htmlFor="first-name">First Name: </label>
+        <input
+          type="text"
+          name="first-name"
+          id="first-name"
+          placeholder="First Name"
+          required
+        />
+        <label htmlFor="last-name">Last Name: </label>
+        <input
+          type="text"
+          name="last-name"
+          id="last-name"
+          placeholder="Last Name"
+          required
+        />
         <label htmlFor="form-email">Email: </label>
         <input
           type="email"
           name="form-email"
           id="form-email"
           placeholder="E-mail"
+          required
         />
         <label htmlFor="message">Your message: </label>
         <textarea

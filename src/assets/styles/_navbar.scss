@@ -1,17 +1,69 @@
 @use 'colors' as c;
-@use 'media-queries' as *;
+@use 'media-queries' as q;
 
 .navbar {
-  display: flex;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-areas: "header" "hidden-links";
   background-color: c.$eerie-black;
   padding: 1em;
+  position: sticky;
+  top: 0;
+  &__header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+  }
   &__logo {
-    width: 10vw;
+    display: block;
+    width: 20vw;
+  }
+  &__hamburger-btn {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
   }
   &__links {
+    display: flex;
+    flex-direction: column;
+    grid-area: hidden-links;
+    a {
+      text-decoration: none;
+      color: c.$platinum;
+      padding: 1em 0;
+    }
     &--hidden {
+      display: none;
     }
   }
 }
-@media screen and (min-width: $query-phone) {
+@media screen and (min-width: q.$query-phone) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__links {
+      display: flex;
+      flex-direction: row;
+      width: 30vw;
+      justify-content: space-between;
+      align-items: center;
+      a {
+        padding: 0;
+      }
+    }
+    &__hamburger-btn {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: q.$query-tablet) {
+  .navbar {
+    &__logo {
+      width: 15vw;
+    }
+    &__links {
+      width: 20vw;
+    }
+  }
 }

@@ -11,7 +11,7 @@ const HomePage = () => {
       <span>
         <h1>Welcome to the cyber art gallery!</h1>
       </span>
-      <RecentPost />
+      {/* <RecentPost /> */}
     </div>
   );
 };

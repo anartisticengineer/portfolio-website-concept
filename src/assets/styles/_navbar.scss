@@ -1,0 +1,12 @@
+@use 'colors' as c;
+
+.navbar {
+  display: flex;
+  background-color: c.$eerie-black;
+  padding: 1em;
+  &__logo {
+    width: 10vw;
+  }
+  &__links {
+  }
+}

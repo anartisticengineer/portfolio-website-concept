@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import logo from "../cyberart_by_justin_name_1.png";
+import logo from "../assets/images/cyberart_by_justin_name_1.png";
 
 const Navbar = () => {
   //toggle the dropdown menu on a mobile display
@@ -17,12 +17,12 @@ const Navbar = () => {
   const navStyle = { color: "white" };
 
   return (
-    <nav className="nav-bar">
+    <nav className="navbar">
       <Link to="/">
-        <img src={logo} alt="cyberart_by_justin" id="nav-logo" />
+        <img src={logo} className="navbar__logo" alt="cyberart_by_justin" id="nav-logo" />
       </Link>
       {/*These shoudl be hidden and collapsible in mobile view */}
-      <div className="nav-links" id="theNavBar">
+      <div className="navbar__links" id="theNavBar">
         {/*Gallery dropdown */}
         <Link to="/gallery">Gallery</Link>
         {/*End of dropdown*/}

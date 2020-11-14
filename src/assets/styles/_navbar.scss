@@ -1,11 +1,13 @@
 @use 'colors' as c;
 @use 'media-queries' as q;
+@use 'typography' as type;
 
 .navbar {
   display: grid;
   grid-template-rows: auto auto;
   grid-template-areas: "header" "hidden-links";
   background-color: c.$eerie-black;
+  font-family: type.$font-primary;
   padding: 1em;
   position: sticky;
   top: 0;

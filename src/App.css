@@ -1,7 +1,3 @@
-:root {
-  --font-main: address-sans-pro, sans-serif;
-}
-
 body {
   background-color: var(--platinum);
   font-family: var(--font-main);

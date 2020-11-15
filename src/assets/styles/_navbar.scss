@@ -1,5 +1,6 @@
 @use 'colors' as c;
 @use 'media-queries' as q;
+@use 'mixins' as mix;
 @use 'typography' as type;
 
 .navbar {
@@ -30,9 +31,7 @@
     flex-direction: column;
     grid-area: hidden-links;
     a {
-      text-decoration: none;
-      color: c.$platinum;
-      padding: 1em 0;
+      @include mix.nav-link-style(c.$platinum);
     }
     &--hidden {
       display: none;
@@ -50,9 +49,6 @@
       width: 30vw;
       justify-content: space-between;
       align-items: center;
-      a {
-        padding: 0;
-      }
     }
     &__hamburger-btn {
       display: none;

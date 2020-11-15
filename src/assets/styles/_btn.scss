@@ -1,0 +1,18 @@
+@use 'colors' as c;
+@use 'mixins' as mix;
+@use 'typography' as type;
+.btn {
+  @include mix.round-and-pad(1em);
+  color: c.$eerie-black;
+  border-style: none;
+  font-family: type.$font-primary;
+  &:hover {
+    background-color: c.$winter-sky;
+  }
+  &--submit {
+    width: min-content;
+    background-color: c.$eerie-black;
+    color: c.$platinum;
+    margin: 1em 0;
+  }
+}

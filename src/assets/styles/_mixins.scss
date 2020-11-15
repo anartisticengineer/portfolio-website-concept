@@ -1,0 +1,14 @@
+//this one's good for buttons and text fields
+@mixin round-and-pad($size) {
+  border-radius: $size;
+  padding: $size;
+}
+
+@mixin nav-link-style($color) {
+  text-decoration: none;
+  color: $color;
+  padding: 1em 0;
+  @media screen and (min-width: 480px) {
+    padding: 0;
+  }
+}

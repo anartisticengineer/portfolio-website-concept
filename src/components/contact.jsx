@@ -30,9 +30,10 @@ const ContactPage = () => {
           {/*Contact form */}
           <form onSubmit={handleSubmit} id="submit-form" autoComplete="off">
             {/**First and last name */}
-            <div>
+            <div id="form-name">
               <label htmlFor="first-name">First Name: </label>
               <input
+                className="textarea"
                 type="text"
                 name="first-name"
                 id="first-name"
@@ -41,6 +42,7 @@ const ContactPage = () => {
               />
               <label htmlFor="last-name">Last Name: </label>
               <input
+                className="textarea"
                 type="text"
                 name="last-name"
                 id="last-name"
@@ -52,6 +54,7 @@ const ContactPage = () => {
             <div>
               <label htmlFor="form-email">Email: </label>
               <input
+                className="textarea"
                 type="email"
                 name="form-email"
                 id="form-email"
@@ -62,6 +65,7 @@ const ContactPage = () => {
             <div>
               <label htmlFor="message">Your message: </label>
               <textarea
+                className="textarea textarea--multiline"
                 name="message"
                 id="message"
                 cols="30"
@@ -69,8 +73,9 @@ const ContactPage = () => {
                 placeholder="Write your message here"
                 required
               ></textarea>
+              {/* <input className="textarea textarea--multiline" type="text" id="message" placeholder="Write your message here" required/> */}
             </div>
-            <button type="submit" id="submit-btn">
+            <button className="btn btn--submit" type="submit" id="submit-btn">
               Submit
             </button>
           </form>

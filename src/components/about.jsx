@@ -35,10 +35,10 @@ const AboutPage = () => {
         {/** */}
         <article style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
           <div id="cv-or-features">
-            <button id="cv-btn" onClick={() => changePage("cv")}>
+            <button className="btn" id="cv-btn" onClick={() => changePage("cv")}>
               CV
             </button>
-            <button id="features-btn" onClick={() => changePage("features")}>
+            <button className="btn" id="features-btn" onClick={() => changePage("features")}>
               Features
             </button>
           </div>

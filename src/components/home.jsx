@@ -7,12 +7,9 @@ const HomePage = () => {
   });
 
   return (
-    <div id="home-page">
-      <span>
-        <h1>Welcome to the cyber art gallery!</h1>
-      </span>
-      {/* <RecentPost /> */}
-    </div>
+    <main className="container" id="home-page">
+        <h1 className="container__title">Welcome to the cyber art gallery!</h1>
+    </main>
   );
 };
 

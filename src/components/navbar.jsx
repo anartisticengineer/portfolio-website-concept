@@ -18,6 +18,9 @@ const Navbar = () => {
   };
 
   useEffect(() => {
+    if (window.innerWidth > 480){
+      document.getElementById('navbar-links').className = "navbar__links";
+    }
     document.getElementById('hamburger-btn').addEventListener('click',dropDown);
   });
 

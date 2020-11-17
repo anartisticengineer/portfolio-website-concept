@@ -1,16 +1,15 @@
 import React from "react";
 
 const Footer = () => {
-  const whiteTxt = { color: "whitesmoke" };
   let date = new Date();
 
   return (
-    <footer id="foot" style={whiteTxt}>
-      <span id="footer-support" style={{ color: "inherit" }}>
-        <h4 style={{ color: "inherit" }}>
+    <footer className="footer">
+      <section className="footer__block">
+        <h4>
           Like what you're seeing, and wanna help me out (financially)?
         </h4>
-        <p style={{ color: "inherit" }}>Conisder supporting me on Ko-fi!</p>
+        <p>Conisder supporting me on Ko-fi!</p>
         <a href="https://ko-fi.com/K3K2S71S" target="_blank">
           <img
             height="36"
@@ -20,12 +19,12 @@ const Footer = () => {
             alt="Buy Me a Coffee at ko-fi.com"
           />
         </a>
-      </span>
+      </section>
       {/*From 2020 onwards*/}
-      <span style={{ color: "inherit" }}>
+      <section className="footer__block">
         &copy; Justin Johnson{" "}
         {date.getFullYear() === 2020 ? 2020 : `2020 - ${date.getFullYear()}`}
-      </span>
+      </section>
     </footer>
   );
 };

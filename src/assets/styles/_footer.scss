@@ -1,0 +1,15 @@
+@use 'colors' as c;
+@use 'typography' as type;
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: c.$eerie-black;
+  color: c.$platinum;
+  padding: 0.5em;
+  font-family: type.$font-primary;
+  text-align: center;
+  &__block {
+    display: block;
+    padding: 0.5em;
+  }
+}

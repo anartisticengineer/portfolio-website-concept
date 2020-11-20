@@ -9,18 +9,15 @@ const Navbar = () => {
   //toggle the dropdown menu on a mobile display
   const dropDown = () => {
     console.log('toggle');
-    let x = document.getElementById("navbar-links");
-    if (x.className === "navbar__links--hidden") {
-      x.className = "navbar__links"; //if it's hidden, open it up!
+    const x = document.getElementById("navbar-links");
+    if (x.className === 'navbar__links--hidden') {
+      x.className = 'navbar__links'; //if it's hidden, open it up!
     } else {
-      x.className = "navbar__links--hidden"; //else hide them
+      x.className = 'navbar__links--hidden';//else hide them
     }
   };
 
   useEffect(() => {
-    if (window.innerWidth <= 480){
-      document.getElementById('navbar-links').className = "navbar__links--hidden";
-    }
     document.getElementById('hamburger-btn').addEventListener('click',dropDown);
   });
 

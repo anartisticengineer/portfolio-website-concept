@@ -25,6 +25,7 @@
     display: block;
     width: fit-content;
     margin-left: auto;
+    color: c.$platinum;
   }
   &__links {
     display: flex;
@@ -43,16 +44,23 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    &__links {
+    &__links,
+    &__links--hidden {
       display: flex;
       flex-direction: row;
       width: 30vw;
       justify-content: space-between;
       align-items: center;
+      a {
+        @include mix.nav-link-style(c.$platinum);
+      }
     }
     &__hamburger-btn {
       display: none;
     }
+  }
+  #nav-links {
+    display: flex;
   }
 }
 @media screen and (min-width: q.$query-tablet) {

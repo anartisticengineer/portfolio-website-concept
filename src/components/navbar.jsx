@@ -4,24 +4,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/images/cyberart_by_justin_name_1.png";
 import { useEffect } from "react";
+import { useState } from "react";
 
 const Navbar = () => {
-  //toggle the dropdown menu on a mobile display
-  const dropDown = () => {
-    console.log('toggle');
-    const x = document.getElementById("navbar-links");
-    if (x.className === 'navbar__links--hidden') {
-      x.className = 'navbar__links'; //if it's hidden, open it up!
-    } else {
-      x.className = 'navbar__links--hidden';//else hide them
-    }
-  };
+  //toggle the dropdown menu on a mobile display using a state hook
+
+  const [hidden, toggleHide] = useState(true);
 
   useEffect(() => {
-    document.getElementById('hamburger-btn').addEventListener('click',dropDown);
+    document.getElementById('hamburger-btn').addEventListener('click',() => {toggleHide(!hidden)});
   });
-
-  const navStyle = { color: "white" };
 
   return (
     <nav className="navbar">
@@ -37,14 +29,13 @@ const Navbar = () => {
           <a
               href="javascript:void(0);"
               id="hamburger-btn"
-              style={navStyle}
             >
             <FontAwesomeIcon icon={faBars} />
           </a>
         </span>
       </section>
       {/*These should be hidden and collapsible in mobile view */}
-      <span className="navbar__links--hidden" id="navbar-links">
+      <span className={`navbar__links${hidden?'--hidden':''}`} id="navbar-links">
         {/*Gallery dropdown */}
         <Link to="/gallery">Gallery</Link>
         <Link to="/about">About</Link>

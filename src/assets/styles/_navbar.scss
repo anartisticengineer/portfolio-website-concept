@@ -25,7 +25,9 @@
     display: block;
     width: fit-content;
     margin-left: auto;
-    color: c.$platinum;
+    * {
+      color: c.$platinum;
+    }
   }
   &__links {
     display: flex;
@@ -48,7 +50,7 @@
     &__links--hidden {
       display: flex;
       flex-direction: row;
-      width: 30vw;
+      width: 20vw;
       justify-content: space-between;
       align-items: center;
       a {
@@ -67,9 +69,6 @@
   .navbar {
     &__logo {
       width: 15vw;
-    }
-    &__links {
-      width: 20vw;
     }
   }
 }

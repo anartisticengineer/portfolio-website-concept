@@ -1,0 +1,17 @@
+@use './media-queries' as q;
+.social {
+  display: inline-flex;
+  flex-direction: column;
+  @media screen and (min-width: q.$query-phone) {
+    grid-column-start: 2;
+    margin-left: 5em;
+    margin-bottom: auto;
+  }
+  &__text {
+    text-align: center;
+  }
+  &__logos {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

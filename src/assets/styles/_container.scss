@@ -18,13 +18,6 @@
       width: 40vw;
     }
   }
-  &__sm-logos {
-    display: flex;
-    justify-content: space-evenly;
-    i {
-      color: c.$eerie-black;
-    }
-  }
   label {
     display: block;
   }
@@ -42,24 +35,12 @@
   .container {
     &__content {
       display: grid;
+      grid-template-columns: 3fr 2fr;
       //about and contact page grid
       img {
         width: 20vw;
       }
-      &--about,
-      &--contact {
-        grid-template-columns: 2fr 1fr;
-        &:first-child {
-          grid-area: 1;
-        }
-        &:nth-child(2) {
-          grid-area: 2;
-        }
-      }
-      //gallery page grid
-      //contact page grid
-      &--contact {
-        grid-template-columns: 3fr 1fr;
+      &--about {
       }
     }
   }

@@ -6,84 +6,28 @@ import {
   faBehance,
 } from "@fortawesome/free-brands-svg-icons";
 import { useEffect } from "react";
+import Form from "./form";
 
 const ContactPage = () => {
   useEffect(() => {
     document.title = "Contact - cyberart_by_justin";
   });
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    //console.log(event.target.id);
-    //let theForm = document.getElementById(event.target.id);
-  };
-
   return (
     <main className="container">
       <h1 className="container__title">Contact</h1>
-      <section className="container__content container__content--contact">
+      <section className="container__content">
         <article>
           <p>
             Wanna get in touch? Commissions, collaborations, or just wanna say hi?
             Send me an email with the form below, and/or follow me online. :)
           </p>
-          {/*Contact form */}
-          <form onSubmit={handleSubmit} id="submit-form" autoComplete="off">
-            {/**First and last name */}
-            <div id="form-name">
-              <label htmlFor="first-name">First Name: </label>
-              <input
-                className="textarea"
-                type="text"
-                name="first-name"
-                id="first-name"
-                placeholder="First Name"
-                required
-              />
-              <label htmlFor="last-name">Last Name: </label>
-              <input
-                className="textarea"
-                type="text"
-                name="last-name"
-                id="last-name"
-                placeholder="Last Name"
-                required
-              />
-            </div>
-            {/**Text area for email */}
-            <div>
-              <label htmlFor="form-email">Email: </label>
-              <input
-                className="textarea"
-                type="email"
-                name="form-email"
-                id="form-email"
-                placeholder="E-mail"
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="message">Your message: </label>
-              <textarea
-                className="textarea textarea--multiline"
-                name="message"
-                id="message"
-                cols="30"
-                rows="10"
-                placeholder="Write your message here"
-                required
-              ></textarea>
-              {/* <input className="textarea textarea--multiline" type="text" id="message" placeholder="Write your message here" required/> */}
-            </div>
-            <button className="btn btn--submit" type="submit" id="submit-btn">
-              Submit
-            </button>
-          </form>
+          <Form/>
         </article>
         {/*Social media logos section */}
-        <article>
-          <p>Or follow me on social media. I'm pretty active on there (most of the time).</p>
-          <div className="container__sm-logos" id="sm-logos">
+        <article className="social">
+          <p className="social__text">Or follow me on social media. I'm pretty active on there (most of the time).</p>
+          <span className="social__logos" id="sm-logos">
             <a
               href="https://www.facebook.com/cyberartbyjustin"
               rel="noreferrer"
@@ -105,7 +49,7 @@ const ContactPage = () => {
             >
               <FontAwesomeIcon icon={faBehance} id="icon-behance"/>
             </a>
-          </div>
+          </span>
         </article>
       </section>
     </main>

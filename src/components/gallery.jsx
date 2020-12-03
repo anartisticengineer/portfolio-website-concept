@@ -4,7 +4,7 @@ import { useEffect } from "react";
 const Gallery = () => {
   useEffect(() => {
     document.title = "Gallery - cyberart_by_justin";
-  });
+  },[]);
   return <div className="container-primary"></div>;
 };
 

@@ -11,7 +11,7 @@ import Form from "./form";
 const ContactPage = () => {
   useEffect(() => {
     document.title = "Contact - cyberart_by_justin";
-  });
+  },[]);
 
   return (
     <main className="container">

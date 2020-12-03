@@ -4,7 +4,7 @@ import profilePhoto from "../assets/images/new profile pic oct 2019 smaller.jpg"
 const AboutPage = () => {
   useEffect(() => {
     document.title = "About Me - cyberart_by_justin";
-  });
+  },[]);
 
   const [page, changePage] = useState("cv");
 

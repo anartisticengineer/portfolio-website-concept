@@ -11,9 +11,9 @@ const AboutPage = () => {
   return (
     <main className="container" id="about-page">
       <h1 className="container__title">About Me</h1>
-      <section className="container__content container__content--about">
+      <section className="about">
         {/**Grid 1 */}
-        <article>
+        <article className="about__article">
           <div style={{display: 'flex', justifyContent: 'center'}}>
             <img src={profilePhoto} alt="profile" id="about-profile-photo"/>
           </div>
@@ -33,7 +33,7 @@ const AboutPage = () => {
           </p>
         </article>
         {/** */}
-        <article style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
+        <article className="about__article">
           <div id="cv-or-features">
             <button className="btn" id="cv-btn" onClick={() => changePage("cv")}>
               CV

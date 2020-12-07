@@ -10,9 +10,9 @@
     background-color: c.$winter-sky;
   }
   &--submit {
-    width: min-content;
+    min-width: 100px;
     background-color: c.$eerie-black;
     color: c.$platinum;
-    margin: 1em 0;
+    margin: 1em auto;
   }
 }

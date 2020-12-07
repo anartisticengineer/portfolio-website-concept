@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 const Form = () => {
+
     const handleSubmit = (event) => {
         event.preventDefault();
+        console.log(event.target);
       };
 
     return (

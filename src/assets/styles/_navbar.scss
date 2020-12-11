@@ -10,6 +10,9 @@
   background-color: c.$eerie-black;
   font-family: type.$font-primary;
   padding: 1em;
+  @media screen and (max-width: q.$query-phone) {
+    padding: 0.5em 1em;
+  }
   position: sticky;
   top: 0;
   &__header {
@@ -20,6 +23,9 @@
   &__logo {
     display: block;
     width: 20vw;
+    @media screen and (max-width: q.$query-phone) {
+      padding: 1em 0;
+    }
   }
   &__hamburger-btn {
     display: block;
@@ -27,6 +33,9 @@
     margin-left: auto;
     * {
       color: c.$platinum;
+    }
+    :hover {
+      cursor: pointer;
     }
   }
   &__links {
@@ -39,6 +48,9 @@
     &--hidden {
       display: none;
     }
+  }
+  .active {
+    color: c.$winter-sky;
   }
 }
 @media screen and (min-width: q.$query-phone) {

@@ -15,10 +15,10 @@ function App() {
       <Navbar />
       {/*Pages via Route */}
       <Switch>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/gallery" exact component={Gallery} />
-        <Route path="/about" component={AboutPage} />
-        <Route path="/contact" component={ContactPage} />
+        <Route exact path="/"><HomePage/></Route>
+        <Route path="/gallery"><Gallery/></Route>
+        <Route path="/about"><AboutPage/></Route>
+        <Route path="/contact"><ContactPage/></Route>
       </Switch>
       <Footer />
     </BrowserRouter>

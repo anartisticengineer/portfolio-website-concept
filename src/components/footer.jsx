@@ -10,7 +10,7 @@ const Footer = () => {
           Like what you're seeing, and wanna help me out (financially)?
         </h4>
         <p>Conisder supporting me on Ko-fi!</p>
-        <a href="https://ko-fi.com/K3K2S71S" target="_blank">
+        <a href="https://ko-fi.com/K3K2S71S" target="_blank" rel="noopener noreferrer">
           <img
             height="36"
             style={{ border: "0px", height: "36px" }}

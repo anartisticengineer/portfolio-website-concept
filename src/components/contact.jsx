@@ -30,21 +30,21 @@ const ContactPage = () => {
           <span className="social__logos" id="sm-logos">
             <a
               href="https://www.facebook.com/cyberartbyjustin"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               <FontAwesomeIcon icon={faFacebookF} id="icon-fb" />
             </a>
             <a
               href="https://www.instagram.com/cyberart_by_justin/"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               <FontAwesomeIcon icon={faInstagram} id="icon-ig"/>
             </a>
             <a
               href="https://www.behance.net/cyberartbyjustin"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               <FontAwesomeIcon icon={faBehance} id="icon-behance"/>

@@ -34,9 +34,6 @@
     * {
       color: c.$platinum;
     }
-    :hover {
-      cursor: pointer;
-    }
   }
   &__links {
     display: flex;
@@ -62,11 +59,14 @@
     &__links--hidden {
       display: flex;
       flex-direction: row;
-      width: 20vw;
+      width: 25vw;
       justify-content: space-between;
       align-items: center;
       a {
         @include mix.nav-link-style(c.$platinum);
+        &:hover {
+          color: c.$carolina-blue;
+        }
       }
     }
     &__hamburger-btn {

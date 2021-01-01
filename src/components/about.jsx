@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import profilePhoto from "../assets/images/new profile pic oct 2019 smaller.jpg";
+import {fadeUp} from "../scripts/utilities";
 
 const AboutPage = () => {
   useEffect(() => {
@@ -10,8 +11,8 @@ const AboutPage = () => {
 
   return (
     <main className="container" id="about-page">
-      <h1 className="container__title">About Me</h1>
-      <section className="about">
+      <h1 className={`container__title ${fadeUp()}`}>About Me</h1>
+      <section className={`about ${fadeUp()}`}>
         {/**Grid 1 */}
         <article className="about__article">
           <div style={{display: 'flex', justifyContent: 'center'}}>
@@ -54,7 +55,7 @@ export default AboutPage;
 
 const CV = () => {
   return (
-    <div>
+    <div className="animate__animated animate__fadeInUp">
       <h3 className="container__title">CV</h3>
       <ul>
         <li>Objective</li>
@@ -66,7 +67,7 @@ const CV = () => {
 
 const Features = () => {
   return (
-    <div>
+    <div className="animate__animated animate__fadeInUp">
       <h3 className="container__title">Features</h3>
       <ul>
         <li>Jun 2018 - CVA Zine:Glitch</li>

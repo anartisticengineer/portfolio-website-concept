@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { embedMaterial } from "../scripts/embed";
+import {fadeUp} from "../scripts/utilities";
 
 const Gallery = () => {
 
@@ -9,10 +10,10 @@ const Gallery = () => {
   },[]);
 
   return <main className="container">
-    <h1 className="container__title">Gallery</h1>
+    <h1 className={`container__title ${fadeUp()}`}>Gallery</h1>
     <p>Below, you'll find my latest works (that are on Instagram)!</p>
     {/*I definitely didn't want to use this, but the embed site gives me very little of a choice :P */}
-    <section className="gallery" dangerouslySetInnerHTML={{__html:embedMaterial}}></section>
+    <section className={`gallery ${fadeUp()}`} dangerouslySetInnerHTML={{__html:embedMaterial}}></section>
   </main>;
 };
 

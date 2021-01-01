@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useEffect } from "react";
 import Form from "./form";
+import {fadeUp} from "../scripts/utilities";
 
 const ContactPage = () => {
   useEffect(() => {
@@ -15,8 +16,8 @@ const ContactPage = () => {
 
   return (
     <main className="container">
-      <h1 className="container__title">Contact</h1>
-      <section className="container__content">
+      <h1 className={`container__title ${fadeUp()}`}>Contact</h1>
+      <section className={`container__content ${fadeUp()}`}>
         <article>
           <p>
             Wanna get in touch? Commissions, collaborations, or just wanna say hi?

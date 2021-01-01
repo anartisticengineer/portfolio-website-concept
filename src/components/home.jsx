@@ -12,7 +12,7 @@ const HomePage = () => {
   return (
     <main className="container" id="home-page">
         <SketchHome/>
-        <aside>
+        <aside className="animate__animated animate__fadeInUp">
           <h1 className="container__title">Welcome to the cyber art gallery!</h1>
           <button className="btn btn--home" onClick={() => {history.push('/gallery')}}>See my latest stuff</button>
         </aside> 

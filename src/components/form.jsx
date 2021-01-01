@@ -8,7 +8,7 @@ const Form = () => {
       };
 
     return (
-        <form className="form" onSubmit={handleSubmit} id="submit-form" autoComplete="off">
+        <form className="form " onSubmit={handleSubmit} id="submit-form" autoComplete="off">
           {/**First and last name */}
           <div className="form__block">
             <label className="form__label" id="first-name__label" htmlFor="first-name">First Name: </label>

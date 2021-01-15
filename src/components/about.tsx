@@ -57,10 +57,19 @@ const CV = () => {
   return (
     <div className="animate__animated animate__fadeInUp">
       <h3 className="container__title">CV</h3>
-      <ul>
-        <li>Objective</li>
-        <li>Education</li>
-      </ul>
+      <h4>Objective</h4>
+        <p>To specialize in digital art and/or creative coding while continuously exploring ways to bring the two together!</p>
+      <h4>Education</h4>
+        <ul>
+          <li>2018 - B.S. in Electrical Engineering (with an emphasis in Digital Signal Processing) at CSU Long Beach</li>
+          <li>2020 - Software Developer Apprentice at Techtonic in Boulder, Colorado</li>
+        </ul>
+      <h4>Notable Projects + Experience</h4>
+        <ul>
+          <li>(Obviously) MAKING THIS WEBSITE!</li>
+          <li>Glitch FX Generator</li>
+          <li>Generative Patterns</li>
+        </ul>
     </div>
   );
 };
@@ -73,7 +82,7 @@ const Features = () => {
         <li>Jun 2018 - CVA Zine:Glitch</li>
         <li>Oct 2018 - fu:bar/expo in Croatia</li>
         <li>Mar 2019 - Daylighted selected artist</li>
-        <li>Jun 2020 - Project V4llain</li>
+        <li>Jun 2020 - Project V4llain + The Glitch Art Bible</li>
       </ul>
     </div>
   );

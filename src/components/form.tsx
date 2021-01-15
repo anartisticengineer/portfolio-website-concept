@@ -2,7 +2,7 @@ import React from 'react';
 
 const Form = () => {
 
-    const handleSubmit = (event) => {
+    const handleSubmit = (event: any) => {
         event.preventDefault();
         console.log(event.target);
       };
@@ -48,8 +48,8 @@ const Form = () => {
                 className="textarea"
                 name="message"
                 id="message"
-                cols="30"
-                rows="10"
+                cols={30}
+                rows={10}
                 placeholder="Write your message here"
                 required
             ></textarea>

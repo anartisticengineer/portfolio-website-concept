@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/images/cyberart_by_justin_name_1.png";
 import { useState } from "react";
+import { navLinksHidden } from "../scripts/utilities";
 
 const Navbar = () => {
   //toggle the dropdown menu on a mobile display using a state hook
@@ -21,7 +22,7 @@ const Navbar = () => {
         </span>
       </section>
       {/*These should be hidden and collapsible in mobile view */}
-      <span className={`navbar__links${hidden?'--hidden':''}`} id="navbar-links">
+      <span className={navLinksHidden(hidden)} id="navbar-links">
         {/*Gallery dropdown */}
         <NavLink exact to="/">Home</NavLink>
         <NavLink to="/gallery">Gallery</NavLink>

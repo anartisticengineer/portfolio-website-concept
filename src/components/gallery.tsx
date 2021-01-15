@@ -11,7 +11,7 @@ const Gallery = () => {
 
   return <main className="container">
     <h1 className={`container__title ${fadeUp()}`}>Gallery</h1>
-    <p>Below, you'll find my latest works (that are on Instagram)!</p>
+    <p id="gallery-description">Some posts of my latest stuff on Instagram!</p>
     {/*I definitely didn't want to use this, but the embed site gives me very little of a choice :P */}
     <section className={`gallery ${fadeUp()}`} dangerouslySetInnerHTML={{__html:embedMaterial}}></section>
   </main>;

@@ -9,7 +9,7 @@ import HomePage from "./components/home";
 import ContactPage from "./components/contact";
 import Footer from "./components/footer";
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <Navbar />

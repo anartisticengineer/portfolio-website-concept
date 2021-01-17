@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink} from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import logo from "../assets/images/cyberart_by_justin_name_1.png";
+import logo from "../images/cyberart_by_justin_name_1.png";
 import { useState } from "react";
 import { navLinksHidden } from "../scripts/utilities";
 

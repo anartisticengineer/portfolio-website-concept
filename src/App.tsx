@@ -1,12 +1,12 @@
 import React from "react";
-import "./assets/styles/index.scss";
+import "./styles/index.scss";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 //Components
 import Navbar from "./components/navbar";
-import Gallery from "./components/gallery";
-import AboutPage from "./components/about";
-import HomePage from "./components/home";
-import ContactPage from "./components/contact";
+import Gallery from "./pages/gallery";
+import AboutPage from "./pages/about";
+import HomePage from "./pages/home";
+import ContactPage from "./pages/contact";
 import Footer from "./components/footer";
 
 const App = () => {

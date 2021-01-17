@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router";
-import SketchHome from "../assets/sketches/sketch-home";
+import SketchHome from "../sketches/sketch-home";
 
 const HomePage = () => {
   const history = useHistory();

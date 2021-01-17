@@ -6,7 +6,7 @@ import {
   faBehance,
 } from "@fortawesome/free-brands-svg-icons";
 import { useEffect } from "react";
-import Form from "./form";
+import Form from "../components/form";
 import {fadeUp} from "../scripts/utilities";
 
 const ContactPage = () => {

@@ -1,3 +1,33 @@
 $query-phone: 480px;
 $query-tablet: 768px;
 $query-laptop: 1024px;
+
+@mixin phone {
+  @media screen and (max-width: $query-phone - 1px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $query-phone) and (max-width: $query-laptop - 1px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (min-width: $query-laptop) {
+    @content;
+  }
+}
+
+@mixin at-least-tablet {
+  @media screen and (min-width: $query-phone) {
+    @content;
+  }
+}
+
+@mixin at-least-laptop {
+  @media screen and (min-width: $query-tablet) {
+    @content;
+  }
+}

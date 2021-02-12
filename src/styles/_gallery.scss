@@ -5,14 +5,14 @@
   align-items: center;
   height: 250vh;
   max-height: 380vw;
-  @media screen and (min-width: q.$query-phone) {
+  @include q.phone {
     height: 500vh;
     max-height: 390vw;
   }
-  @media screen and (min-width: q.$query-tablet) {
+  @include q.tablet {
     height: 600vh;
   }
-  @media screen and (min-width: q.$query-laptop) {
+  @include q.laptop {
     height: 200vh;
     max-height: 110vw;
   }

@@ -3,17 +3,14 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  @media screen and (min-width: q.$query-phone) {
+  @include q.at-least-tablet {
     grid-column-start: 1;
-  }
-  @media screen and (min-width: q.$query-tablet) {
-    // width: 80%;
   }
   &__block {
     display: flex;
     flex-direction: column;
     width: auto;
-    @media screen and (min-width: q.$query-tablet) {
+    @include q.at-least-laptop {
       flex-direction: row;
       &:last-child {
         flex-direction: column;
@@ -25,7 +22,7 @@
   }
   &__label {
     padding: 0.5em 0;
-    @media screen and (min-width: q.$query-tablet) {
+    @include q.at-least-laptop {
       padding: 0 1em 0 0;
       white-space: nowrap;
     }
@@ -33,17 +30,17 @@
 }
 //Special rule exceptions for certain ids
 #last-name__label {
-  @media screen and (min-width: q.$query-tablet) {
+  @include q.at-least-laptop {
     padding-left: 1em;
   }
 }
 
 #message {
-  @media screen and (min-width: q.$query-tablet) {
+  @include q.at-least-laptop {
     width: calc(100% - 2em);
   }
   &__label {
-    @media screen and (min-width: q.$query-tablet) {
+    @include q.at-least-laptop {
       padding-bottom: 1em;
     }
   }

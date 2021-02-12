@@ -10,7 +10,7 @@
   &__logos {
     display: flex;
     justify-content: space-evenly;
-    @media screen and (min-width: q.$query-phone) {
+    @include q.at-least-tablet {
       margin: 0 auto;
       width: 40%;
     }

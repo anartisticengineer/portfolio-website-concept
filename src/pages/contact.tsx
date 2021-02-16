@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookF,
@@ -7,12 +7,14 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useEffect } from "react";
 import Form from "../components/form";
-import {fadeUp} from "../scripts/utilities";
+import utils from "../scripts/utilities";
 
-const ContactPage = () => {
+const ContactPage: FunctionComponent = () => {
   useEffect(() => {
     document.title = "Contact - cyberart_by_justin";
   },[]);
+
+  const { fadeUp } = utils;
 
   return (
     <main className="container">

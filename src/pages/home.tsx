@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { FunctionComponent, useEffect } from "react";
 import { useHistory } from "react-router";
+import Button from "../components/button";
 import SketchHome from "../sketches/sketch-home";
 
-const HomePage = () => {
+const HomePage: FunctionComponent = () => {
   const history = useHistory();
 
   useEffect(() => {
@@ -14,7 +15,10 @@ const HomePage = () => {
         <SketchHome/>
         <aside className="animate__animated animate__fadeInUp">
           <h1 className="container__title">Welcome to the cyber art gallery!</h1>
-          <button className="btn btn--home" onClick={() => {history.push('/gallery')}}>See my latest stuff</button>
+          <Button classes={"btn--home"} id={"see-latest"}
+            isSubmit={false} onClickFcn={() => history.push("/gallery")}>
+              See my latest stuff
+          </Button>
         </aside> 
     </main>
   );

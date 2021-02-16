@@ -1,9 +1,11 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { useEffect } from "react";
 import { embedMaterial } from "../scripts/embed";
-import {fadeUp} from "../scripts/utilities";
+import utils from "../scripts/utilities";
 
-const Gallery = () => {
+const Gallery: FunctionComponent = () => {
+
+  const {fadeUp} = utils;
 
   useEffect(() => {
     document.title = "Gallery - cyberart_by_justin";

@@ -1,13 +1,25 @@
-const containerClasses = (isDark: boolean): string => {
-    return `container ${isDark?"container--dark":null}`;
+const utils = {
+    containerClasses: (isDark: boolean): string => {
+        return `container ${isDark?"container--dark":null}`;
+    },
+    fadeUp: (): string => {
+        return `animate__animated animate__fadeInUp`;
+    },
+    navLinksHidden: (isHidden: boolean): string => {
+        return `navbar__links${isHidden ? '--hidden':''}`;
+    },
+    btnClasses: (classNames: string | string[] | void): string => {
+        let allClasses: string = "btn";
+        if (classNames){
+            if (typeof classNames === "string"){
+                allClasses += ` ${classNames}`;
+            }
+            else if (typeof classNames === "object"){
+                allClasses += ` ${classNames.join(" ")}`;
+            }
+        }
+        return allClasses;
+    }
 }
 
-const fadeUp = (): string => {
-    return `animate__animated animate__fadeInUp`;
-}
-
-const navLinksHidden = (isHidden: boolean): string => {
-    return `navbar__links${isHidden ? '--hidden':''}`;
-}
-
-export {containerClasses, fadeUp, navLinksHidden};
+export default utils;

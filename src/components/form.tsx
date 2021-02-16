@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
+import Button from './button';
 
-const Form = () => {
+const Form: FunctionComponent = () => {
 
     const handleSubmit = (event: any) => {
         event.preventDefault();
@@ -53,9 +54,7 @@ const Form = () => {
                 placeholder="Write your message here"
                 required
             ></textarea>
-            <button className="btn btn--submit" type="submit" id="submit-btn">
-                Submit
-            </button>
+            <Button classes={"btn--submit"} id={"submit-btn"} isSubmit={true} onClickFcn={() => {}}>Submit</Button>
           </div>
         </form>  
         );

@@ -1,12 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import profilePhoto from "../images/new profile pic oct 2019 smaller.jpg";
-import {fadeUp} from "../scripts/utilities";
+import utils from "../scripts/utilities";
 
-const AboutPage = () => {
+import CV from "../components/cv";
+import Features from "../components/features";
+import Button from "../components/button";
+
+const AboutPage: FunctionComponent = () => {
   useEffect(() => {
     document.title = "About Me - cyberart_by_justin";
   },[]);
 
+  const { fadeUp } = utils;
   const [page, changePage] = useState("cv");
 
   return (
@@ -36,14 +41,11 @@ const AboutPage = () => {
         {/** */}
         <article className="about__article">
           <div id="cv-or-features">
-            <button className="btn" id="cv-btn" onClick={() => changePage("cv")}>
-              CV
-            </button>
-            <button className="btn" id="features-btn" onClick={() => changePage("features")}>
-              Features
-            </button>
+            <Button classes={""} id={"cv-btn"} 
+                isSubmit={false} onClickFcn={() => changePage("cv")}>CV</Button>
+            <Button classes={""} id={"features-btn"} 
+                isSubmit={false} onClickFcn={() => changePage("features")}>Features</Button>
           </div>
-          {/*This will be the CV or Features */}
           {page === "cv" ? <CV /> : <Features />}
         </article>
       </section>
@@ -52,38 +54,3 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
-
-const CV = () => {
-  return (
-    <div className="animate__animated animate__fadeInUp">
-      <h3 className="container__title">CV</h3>
-      <h4>Objective</h4>
-        <p>To specialize in digital art and/or creative coding while continuously exploring ways to bring the two together!</p>
-      <h4>Education</h4>
-        <ul>
-          <li>2018 - B.S. in Electrical Engineering (with an emphasis in Digital Signal Processing) at CSU Long Beach</li>
-          <li>2020 - Software Developer Apprentice at Techtonic in Boulder, Colorado</li>
-        </ul>
-      <h4>Notable Projects + Experience</h4>
-        <ul>
-          <li>(Obviously) MAKING THIS WEBSITE!</li>
-          <li>Glitch FX Generator</li>
-          <li>Generative Patterns</li>
-        </ul>
-    </div>
-  );
-};
-
-const Features = () => {
-  return (
-    <div className="animate__animated animate__fadeInUp">
-      <h3 className="container__title">Features</h3>
-      <ul>
-        <li>Jun 2018 - CVA Zine:Glitch</li>
-        <li>Oct 2018 - fu:bar/expo in Croatia</li>
-        <li>Mar 2019 - Daylighted selected artist</li>
-        <li>Jun 2020 - Project V4llain + The Glitch Art Bible</li>
-      </ul>
-    </div>
-  );
-};

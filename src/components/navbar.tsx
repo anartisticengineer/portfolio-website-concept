@@ -1,14 +1,12 @@
-import React from "react";
-import { NavLink} from "react-router-dom";
+import React, { useState, FunctionComponent } from "react";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import logo from "../images/cyberart_by_justin_name_1.png";
-import { useState } from "react";
-import { navLinksHidden } from "../scripts/utilities";
+import utils from "../scripts/utilities";
 
-const Navbar = () => {
+const Navbar: FunctionComponent = () => {
   //toggle the dropdown menu on a mobile display using a state hook
-
   const [hidden, toggleHide] = useState(true);
 
   return (
@@ -22,7 +20,7 @@ const Navbar = () => {
         </span>
       </section>
       {/*These should be hidden and collapsible in mobile view */}
-      <span className={navLinksHidden(hidden)} id="navbar-links">
+      <span className={utils.navLinksHidden(hidden)} id="navbar-links">
         {/*Gallery dropdown */}
         <NavLink exact to="/">Home</NavLink>
         <NavLink to="/gallery">Gallery</NavLink>

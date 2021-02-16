@@ -1,7 +1,8 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 
-const Footer = () => {
-  let date = new Date();
+const Footer: FunctionComponent = () => {
+  
+  let date: Date = new Date();
 
   return (
     <footer className="footer">

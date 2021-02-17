@@ -4,7 +4,11 @@ import utils from '../scripts/utilities';
 import { ButtonProps } from '../types/componentprops';
 
 const Button: FunctionComponent<ButtonProps> = ({
-  classes, id, isSubmit, onClickFcn, children,
+  classes,
+  id,
+  isSubmit,
+  onClickFcn,
+  children,
 }) => {
   const { btnClasses } = utils;
 

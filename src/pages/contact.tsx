@@ -1,11 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useEffect, FunctionComponent } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faFacebookF,
-  faInstagram,
-  faBehance,
-} from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faInstagram, faBehance } from '@fortawesome/free-brands-svg-icons';
 import Form from '../components/form';
 import utils from '../scripts/utilities';
 
@@ -22,14 +18,16 @@ const ContactPage: FunctionComponent = () => {
       <section className={`container__content ${fadeUp()}`}>
         <article>
           <p>
-            Wanna get in touch? Commissions, collaborations, or just wanna say hi?
-            Send me an email with the form below, and/or follow me online. :)
+            Wanna get in touch? Commissions, collaborations, or just wanna say hi? Send me an email
+            with the form below, and/or follow me online. :)
           </p>
           <Form />
         </article>
         {/* Social media logos section */}
         <article className="social">
-          <p className="social__text">Or follow me on social media. I&apos;m pretty active on there (most of the time).</p>
+          <p className="social__text">
+            Or follow me on social media. I&apos;m pretty active on there (most of the time).
+          </p>
           <span className="social__logos" id="sm-logos">
             <a
               href="https://www.facebook.com/cyberartbyjustin"

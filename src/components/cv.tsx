@@ -10,14 +10,14 @@ const CV: FunctionComponent = () => {
       <h3 className="container__title">CV</h3>
       <h4>Objective</h4>
       <p>
-        To specialize in digital art and/or creative coding
-        while continuously exploring ways to bring the two together!
+        To specialize in digital art and/or creative coding while continuously exploring ways to
+        bring the two together!
       </p>
       <h4>Education</h4>
       <ul>
         <li>
-          2018 - B.S. in Electrical Engineering
-          (with an emphasis in Digital Signal Processing) at CSU Long Beach
+          2018 - B.S. in Electrical Engineering (with an emphasis in Digital Signal Processing) at
+          CSU Long Beach
         </li>
         <li>2020 - Software Developer Apprentice at Techtonic in Boulder, Colorado</li>
       </ul>

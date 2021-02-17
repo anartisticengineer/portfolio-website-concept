@@ -18,7 +18,10 @@ const Gallery: FunctionComponent = () => {
       <p id="gallery-description">Some posts of my latest stuff on Instagram!</p>
       {/* I definitely didn't want to use this,
        but the embed site gives me very little of a choice :P */}
-      <section className={`gallery ${fadeUp()}`} dangerouslySetInnerHTML={{ __html: embedMaterial }} />
+      <section
+        className={`gallery ${fadeUp()}`}
+        dangerouslySetInnerHTML={{ __html: embedMaterial }}
+      />
     </main>
   );
 };

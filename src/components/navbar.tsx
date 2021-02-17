@@ -16,7 +16,7 @@ const Navbar: FunctionComponent = () => {
     <nav className="navbar">
       {/* Visible in the mobile view */}
       <section className="navbar__header">
-        <img src={logo} className="navbar__logo" alt="cyberart_by_justin" id="nav-logo"/>
+        <img src={logo} className="navbar__logo" alt="cyberart_by_justin" id="nav-logo" />
         {/* Toggle hamburger button */}
         <span className="navbar__hamburger-btn" onClick={() => toggleHide(!hidden)}>
           <FontAwesomeIcon icon={hidden ? faBars : faTimes} />
@@ -25,7 +25,9 @@ const Navbar: FunctionComponent = () => {
       {/* These should be hidden and collapsible in mobile view */}
       <span className={utils.navLinksHidden(hidden)} id="navbar-links">
         {/* Gallery dropdown */}
-        <NavLink exact to="/">Home</NavLink>
+        <NavLink exact to="/">
+          Home
+        </NavLink>
         <NavLink to="/gallery">Gallery</NavLink>
         <NavLink to="/about">About</NavLink>
         <NavLink to="/contact">Contact</NavLink>

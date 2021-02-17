@@ -31,3 +31,7 @@ describe('button class functionality', () => {
     expect(utils.btnClasses(['class1', 'class2'])).to.equal('btn class1 class2');
   });
 });
+
+describe('should be 2020-2021', () => {
+  expect(utils.footerCopyrights()).to.equal('© Justin Johnson 2020 - 2021');
+});

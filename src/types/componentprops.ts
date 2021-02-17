@@ -8,6 +8,7 @@ export type ButtonProps = {
 export type InputFieldProps = {
     labelId: string,
     inputId: string,
+    inputType: string | undefined,
     placeholder: string,
     isRequired: boolean,
 }

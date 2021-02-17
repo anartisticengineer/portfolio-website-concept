@@ -15,10 +15,18 @@ const App = () => (
     <Navbar />
     {/* Pages via Route */}
     <Switch>
-      <Route exact path="/"><HomePage /></Route>
-      <Route path="/gallery"><Gallery /></Route>
-      <Route path="/about"><AboutPage /></Route>
-      <Route path="/contact"><ContactPage /></Route>
+      <Route exact path="/">
+        <HomePage />
+      </Route>
+      <Route path="/gallery">
+        <Gallery />
+      </Route>
+      <Route path="/about">
+        <AboutPage />
+      </Route>
+      <Route path="/contact">
+        <ContactPage />
+      </Route>
     </Switch>
     <Footer />
   </BrowserRouter>

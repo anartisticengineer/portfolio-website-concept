@@ -2,7 +2,8 @@
 import React, { FunctionComponent, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import Button from '../components/button';
-import SketchHome from '../sketches/sketch-home';
+import bannerImg from '../images/banner-glitch.gif';
+import utils from '../scripts/utilities';
 
 const HomePage: FunctionComponent = () => {
   const history = useHistory();
@@ -13,8 +14,9 @@ const HomePage: FunctionComponent = () => {
 
   return (
     <main className="container" id="home-page">
-      <SketchHome />
-      <aside className="animate__animated animate__fadeInUp">
+      {/* <SketchHome /> */}
+      <img src={bannerImg} alt="banner" id="home-banner" />
+      <section className={utils.fadeUp()}>
         <h1 className="container__title">Welcome to the cyber art gallery!</h1>
         <Button
           classes="btn--home"
@@ -24,7 +26,7 @@ const HomePage: FunctionComponent = () => {
         >
           See my latest stuff
         </Button>
-      </aside>
+      </section>
     </main>
   );
 };

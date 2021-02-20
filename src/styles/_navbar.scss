@@ -87,38 +87,3 @@
     color: c.$winter-sky;
   }
 }
-// @include q.at-least-tablet {
-//   .navbar {
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     &__links,
-//     &__links--hidden {
-//       display: flex;
-//       flex-direction: row;
-//       width: 25vw;
-//       justify-content: space-between;
-//       align-items: center;
-//       a {
-//         @include mix.nav-link-style(c.$platinum);
-//         &:hover {
-//           color: c.$winter-sky;
-//           text-decoration: underline;
-//         }
-//       }
-//     }
-//     &__hamburger-btn {
-//       display: none;
-//     }
-//   }
-//   #nav-links {
-//     display: flex;
-//   }
-// }
-// @media screen and (min-width: q.$query-tablet) {
-//   .navbar {
-//     &__logo {
-//       width: 15vw;
-//     }
-//   }
-// }

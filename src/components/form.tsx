@@ -11,30 +11,19 @@ const Form: FunctionComponent = () => {
   };
 
   return (
-    <form className="form " onSubmit={handleSubmit} id="submit-form" autoComplete="off">
+    <form className="form" onSubmit={handleSubmit} id="submit-form" autoComplete="off">
       {/** First and last name */}
       <div className="form__block">
         <InputField
-          labelId="first-name__label"
-          inputId="first-name"
+          labelId="name__label"
+          inputId="name"
           inputType="text"
-          placeholder="First Name"
+          placeholder="Name"
           isRequired
         >
-          First Name:
+          Name:
         </InputField>
-        <InputField
-          labelId="last-name__label"
-          inputId="last-name"
-          inputType="text"
-          placeholder="Last Name"
-          isRequired
-        >
-          Last Name:
-        </InputField>
-      </div>
-      {/** Text area for email */}
-      <div className="form__block">
+        {/** Text area for email */}
         <InputField
           labelId="form-email__label"
           inputId="form-email"

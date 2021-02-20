@@ -4,44 +4,22 @@
   flex-direction: column;
   width: 100%;
   @include q.at-least-tablet {
-    grid-column-start: 1;
+    display: inline-flex;
+    align-items: flex-start;
+    width: 50vw;
+    height: 100%;
   }
   &__block {
     display: flex;
     flex-direction: column;
-    width: auto;
-    @include q.at-least-laptop {
-      flex-direction: row;
-      &:last-child {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    @include q.at-least-tablet {
+      width: 100%;
     }
-    align-items: center;
+  }
+  &__label {
+    display: block;
     padding: 1em 0;
-  }
-  &__label {
-    padding: 0.5em 0;
     @include q.at-least-laptop {
-      padding: 0 1em 0 0;
-      white-space: nowrap;
-    }
-  }
-}
-//Special rule exceptions for certain ids
-#last-name__label {
-  @include q.at-least-laptop {
-    padding-left: 1em;
-  }
-}
-
-#message {
-  @include q.at-least-laptop {
-    width: calc(100% - 2em);
-  }
-  &__label {
-    @include q.at-least-laptop {
-      padding-bottom: 1em;
     }
   }
 }

@@ -3,6 +3,10 @@
   display: inline-flex;
   flex-direction: column;
   width: 100%;
+  @include q.at-least-tablet {
+    margin: auto;
+    padding: 2rem;
+  }
   &__text {
     text-align: center;
     padding-bottom: 1rem;
@@ -12,6 +16,11 @@
     justify-content: space-evenly;
     @include q.at-least-tablet {
       margin: 0 auto;
+    }
+    @include q.tablet {
+      width: 75%;
+    }
+    @include q.laptop {
       width: 40%;
     }
   }

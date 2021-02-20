@@ -7,12 +7,18 @@
   color: c.$eerie-black;
   padding: 2rem;
   font-family: type.$font-primary;
-  min-height: calc(100vh - 258px);
+  height: auto;
   &__title {
     text-align: center;
   }
-  label {
-    display: block;
+  &--contact {
+    @include q.at-least-tablet {
+      section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    }
   }
 }
 
@@ -23,7 +29,6 @@
   @include q.at-least-tablet {
     justify-content: space-around;
     height: fit-content;
-    min-height: calc(100vh - 273px);
   }
   align-items: stretch;
   padding: 0;

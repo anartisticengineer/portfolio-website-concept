@@ -1,4 +1,6 @@
 //this one's good for buttons and text fields
+@use 'media-queries' as q;
+
 @mixin round-and-pad($size) {
   border-radius: $size;
   padding: $size;
@@ -8,7 +10,7 @@
   text-decoration: none;
   color: $color;
   padding: 1em 0;
-  @media screen and (min-width: 480px) {
+  @include q.at-least-tablet {
     padding: 0;
   }
 }

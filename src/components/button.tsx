@@ -7,6 +7,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   classes,
   id,
   isSubmit,
+  isDisabled,
   onClickFcn,
   children,
 }) => {
@@ -18,6 +19,7 @@ const Button: FunctionComponent<ButtonProps> = ({
       type={isSubmit ? 'submit' : 'button'}
       id={id}
       onClick={onClickFcn}
+      disabled={isDisabled}
     >
       {children}
     </button>

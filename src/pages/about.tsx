@@ -46,6 +46,7 @@ const AboutPage: FunctionComponent = () => {
               classes=""
               id="cv-btn"
               isSubmit={false}
+              isDisabled={false}
               onClickFcn={() => changePage('cv')}
             >
               CV
@@ -54,6 +55,7 @@ const AboutPage: FunctionComponent = () => {
               classes=""
               id="features-btn"
               isSubmit={false}
+              isDisabled={false}
               onClickFcn={() => changePage('features')}
             >
               Features

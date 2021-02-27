@@ -35,3 +35,13 @@ describe('button class functionality', () => {
 describe('should be 2020-2021', () => {
   expect(utils.footerCopyrights()).to.equal('© Justin Johnson 2020 - 2021');
 });
+
+describe('allowing submission of a form', () => {
+  const options: object[] = [{ name: 'Justin', email: 'sample@gmail.com', message: 'bla bla' }, { name: '', email: '', message: '' }];
+  it('should be true', () => {
+    expect(utils.allowSubmission(options[0])).to.eq(true);
+  });
+  it('should be false', () => {
+    expect(utils.allowSubmission(options[1])).to.eq(false);
+  });
+});

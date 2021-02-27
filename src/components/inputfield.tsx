@@ -10,6 +10,7 @@ const InputField: FunctionComponent<InputFieldProps> = ({
   inputType = 'text',
   placeholder,
   isRequired,
+  onChangeFcn,
   children,
 }) => (
   <>
@@ -24,6 +25,7 @@ const InputField: FunctionComponent<InputFieldProps> = ({
         name={inputId}
         placeholder={placeholder}
         required={isRequired}
+        onChange={onChangeFcn}
       />
     ) : (
       <textarea
@@ -32,6 +34,7 @@ const InputField: FunctionComponent<InputFieldProps> = ({
         name={inputId}
         placeholder={placeholder}
         required={isRequired}
+        onChange={onChangeFcn}
       />
     )}
   </>

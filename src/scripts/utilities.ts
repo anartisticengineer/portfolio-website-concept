@@ -17,6 +17,12 @@ const utils = {
     return allClasses;
   },
 
+  allowSubmission: (formData: {}): boolean => {
+    const formValues: string[] = Object.values(formData);
+    // eslint-disable-next-line eqeqeq
+    return formValues.every((item) => item !== '');
+  },
+
   footerCopyrights: (): string => {
     const date: Date = new Date();
     return `© Justin Johnson 2020${date.getFullYear() === 2020 ? '' : ` - ${date.getFullYear()}`}`;

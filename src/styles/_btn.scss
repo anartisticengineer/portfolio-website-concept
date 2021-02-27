@@ -9,6 +9,9 @@
   &:hover {
     background-color: c.$winter-sky;
   }
+  &:disabled {
+    background-color: lighten(c.$eerie-black, 25%);
+  }
   &--submit {
     min-width: 100px;
     background-color: c.$eerie-black;

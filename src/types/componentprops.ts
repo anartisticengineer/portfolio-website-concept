@@ -2,6 +2,7 @@ export type ButtonProps = {
     classes: string | string[] | void,
     id: string | undefined,
     isSubmit: boolean,
+    isDisabled: boolean,
     onClickFcn: () => any
 }
 
@@ -11,4 +12,6 @@ export type InputFieldProps = {
     inputType: string | undefined,
     placeholder: string,
     isRequired: boolean,
+    // eslint-disable-next-line no-unused-vars
+    onChangeFcn: (event: any) => void
 }

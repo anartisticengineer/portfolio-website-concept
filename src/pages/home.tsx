@@ -22,6 +22,7 @@ const HomePage: FunctionComponent = () => {
           classes="btn--home"
           id="see-latest"
           isSubmit={false}
+          isDisabled={false}
           onClickFcn={() => history.push('/gallery')}
         >
           See my latest stuff

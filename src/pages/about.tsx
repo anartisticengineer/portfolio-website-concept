@@ -11,7 +11,6 @@ const AboutPage: FunctionComponent = () => {
   useEffect(() => {
     document.title = 'About Me - cyberart_by_justin';
   }, []);
-
   const { fadeUp } = utils;
   const [page, changePage] = useState('cv');
 
@@ -21,9 +20,7 @@ const AboutPage: FunctionComponent = () => {
       <section className={`about ${fadeUp()}`}>
         {/** Grid 1 */}
         <article className="about__article">
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <img src={profilePhoto} alt="profile" id="about-profile-photo" />
-          </div>
+          <img className="about__article__photo" src={profilePhoto} alt="profile pic of Justin" id="about-profile-photo" />
           <h2 className="container__title">Who am I?</h2>
           <p>
             I am a digital artist/creative coder currently based in Denver,

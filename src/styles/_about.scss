@@ -16,6 +16,7 @@
 
   &__article {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     height: 100%;
     padding: 0 1em;
@@ -31,6 +32,9 @@
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
       }
+    }
+    &__photo {
+      margin: 0 auto;
     }
   }
 }

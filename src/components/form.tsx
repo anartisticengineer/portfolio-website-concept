@@ -24,7 +24,6 @@ const Form: FunctionComponent = () => {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    console.log(event.target);
   };
 
   return (

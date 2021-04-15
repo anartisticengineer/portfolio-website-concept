@@ -19,6 +19,8 @@ const InputField: FunctionComponent<InputFieldProps> = ({
     </label>
     {inputType !== 'textarea' ? (
       <input
+        aria-labelledby={labelId}
+        aria-required={isRequired}
         className="textarea"
         type={inputType}
         id={inputId}

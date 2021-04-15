@@ -25,7 +25,7 @@ const Navbar: FunctionComponent = () => {
       {/* These should be hidden and collapsible in mobile view */}
       <span className={utils.navLinksHidden(hidden)} id="navbar-links">
         {/* Gallery dropdown */}
-        <NavLink exact to="/">
+        <NavLink exact to="/" tabIndex={0}>
           Home
         </NavLink>
         <NavLink to="/gallery">Gallery</NavLink>

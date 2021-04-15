@@ -15,6 +15,7 @@ const Button: FunctionComponent<ButtonProps> = ({
 
   return (
     <button
+      aria-disabled={isDisabled}
       className={btnClasses(classes)}
       type={isSubmit ? 'submit' : 'button'}
       id={id}

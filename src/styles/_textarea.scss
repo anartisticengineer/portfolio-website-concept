@@ -6,6 +6,7 @@
 .textarea {
   @include mix.round-and-pad(1em);
   border: 1px solid c.$eerie-black;
+  font-size: small;
   font-family: type.$font-primary;
   resize: none;
   width: auto;

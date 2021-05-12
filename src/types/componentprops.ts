@@ -15,3 +15,14 @@ export type InputFieldProps = {
     // eslint-disable-next-line no-unused-vars
     onChangeFcn: (event: any) => void
 }
+
+export type ArtworkProps = {
+    name: string,
+    url: string,
+    dim: [number, number]
+}
+
+export type SeriesProps = {
+    name: string,
+    associatedPieces: ArtworkProps[] | null
+}

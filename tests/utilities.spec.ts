@@ -45,3 +45,7 @@ describe('allowing submission of a form', () => {
     expect(utils.allowSubmission(options[1])).to.eq(false);
   });
 });
+
+describe('should display correct urls', () => {
+
+});

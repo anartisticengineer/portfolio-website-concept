@@ -27,6 +27,9 @@ const utils = {
     const date: Date = new Date();
     return `© Justin Johnson 2020${date.getFullYear() === 2020 ? '' : ` - ${date.getFullYear()}`}`;
   },
+
+  getSeriesDisplayUrl: (): string => 'sample',
+
 };
 
 export default utils;

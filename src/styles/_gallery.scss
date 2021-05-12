@@ -2,23 +2,11 @@
 .gallery {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  height: 250vh;
-  max-height: 380vw;
-  @include q.phone {
-    height: 500vh;
-    max-height: 390vw;
-  }
-  @include q.tablet {
-    height: 600vh;
+  @include q.at-least-tablet {
+    flex-direction: row;
   }
   @include q.laptop {
-    height: 200vh;
-    max-height: 110vw;
-  }
-  iframe {
-    width: 80%;
-    height: 100%;
+    // padding: 0 100px;
   }
 }
 

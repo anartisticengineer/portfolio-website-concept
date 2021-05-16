@@ -2,30 +2,24 @@
 import React, { FunctionComponent } from 'react';
 import utils from '../scripts/utilities';
 
+import aboutSample from '../samples/aboutsample.json';
+
 const CV: FunctionComponent = () => {
   const { fadeUp } = utils;
+  const { cv } = aboutSample;
 
   return (
     <div className={fadeUp()}>
       <h3 className="container__title">CV</h3>
       <h4>Objective</h4>
-      <p>
-        To specialize in digital art and/or creative coding while continuously exploring ways to
-        bring the two together!
-      </p>
+      <p>{cv.objective}</p>
       <h4>Education</h4>
       <ul>
-        <li>
-          2018 - B.S. in Electrical Engineering (with an emphasis in Digital Signal Processing) at
-          CSU Long Beach
-        </li>
-        <li>2020 - Software Developer Apprentice at Techtonic in Boulder, Colorado</li>
+        {cv.education.map((el) => <li>{el}</li>)}
       </ul>
       <h4>Notable Projects + Experience</h4>
       <ul>
-        <li>(Obviously) MAKING THIS WEBSITE!</li>
-        <li>Glitch FX Generator</li>
-        <li>Generative Patterns</li>
+        {cv.projects.map((el) => <li>{el}</li>)}
       </ul>
     </div>
   );

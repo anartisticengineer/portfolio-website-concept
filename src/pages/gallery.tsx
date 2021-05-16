@@ -1,10 +1,10 @@
 /* eslint-disable react/no-danger */
 /* eslint-disable react/jsx-filename-extension */
 import React, { FunctionComponent, useEffect } from 'react';
-import Series from '../components/series';
-import { SeriesProps } from '../types/componentprops';
 
-// import { embedMaterial } from '../scripts/embed';
+import SeriesCard from '../components/seriescard';
+
+import { SeriesProps } from '../types/componentprops';
 import utils from '../scripts/utilities';
 
 const Gallery: FunctionComponent = () => {
@@ -19,12 +19,8 @@ const Gallery: FunctionComponent = () => {
   return (
     <main className="container">
       <h1 className={`container__title ${fadeUp()}`}>Gallery</h1>
-      {/* <p id="gallery-description">Some posts of my latest stuff on Instagram!</p> */}
       <section className="gallery">
-        <Series name={sampleSeries.name} associatedPieces={null}>Sample</Series>
-        <Series name={sampleSeries.name} associatedPieces={null}>Sample</Series>
-        <Series name={sampleSeries.name} associatedPieces={null}>Sample</Series>
-        <Series name={sampleSeries.name} associatedPieces={null}>Sample</Series>
+        <SeriesCard name={sampleSeries.name} associatedPieces={null}>Dark Vaporwave</SeriesCard>
       </section>
     </main>
   );

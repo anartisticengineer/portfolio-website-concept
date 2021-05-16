@@ -2,19 +2,17 @@
 import React, { FunctionComponent } from 'react';
 import utils from '../scripts/utilities';
 
+import aboutSample from '../samples/aboutsample.json';
+
 const Features: FunctionComponent = () => {
   const { fadeUp } = utils;
+  const { features } = aboutSample;
 
   return (
     <div className={fadeUp()}>
       <h3 className="container__title">Features</h3>
       <ul>
-        <li>Jun 2018 - CVA Zine:Glitch</li>
-        <li>Oct 2018 - fu:bar/expo in Croatia</li>
-        <li>Dec 2018 - Featured Artist: Creative Collective</li>
-        <li>Mar 2019 - Daylighted selected artist</li>
-        <li>Jun 2020 - Project V4llain + The Glitch Art Bible</li>
-        <li>Aug 2020 - Featured Artist: Glitch Artists Collective</li>
+        {features.map((el) => <li>{el}</li>)}
       </ul>
     </div>
   );

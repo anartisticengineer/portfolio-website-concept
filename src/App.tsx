@@ -9,6 +9,7 @@ import AboutPage from './pages/about';
 import HomePage from './pages/home';
 import ContactPage from './pages/contact';
 import Footer from './components/footer';
+import Series from './pages/series';
 
 const App = () => (
   <BrowserRouter>
@@ -18,8 +19,11 @@ const App = () => (
       <Route exact path="/">
         <HomePage />
       </Route>
-      <Route path="/gallery">
+      <Route exact path="/gallery">
         <Gallery />
+      </Route>
+      <Route path="/gallery/:name">
+        <Series />
       </Route>
       <Route path="/about">
         <AboutPage />

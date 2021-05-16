@@ -5,17 +5,17 @@ import { SeriesProps } from '../types/componentprops';
 import placeholderImg from '../images/default-placeholder-image.png';
 
 // eslint-disable-next-line no-unused-vars
-const Series: FunctionComponent<SeriesProps> = ({ name, associatedPieces = null, children }) => {
+const SeriesCard:FunctionComponent<SeriesProps> = ({ name, associatedPieces = null, children }) => {
   useEffect(() => {
-    document.title = name;
+
   }, []);
 
   return (
-    <Link className="series" to={`/${name}`}>
-      <img className="series__image" src={placeholderImg} alt={`Example of ${name}`} />
-      <div className="series__caption">{ children }</div>
+    <Link className="seriescard" to={`/gallery/${name}`}>
+      <img className="seriescard__image" src={placeholderImg} alt={`Example of ${name}`} />
+      <div className="seriescard__caption">{ children }</div>
     </Link>
   );
 };
 
-export default Series;
+export default SeriesCard;

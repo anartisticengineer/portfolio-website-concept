@@ -18,8 +18,7 @@ export type InputFieldProps = {
 
 export type ArtworkProps = {
     name: string,
-    url: string,
-    dim: [number, number]
+    url: string
 }
 
 export type SeriesProps = {

@@ -5,6 +5,12 @@ publish_mode: editorial_workflow
 media_folder: 'public/images/uploads' # Media files will be stored in the repo under public/images/uploads
 public_folder: '/images/uploads' # The src attribute for uploaded media will begin with /images/uploads
 collections:
+  - name: 'summary'
+    label: 'Summary'
+    folder: '_content/summary'
+    create: true
+    fields:
+      - { label: 'Summary Text', name: 'summary-text', widget: 'text' }
   - name: 'cv'
     label: 'CV'
     folder: '_content/cv'
@@ -13,3 +19,11 @@ collections:
       - { label: 'Objective', name: 'objective', widget: 'string' }
       - { label: 'Education', name: 'education', widget: 'list' }
       - { label: 'Projects', name: 'projects', widget: 'list' }
+  - name: 'features'
+    label: 'Features'
+    folder: '_content/features'
+    create: true
+    widget: 'object'
+    fields:
+      - { label: 'Date', name: 'date', widget: 'datetime', date_format: 'MM.YYYY' }
+      - { label: 'Feature Name', name: 'featurename', widget: 'string' }

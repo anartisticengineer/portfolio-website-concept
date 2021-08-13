@@ -10,7 +10,7 @@ client/src/App.css
 
 
 # production
-client/build
+/build
 
 # misc
 .DS_Store

@@ -1,0 +1,15 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update
+publish_mode: editorial_workflow
+media_folder: 'public/images/uploads' # Media files will be stored in the repo under public/images/uploads
+public_folder: '/images/uploads' # The src attribute for uploaded media will begin with /images/uploads
+collections:
+  - name: 'cv'
+    label: 'CV'
+    folder: '_content/cv'
+    create: true
+    fields:
+      - { label: 'Objective', name: 'objective', widget: 'string' }
+      - { label: 'Education', name: 'education', widget: 'list' }
+      - { label: 'Projects', name: 'projects', widget: 'list' }

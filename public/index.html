@@ -14,11 +14,23 @@
     <link rel="stylesheet" href="https://use.typekit.net/gns2byh.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/4.2.3/typescript.min.js" integrity="sha512-cuuFVaWyduhNSEyEs3W+f8hyRtcKgkQ7F1zQD4qaqd+q8q0LCU4sYAoseE0SKFrpa5uxbyMSp++2rKSgWXH89g==" crossorigin="anonymous"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <title>Cyberart By Justin</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <script src="../src/index.tsx"></script>
     <div id="root"></div>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>

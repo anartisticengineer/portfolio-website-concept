@@ -4,11 +4,14 @@ backend:
 publish_mode: editorial_workflow
 media_folder: 'public/images/uploads' # Media files will be stored in the repo under public/images/uploads
 public_folder: '/images/uploads' # The src attribute for uploaded media will begin with /images/uploads
+site_url: https://amazing-dubinsky-16c8e2.netlify.app/
+extension: 'json'
 collections:
   - name: 'summary'
     label: 'Summary'
     folder: '_content/summary'
     create: true
+    slug: 'summary-{{year}}-{{month}}'
     fields:
       - { label: 'Summary Text', name: 'summary-text', widget: 'text' }
   - name: 'cv'

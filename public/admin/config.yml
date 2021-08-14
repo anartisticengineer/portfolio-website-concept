@@ -20,16 +20,10 @@ collections:
             widget: 'text'
           - label: 'Education'
             name: 'education'
-            widget: 'object'
-            field:
-              - { label: 'Edu', name: 'edu', widget: 'string' }
+            widget: 'list'
           - label: 'Projects'
             name: 'projects'
-            widget: 'object'
-            field:
-              - { label: 'Project', name: 'project', widget: 'string' }
+            widget: 'list'
       - label: 'Features'
         name: 'features'
-        widget: 'object'
-        field:
-          - { label: 'Feature', name: 'feature', widget: 'string' }
+        widget: 'list'

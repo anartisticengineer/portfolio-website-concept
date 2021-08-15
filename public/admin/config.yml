@@ -7,11 +7,36 @@ public_folder: '/images/uploads' # The src attribute for uploaded media will beg
 site_url: https://amazing-dubinsky-16c8e2.netlify.app/
 extension: 'json'
 collections:
+  # Home page
+  - label: 'Homepage'
+    name: 'homepage'
+    folder: '_content/homepage'
+    create: true
+    fields:
+      - label: 'Home GIF'
+        name: 'home-gif'
+        widget: 'object'
+        fields:
+          - { label: 'GIF Image', name: 'gif-image', widget: 'image' }
+          - { label: 'GIF Alternate Text', name: 'gif-alt-text', widget: 'string' }
+      - label: 'Welcome Text'
+        name: 'welcome-text'
+        widget: 'string'
+      - label: 'To Gallery Button Text'
+        name: 'to-gallery-button-text'
+        widget: 'string'
+  # About page
   - label: 'About'
     name: 'about'
     folder: '_content/about'
     create: true
     fields:
+      - label: 'Profile Image'
+        name: 'profile-image'
+        widget: 'object'
+        fields:
+          - { label: 'Image', name: 'image', widget: 'image' }
+          - { label: 'Alternate Text', name: 'alt-text', widget: 'string' }
       - label: 'CV'
         name: 'cv'
         widget: 'object'

@@ -12,6 +12,7 @@ collections:
     folder: 'content/homepage'
     create: true
     extension: 'json'
+    slug: 'home'
     preview_path: 'content/homepage.{{extension}}'
     fields:
       - label: 'Home GIF'
@@ -32,6 +33,7 @@ collections:
     folder: 'content/about'
     create: true
     extension: 'json'
+    slug: 'about'
     preview_path: 'content/aboutpage.{{extension}}'
     fields:
       - label: 'Profile Image'
@@ -62,6 +64,7 @@ collections:
     folder: 'content/contact'
     create: true
     extension: 'json'
+    slug: 'contact'
     preview_path: 'content/contact.{{extension}}'
     fields:
       - label: 'Get In Touch'

@@ -50,8 +50,9 @@ collections:
           - label: 'Summary'
             name: 'summary'
             widget: 'object'
-              - {label: 'Summary Title', name: 'title', widget: 'string'}
-              - {label: 'Summary Body', name: 'body', widget: 'text'}
+            fields:
+              - { label: 'Summary Title', name: 'title', widget: 'string' }
+              - { label: 'Summary Body', name: 'body', widget: 'text' }
           - label: 'CV'
             name: 'cv'
             widget: 'object'

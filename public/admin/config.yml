@@ -47,6 +47,9 @@ collections:
             fields:
               - { label: 'Image', name: 'image', widget: 'image' }
               - { label: 'Alternate Text', name: 'alt-text', widget: 'string' }
+          - label: 'Summary'
+            name: 'summary'
+            widget: 'text'
           - label: 'CV'
             name: 'cv'
             widget: 'object'

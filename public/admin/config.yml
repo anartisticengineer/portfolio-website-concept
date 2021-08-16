@@ -10,7 +10,7 @@ collections:
   - label: 'Homepage'
     name: 'homepage'
     indentifier_field: 'homepage'
-    folder: 'content/homepage'
+    file: 'content/homepage.json'
     create: true
     extension: 'json'
     slug: 'home'
@@ -32,7 +32,7 @@ collections:
   - label: 'About'
     name: 'about'
     indentifier_field: 'about'
-    folder: 'content/about'
+    file: 'content/about.json'
     create: true
     extension: 'json'
     slug: 'about'
@@ -64,7 +64,7 @@ collections:
   - label: 'Contact'
     name: 'contact'
     indentifier_field: 'contact'
-    folder: 'content/contact'
+    file: 'content/contact.json'
     create: true
     extension: 'json'
     slug: 'contact'

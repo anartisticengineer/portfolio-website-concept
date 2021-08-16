@@ -9,6 +9,7 @@ collections:
   # Home page
   - label: 'Homepage'
     name: 'homepage'
+    indentifier_field: 'homepage'
     folder: 'content/homepage'
     create: true
     extension: 'json'
@@ -30,6 +31,7 @@ collections:
   # About page
   - label: 'About'
     name: 'about'
+    indentifier_field: 'about'
     folder: 'content/about'
     create: true
     extension: 'json'
@@ -61,6 +63,7 @@ collections:
   # Contact page
   - label: 'Contact'
     name: 'contact'
+    indentifier_field: 'contact'
     folder: 'content/contact'
     create: true
     extension: 'json'

@@ -3,10 +3,12 @@ import React, { FunctionComponent } from 'react';
 import { faBehance, faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import contentContact from '../content/contact.json';
+
 const Social: FunctionComponent = () => (
   <article className="social">
     <p className="social__text">
-      Or follow me on social media. I&apos;m pretty active on there (most of the time).
+      {contentContact['sm-dialog']}
     </p>
     <span className="social__logos" id="sm-logos">
       <a href="https://www.facebook.com/cyberartbyjustin" rel="noopener noreferrer" target="_blank">

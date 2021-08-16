@@ -5,13 +5,14 @@ publish_mode: editorial_workflow
 media_folder: 'public/images/uploads' # Media files will be stored in the repo under public/images/uploads
 public_folder: '/images/uploads' # The src attribute for uploaded media will begin with /images/uploads
 site_url: https://amazing-dubinsky-16c8e2.netlify.app/
-extension: 'json'
 collections:
   # Home page
   - label: 'Homepage'
     name: 'homepage'
-    folder: '_content/homepage'
+    folder: 'content/homepage'
     create: true
+    extension: 'json'
+    preview_path: 'content/homepage.{{extension}}'
     fields:
       - label: 'Home GIF'
         name: 'home-gif'
@@ -28,8 +29,10 @@ collections:
   # About page
   - label: 'About'
     name: 'about'
-    folder: '_content/about'
+    folder: 'content/about'
     create: true
+    extension: 'json'
+    preview_path: 'content/aboutpage.{{extension}}'
     fields:
       - label: 'Profile Image'
         name: 'profile-image'
@@ -53,3 +56,17 @@ collections:
       - label: 'Features'
         name: 'features'
         widget: 'list'
+  # Contact page
+  - label: 'Contact'
+    name: 'contact'
+    folder: 'content/contact'
+    create: true
+    extension: 'json'
+    preview_path: 'content/contact.{{extension}}'
+    fields:
+      - label: 'Get In Touch'
+        name: 'get-in-touch'
+        widget: 'string'
+      - label: 'Social Media Dialog'
+        name: 'sm-dialog'
+        widget: 'string'

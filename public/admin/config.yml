@@ -49,20 +49,16 @@ collections:
               - { label: 'Alternate Text', name: 'alt-text', widget: 'string' }
           - label: 'Summary'
             name: 'summary'
-            widget: 'text'
+            widget: 'object'
+              - {label: 'Summary Title', name: 'title', widget: 'string'}
+              - {label: 'Summary Body', name: 'body', widget: 'text'}
           - label: 'CV'
             name: 'cv'
             widget: 'object'
             fields:
-              - label: 'Objective'
-                name: 'objective'
-                widget: 'text'
-              - label: 'Education'
-                name: 'education'
-                widget: 'list'
-              - label: 'Projects'
-                name: 'projects'
-                widget: 'list'
+              - { label: 'Objective', name: 'objective', widget: 'text' }
+              - { label: 'Education', name: 'education', widget: 'list' }
+              - { label: 'Projects', name: 'projects', widget: 'list' }
           - label: 'Features'
             name: 'features'
             widget: 'list'

@@ -1,0 +1,23 @@
+{
+  "profile-image": {
+    "image": "/images/uploads/new-profile-pic-oct-2019-smaller.jpg",
+    "alt-text": "Photo of Justin"
+  },
+  "cv": {
+    "objective": "To specialize in digital art and creative coding, while continuing to bring the two together.",
+    "education": [
+      "2018 - B.S. in Electrical Engineering (emphasis in Digital Signal Processing) at CSU Long Beach",
+      "2020 - Software Developer Apprentice at Techtonic in Boulder",
+      "Colorado"
+    ],
+    "projects": []
+  },
+  "features": [
+    "Jun 2018 - CVA Zine:Glitch",
+    "Oct 2018 - fu:bar/expo in Croatia",
+    "Dec 2018 - Featured Artist: Creative Collective",
+    "Mar 2019 - Daylighted selected artist",
+    "Jun 2020 - Project V4llain + The Glitch Art Bible",
+    "Aug 2020 - Featured Artist: Glitch Artists Collective"
+  ]
+}

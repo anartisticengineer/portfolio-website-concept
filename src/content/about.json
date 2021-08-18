@@ -1,0 +1,29 @@
+{
+  "features": [
+    "Jun 2018 - CVA Zine:Glitch",
+    "Oct 2018 - fu:bar/expo in Croatia",
+    "Dec 2018 - Featured Artist: Creative Collective",
+    "Mar 2019 - Daylighted selected artist",
+    "Jun 2020 - Project V4llain + The Glitch Art Bible",
+    "Aug 2020 - Featured Artist: Glitch Artists Collective"
+  ],
+  "cv": {
+    "projects": [
+      "This website! (obviously)",
+      "Glitch FX Generator"
+    ],
+    "education": [
+      "2018 - B.S. in Electrical Engineering (with an emphasis in Digital Signal Processing) at CSU Long Beach",
+      "2020 - Software Developer Apprentice at Techtonic in Boulder Colorado"
+    ],
+    "objective": "To specialize in digital art and/or creative coding while continuously exploring ways to bring the two together!"
+  },
+  "summary": {
+    "title": "Who Am I?",
+    "body": "I am a digital artist/creative coder currently based in Denver, Colorado. I've been doing digital art since about 2017 and creative coding since 2016. As I've grown as an artist over the years, I've been discovering more ways to combine art and technology.\nSpecializing primarily in glitch art, much of my best works come from destroying my photos on purpose. Datamoshing, breaking pixels, pixel sorting, all of that good stuff. I've used my creative coding skills to create my own tool for glitching artworks; a tool whose influence can be seen in much of my latest artworks."
+  },
+  "profile-image": {
+    "image": "/images/uploads/new-profile-pic-oct-2019-smaller.jpg",
+    "alt-text": "Profile photo of Justin"
+  }
+}

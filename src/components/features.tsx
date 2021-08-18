@@ -2,11 +2,11 @@
 import React, { FunctionComponent } from 'react';
 import utils from '../scripts/utilities';
 
-import aboutSample from '../samples/aboutsample.json';
+import aboutContent from '../content/about.json';
 
 const Features: FunctionComponent = () => {
   const { fadeUp } = utils;
-  const { features } = aboutSample;
+  const { features } = aboutContent;
 
   return (
     <div className={fadeUp()}>

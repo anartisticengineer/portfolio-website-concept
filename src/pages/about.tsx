@@ -1,17 +1,21 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import profilePhoto from '../images/new profile pic oct 2019 smaller.jpg';
+
 import utils from '../scripts/utilities';
 
 import CV from '../components/cv';
 import Features from '../components/features';
 import Button from '../components/button';
 
+import aboutContent from '../content/about.json';
+
 const AboutPage: FunctionComponent = () => {
   useEffect(() => {
     document.title = 'About Me - cyberart_by_justin';
   }, []);
   const { fadeUp } = utils;
+  const { summary } = aboutContent;
+  const aboutImage = aboutContent['profile-image'];
   const [page, changePage] = useState('cv');
 
   return (
@@ -20,20 +24,10 @@ const AboutPage: FunctionComponent = () => {
       <section className={`about ${fadeUp()}`}>
         {/** Grid 1 */}
         <article className="about__article">
-          <img className="about__article__photo" src={profilePhoto} alt="profile pic of Justin" id="about-profile-photo" />
-          <h2 className="container__title">Who am I?</h2>
+          <img className="about__article__photo" src={aboutImage.image} alt={aboutImage['alt-text']} id="about-profile-photo" />
+          <h2 className="container__title">{summary.title}</h2>
           <p>
-            I am a digital artist/creative coder currently based in Denver,
-            Colorado. I&apos;ve been doing digital art since about 2017 and creative
-            coding since 2016. As I&apos;ve grown as an artist over the years, I&apos;ve been
-            discovering more ways to combine art and technology.
-          </p>
-          <p>
-            Specializing primarily in glitch art, much of my best works come from
-            destroying my photos on purpose. Datamoshing, breaking pixels, pixel
-            sorting, all of that good stuff. I&apos;ve used my creative coding skills to
-            create my own tool for glitching artworks; a tool whose influence can be
-            seen in much of my latest artworks.
+            {summary.body}
           </p>
         </article>
         {/** */}

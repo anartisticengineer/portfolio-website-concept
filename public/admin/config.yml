@@ -31,6 +31,26 @@ collections:
           - label: 'To Gallery Button Text'
             name: 'to-gallery-button-text'
             widget: 'string'
+      # Gallery page
+      - label: 'Gallery'
+        name: 'gallery'
+        indentifier_field: 'gallery'
+        file: src/content/gallery.json
+        create: true
+        extension: 'json'
+        slug: 'gallery'
+        fields:
+          - label: 'Series'
+            name: 'series'
+            widget: 'list'
+            fields:
+              - { label: 'Series Name', name: 'series-name', widget: 'string' }
+              - label: 'Artworks'
+                name: 'artworks'
+                widget: 'list'
+                fields:
+                  - { label: 'Artwork Name', name: 'artwork-name', widget: 'string' }
+                  - { label: 'Artwork File', name: 'artwork-file', widget: 'image' }
       # About page
       - label: 'About'
         name: 'about'
@@ -39,7 +59,6 @@ collections:
         create: true
         extension: 'json'
         slug: 'about'
-        preview_path: 'content/aboutpage.{{extension}}'
         fields:
           - label: 'Profile Image'
             name: 'profile-image'
@@ -50,8 +69,9 @@ collections:
           - label: 'Summary'
             name: 'summary'
             widget: 'object'
-              - {label: 'Summary Title', name: 'title', widget: 'string'}
-              - {label: 'Summary Body', name: 'body', widget: 'text'}
+            fields:
+              - { label: 'Summary Title', name: 'title', widget: 'string' }
+              - { label: 'Summary Body', name: 'body', widget: 'text' }
           - label: 'CV'
             name: 'cv'
             widget: 'object'
@@ -70,7 +90,6 @@ collections:
         create: true
         extension: 'json'
         slug: 'contact'
-        preview_path: 'content/contact.{{extension}}'
         fields:
           - label: 'Get In Touch'
             name: 'get-in-touch'

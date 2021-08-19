@@ -4,8 +4,9 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import utils from '../scripts/utilities';
 
-import defaultPic from '../images/default-placeholder-image.png';
 import Button from '../components/button';
+
+import notFoundContent from '../content/not-found.json';
 
 const NotFound = () => {
   const history = useHistory();
@@ -14,8 +15,8 @@ const NotFound = () => {
     <main className="container notfound">
       <h1 className={`container__title ${fadeUp()}`}>OOF</h1>
       <figure className="notfound__figure">
-        <img className="notfound__image" src={defaultPic} alt="sample alt text" />
-        <figcaption className="notfound__caption">I think we hit a dead end...</figcaption>
+        <img className="notfound__image" src={notFoundContent['funny-gif']} alt="sample alt text" />
+        <figcaption className="notfound__caption">{ notFoundContent['funny-caption'] }</figcaption>
       </figure>
       <div className="notfound__goback">
         <Button
@@ -27,7 +28,7 @@ const NotFound = () => {
             history.goBack();
           }}
         >
-          Go back.
+          {notFoundContent['button-dialog']}
         </Button>
       </div>
     </main>

@@ -27,7 +27,7 @@ const NotFound = () => {
             history.goBack();
           }}
         >
-          Go back a spot.
+          Go back.
         </Button>
       </div>
     </main>

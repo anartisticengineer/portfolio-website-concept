@@ -10,6 +10,7 @@ import HomePage from './pages/home';
 import ContactPage from './pages/contact';
 import Footer from './components/footer';
 import Series from './pages/series';
+import NotFound from './pages/notfound';
 
 const App = () => (
   <BrowserRouter>
@@ -31,6 +32,7 @@ const App = () => (
       <Route path="/contact">
         <ContactPage />
       </Route>
+      <NotFound />
     </Switch>
     <Footer />
   </BrowserRouter>

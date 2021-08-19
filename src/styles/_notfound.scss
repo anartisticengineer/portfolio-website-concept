@@ -1,0 +1,23 @@
+@use 'colors' as c;
+@use 'media-queries' as q;
+
+.notfound {
+  &__figure {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__caption {
+    text-align: center;
+  }
+  &__goback {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+}

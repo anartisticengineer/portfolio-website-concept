@@ -97,3 +97,21 @@ collections:
           - label: 'Social Media Dialog'
             name: 'sm-dialog'
             widget: 'string'
+      # Not Found page
+      - label: 'Page Not Found'
+        name: 'not-found'
+        identifier_field: 'not-found'
+        file: 'src/content/not-found.json'
+        create: true
+        extension: 'json'
+        slug: 'not-found'
+        fields:
+          - label: 'Funny GIF'
+            name: 'funny-gif'
+            widget: 'image'
+          - label: 'Funny Caption'
+            name: 'funny-caption'
+            widget: 'string'
+          - label: 'Button Diaglog'
+            name: 'button-dialog'
+            widget: 'string'

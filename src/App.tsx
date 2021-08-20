@@ -23,7 +23,7 @@ const App = () => (
       <Route exact path="/gallery">
         <Gallery />
       </Route>
-      <Route path="/gallery/:name">
+      <Route path="/gallery/:index">
         <Series />
       </Route>
       <Route path="/about">

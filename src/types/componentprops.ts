@@ -21,7 +21,8 @@ export type ArtworkProps = {
     url: string
 }
 
-export type SeriesProps = {
+export type SeriesCardProps = {
     name: string,
-    associatedPieces: ArtworkProps[] | null
+    searchIndex: number,
+    previewPieceUrl: string
 }

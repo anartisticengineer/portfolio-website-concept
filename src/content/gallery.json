@@ -10,6 +10,22 @@
         {
           "artwork-name": "SAVIOR",
           "artwork-file": "/images/uploads/envy2.jpg"
+        },
+        {
+          "artwork-name": "REFUGE",
+          "artwork-file": "/images/uploads/envy3.jpg"
+        },
+        {
+          "artwork-name": "TRANQUILITY",
+          "artwork-file": "/images/uploads/envy4.jpg"
+        },
+        {
+          "artwork-name": "VISTA",
+          "artwork-file": "/images/uploads/vista.jpg"
+        },
+        {
+          "artwork-name": "ERUPTION",
+          "artwork-file": "/images/uploads/eruption.jpg"
         }
       ]
     }

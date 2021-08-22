@@ -10,9 +10,11 @@ const SeriesCard:FunctionComponent<SeriesCardProps> = ({ name, searchIndex, prev
   }, []);
 
   return (
-    <Link className="seriescard" to={`/gallery/${searchIndex}`}>
-      <img className="seriescard__image" src={previewPieceUrl} alt={`Example of ${name}`} />
-      <div className="seriescard__caption">{ name }</div>
+    <Link to={`/gallery/${searchIndex}`}>
+      <figure className="seriescard">
+        <img className="seriescard__image" src={previewPieceUrl} alt={`Example of ${name}`} />
+        <figcaption className="seriescard__caption">{name}</figcaption>
+      </figure>
     </Link>
   );
 };

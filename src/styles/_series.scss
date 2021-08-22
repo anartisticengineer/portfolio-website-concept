@@ -4,11 +4,13 @@
 .series {
   display: flex;
   flex-direction: column;
+  width: fit-content;
   @include q.at-least-tablet {
-    width: 100%;
+    // width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-basis: 330px;
+    justify-content: space-around;
   }
   &__artwork {
     padding: 0;
@@ -18,8 +20,10 @@
     &__picture {
       width: 100%;
       height: auto;
+      user-select: none;
     }
     &__title {
+      text-align: center;
     }
   }
 }

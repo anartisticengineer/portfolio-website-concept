@@ -1,22 +1,28 @@
 @use 'colors' as c;
 @use 'media-queries' as q;
+@use 'mixins' as mix;
 
 .seriescard {
-  display: block;
-  margin: 0 auto;
-  padding: 1rem;
-  text-decoration: none;
-  @include q.phone {
-    // max-width: 90%;
-  }
+  flex: 100%;
+  margin: 0.1rem;
   @include q.at-least-tablet {
-    max-width: 330px;
+    display: block;
+    position: relative;
+    width: 30vw;
+    height: auto;
+    flex: 50%;
+  }
+  @include q.tablet {
+    width: 25vw;
   }
   &__image {
     width: 100%;
+    object-fit: cover;
+    object-position: 0% 50%;
     @include q.laptop {
       &:hover {
         filter: blur(2px);
+        outline: 1px solid c.$carolina-blue;
       }
     }
   }
@@ -24,15 +30,17 @@
     color: c.$eerie-black;
     text-align: center;
     font-size: 1.5rem;
+    text-decoration: none;
     @include q.at-least-tablet {
-      position: relative;
+      font-size: 2rem;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      color: c.$ghost-white;
+      text-shadow: 2px 2px 2px c.$eerie-black;
     }
     @include q.tablet {
-      top: -25%;
-    }
-    @include q.laptop {
-      top: -50%;
-      font-size: 2rem;
+      font-size: 1.2rem;
     }
   }
 }

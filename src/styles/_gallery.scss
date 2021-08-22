@@ -2,11 +2,15 @@
 .gallery {
   display: flex;
   flex-direction: column;
+  a {
+    text-decoration: none;
+  }
   @include q.at-least-tablet {
-    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: center;
+    overflow: scroll;
   }
   @include q.laptop {
-    // padding: 0 100px;
   }
 }
 

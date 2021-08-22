@@ -1,14 +1,29 @@
 @use 'media-queries' as q;
+
 .gallery {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   a {
     text-decoration: none;
+    flex-basis: 50%;
+    flex: 100%;
+    @include q.tablet {
+      flex: 50%;
+    }
+    @include q.laptop {
+      flex: 33%;
+    }
+    // height: min-content;
   }
   @include q.at-least-tablet {
-    flex-flow: row wrap;
-    justify-content: center;
-    overflow: scroll;
+    flex-flow: row-reverse wrap;
+    width: auto;
+    height: 100%;
+    overflow: clip scroll;
+    justify-content: flex-start;
+    align-content: stretch;
+  }
+  @include q.tablet {
   }
   @include q.laptop {
   }

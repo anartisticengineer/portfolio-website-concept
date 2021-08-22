@@ -3,22 +3,23 @@
 @use 'mixins' as mix;
 
 .seriescard {
-  flex: 100%;
-  margin: 0.1rem;
+  @include q.phone {
+    margin: 0.5rem;
+  }
   @include q.at-least-tablet {
-    display: block;
+    margin: 0;
+    padding: 0.5rem;
     position: relative;
-    width: 30vw;
-    height: auto;
-    flex: 50%;
+    // width: 100%;
+    // height: auto;
   }
   @include q.tablet {
-    width: 25vw;
+  }
+  @include q.laptop {
   }
   &__image {
     width: 100%;
-    object-fit: cover;
-    object-position: 0% 50%;
+    object-fit: contain;
     @include q.laptop {
       &:hover {
         filter: blur(2px);

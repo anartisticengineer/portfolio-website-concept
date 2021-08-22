@@ -87,6 +87,27 @@
           "artwork-file": "/images/uploads/mxsa-04.jpg"
         }
       ]
+    },
+    {
+      "series-name": "YAMA",
+      "artworks": [
+        {
+          "artwork-name": "YAMA 01",
+          "artwork-file": "/images/uploads/yama-01.jpg"
+        },
+        {
+          "artwork-name": "YAMA 02",
+          "artwork-file": "/images/uploads/yama-02.jpg"
+        },
+        {
+          "artwork-name": "YAMA 03",
+          "artwork-file": "/images/uploads/yama-03.jpg"
+        },
+        {
+          "artwork-name": "YAMA 04",
+          "artwork-file": "/images/uploads/yama-04.jpg"
+        }
+      ]
     }
   ]
 }

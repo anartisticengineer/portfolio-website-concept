@@ -11,31 +11,34 @@ import ContactPage from './pages/contact';
 import Footer from './components/footer';
 import Series from './pages/series';
 import NotFound from './pages/notfound';
+import ErrorBoundary from './pages/errorboundary';
 
 const App = () => (
-  <BrowserRouter>
-    <Navbar />
-    {/* Pages via Route */}
-    <Switch>
-      <Route exact path="/">
-        <HomePage />
-      </Route>
-      <Route exact path="/gallery">
-        <Gallery />
-      </Route>
-      <Route path="/gallery/:index">
-        <Series />
-      </Route>
-      <Route path="/about">
-        <AboutPage />
-      </Route>
-      <Route path="/contact">
-        <ContactPage />
-      </Route>
-      <NotFound />
-    </Switch>
-    <Footer />
-  </BrowserRouter>
+  <ErrorBoundary>
+    <BrowserRouter>
+      <Navbar />
+      {/* Pages via Route */}
+      <Switch>
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+        <Route exact path="/gallery">
+          <Gallery />
+        </Route>
+        <Route path="/gallery/:index">
+          <Series />
+        </Route>
+        <Route path="/about">
+          <AboutPage />
+        </Route>
+        <Route path="/contact">
+          <ContactPage />
+        </Route>
+        <NotFound />
+      </Switch>
+      <Footer />
+    </BrowserRouter>
+  </ErrorBoundary>
 );
 
 export default App;

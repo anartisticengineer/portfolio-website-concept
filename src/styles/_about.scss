@@ -1,4 +1,6 @@
+@use 'colors' as c;
 @use 'media-queries' as q;
+
 .about {
   display: flex;
   flex-direction: column;
@@ -20,9 +22,8 @@
     height: 100%;
     padding: 0 1em;
     button {
-      width: 20vw;
-      min-width: 20vw;
-      max-width: 20vw;
+      flex-grow: 1;
+      flex-basis: 10vw;
       &:first-child {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
@@ -40,4 +41,6 @@
 #cv-or-features {
   display: flex;
   justify-content: center;
+  border: 1px solid c.$eerie-black;
+  border-radius: 1rem;
 }

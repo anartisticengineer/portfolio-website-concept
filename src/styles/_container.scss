@@ -13,6 +13,9 @@
   }
   &--contact {
     @include q.at-least-tablet {
+      p {
+        text-align: center;
+      }
       section {
         display: flex;
         flex-direction: row;

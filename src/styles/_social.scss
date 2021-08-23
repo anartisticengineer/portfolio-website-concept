@@ -1,11 +1,12 @@
+@use './colors' as c;
 @use './media-queries' as q;
 .social {
   display: inline-flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
   margin: auto;
   @include q.at-least-tablet {
-    margin: 0 auto;
     padding: 2rem;
   }
   &__text {
@@ -23,6 +24,11 @@
     }
     @include q.laptop {
       width: 40%;
+      &:hover {
+        a svg {
+          color: c.$winter-sky;
+        }
+      }
     }
   }
 }

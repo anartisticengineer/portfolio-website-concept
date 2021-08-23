@@ -1,7 +1,7 @@
-@use 'colors' as c;
-@use 'media-queries' as q;
-@use 'mixins' as mix;
-@use 'typography' as type;
+@use '../foundation/colors' as c;
+@use '../foundation/media-queries' as q;
+@use '../foundation/mixins' as mix;
+@use '../foundation/typography' as type;
 
 .textarea {
   @include mix.round-and-pad(1em);

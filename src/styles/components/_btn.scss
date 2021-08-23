@@ -1,6 +1,6 @@
-@use 'colors' as c;
-@use 'mixins' as mix;
-@use 'typography' as type;
+@use '../foundation/colors' as c;
+@use '../foundation/mixins' as mix;
+@use '../foundation/typography' as type;
 .btn {
   @include mix.round-and-pad(1em);
   color: c.$eerie-black;

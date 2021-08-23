@@ -1,5 +1,5 @@
-@use 'colors' as c;
-@use 'typography' as type;
+@use '../foundation/colors' as c;
+@use '../foundation/typography' as type;
 .footer {
   display: flex;
   flex-direction: column;

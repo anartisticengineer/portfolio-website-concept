@@ -1,5 +1,5 @@
-@use 'colors' as c;
-@use 'media-queries' as q;
+@use '../foundation/colors' as c;
+@use '../foundation/media-queries' as q;
 
 .series {
   display: flex;

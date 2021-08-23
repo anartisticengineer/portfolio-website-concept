@@ -1,6 +1,6 @@
-@use 'colors' as c;
-@use 'media-queries' as q;
-@use 'typography' as type;
+@use './colors' as c;
+@use './media-queries' as q;
+@use './typography' as type;
 
 .container {
   background-color: c.$platinum;

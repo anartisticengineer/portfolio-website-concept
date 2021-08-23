@@ -3,6 +3,8 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 
+import errorContent from '../content/error-occured.json';
+
 class ErrorBoundary extends React.Component<{}, any> {
   constructor(props: any) {
     super(props);
@@ -20,15 +22,16 @@ class ErrorBoundary extends React.Component<{}, any> {
   render() {
     const { children } = this.props;
     const { hasError } = this.state;
+    const { title, subtitle } = errorContent;
 
     if (hasError) {
       return (
-        <main className="container">
-          <h1>Something screwed up :P</h1>
-          <h2>Hold on tight...</h2>
+        <main className="container errorpage">
+          <h1>{ title }</h1>
+          <h2>{ subtitle }</h2>
           <figure>
-            {/* <img src=""/> */}
-            <figcaption>Test</figcaption>
+            <img src={errorContent['funny-gif']} alt="gif showing an error" />
+            <figcaption>{ errorContent['funny-caption'] }</figcaption>
           </figure>
         </main>
       );

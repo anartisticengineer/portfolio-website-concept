@@ -2,7 +2,7 @@
 @use '../foundation/mixins' as mix;
 @use '../foundation/typography' as type;
 .btn {
-  @include mix.round-and-pad(1em);
+  @include mix.round-and-pad(1rem);
   color: c.$eerie-black;
   border-style: none;
   font-family: type.$font-primary;

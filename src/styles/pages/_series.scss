@@ -6,9 +6,7 @@
   flex-direction: column;
   width: fit-content;
   @include q.at-least-tablet {
-    // width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     flex-basis: 330px;
     justify-content: space-around;
   }

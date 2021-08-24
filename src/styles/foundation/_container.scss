@@ -1,5 +1,6 @@
 @use './colors' as c;
 @use './media-queries' as q;
+@use './mixins' as mix;
 @use './typography' as type;
 
 .container {
@@ -41,9 +42,7 @@
   border-bottom: 1px solid darken(c.$platinum, 20%);
   overflow-x: clip;
   section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include mix.flex-column-center;
     justify-content: center;
     padding-bottom: 2em;
     margin: auto 0;

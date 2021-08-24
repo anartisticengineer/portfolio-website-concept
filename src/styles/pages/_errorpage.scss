@@ -1,7 +1,6 @@
+@use '../foundation/mixins' as mix;
 .errorpage {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @include mix.flex-column-center;
   h1,
   h2 {
     text-align: center;

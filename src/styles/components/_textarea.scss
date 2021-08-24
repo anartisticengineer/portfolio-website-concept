@@ -4,7 +4,7 @@
 @use '../foundation/typography' as type;
 
 .textarea {
-  @include mix.round-and-pad(1em);
+  @include mix.round-and-pad(1rem);
   border: 1px solid c.$eerie-black;
   font-size: small;
   font-family: type.$font-primary;

@@ -14,7 +14,6 @@
     @include q.laptop {
       flex: 33%;
     }
-    // height: min-content;
   }
   @include q.at-least-tablet {
     flex-flow: row-reverse wrap;

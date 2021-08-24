@@ -34,6 +34,7 @@
   z-index: 1;
   @include q.phone {
     padding: 0.5em 1em;
+    z-index: 2;
   }
   @include q.at-least-tablet {
     display: flex;
@@ -85,5 +86,20 @@
   }
   .active {
     color: c.$winter-sky;
+  }
+}
+
+.mobile-navbar-filler {
+  display: none;
+  @include q.phone {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background: fixed;
+    background-color: c.$eerie-black;
+    opacity: 0.5;
   }
 }

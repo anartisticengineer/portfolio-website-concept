@@ -1,0 +1,26 @@
+@use '../foundation/colors' as c;
+@use '../foundation/typography' as type;
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  &__block {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: c.$ghost-white;
+  }
+  &__text {
+    font-family: type.$font-primary;
+    background-color: c.$ghost-white;
+    padding: 0.5rem;
+  }
+  &__spinner {
+  }
+}

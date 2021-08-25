@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-filename-extension */
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/index.scss';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 // Components
@@ -12,33 +13,38 @@ import Footer from './components/footer';
 import Series from './pages/series';
 import NotFound from './pages/notfound';
 import ErrorBoundary from './pages/errorboundary';
+import Loading from './components/loading';
 
-const App = () => (
-  <ErrorBoundary>
-    <BrowserRouter>
-      <Navbar />
-      {/* Pages via Route */}
-      <Switch>
-        <Route exact path="/">
-          <HomePage />
-        </Route>
-        <Route exact path="/gallery">
-          <Gallery />
-        </Route>
-        <Route path="/gallery/:index">
-          <Series />
-        </Route>
-        <Route path="/about">
-          <AboutPage />
-        </Route>
-        <Route path="/contact">
-          <ContactPage />
-        </Route>
-        <NotFound />
-      </Switch>
-      <Footer />
-    </BrowserRouter>
-  </ErrorBoundary>
-);
+const App = () => {
+  const [isLoading, setLoading] = useState(false);
+  return (
+    <ErrorBoundary>
+      <BrowserRouter>
+        <Navbar />
+        {/* Pages via Route */}
+        {isLoading ? <Loading /> : null}
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route exact path="/gallery">
+            <Gallery />
+          </Route>
+          <Route path="/gallery/:index">
+            <Series />
+          </Route>
+          <Route path="/about">
+            <AboutPage />
+          </Route>
+          <Route path="/contact">
+            <ContactPage />
+          </Route>
+          <NotFound />
+        </Switch>
+        <Footer />
+      </BrowserRouter>
+    </ErrorBoundary>
+  );
+};
 
 export default App;

@@ -26,3 +26,8 @@ export type SeriesCardProps = {
     searchIndex: number,
     previewPieceUrl: string
 }
+
+export type EffectHookFunctions = {
+    onStart: () => void,
+    onEnd: () => void
+}

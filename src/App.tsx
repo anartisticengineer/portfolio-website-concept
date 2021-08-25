@@ -14,9 +14,16 @@ import Series from './pages/series';
 import NotFound from './pages/notfound';
 import ErrorBoundary from './pages/errorboundary';
 import Loading from './components/loading';
+import { EffectHookFunctions } from './types/componentprops';
 
 const App = () => {
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(true);
+
+  const loadingFunctions: EffectHookFunctions = {
+    onStart: () => setLoading(false),
+    onEnd: () => setLoading(true),
+  };
+
   return (
     <ErrorBoundary>
       <BrowserRouter>
@@ -25,21 +32,21 @@ const App = () => {
         {isLoading ? <Loading /> : null}
         <Switch>
           <Route exact path="/">
-            <HomePage />
+            <HomePage onStart={loadingFunctions.onStart} onEnd={loadingFunctions.onEnd} />
           </Route>
           <Route exact path="/gallery">
-            <Gallery />
+            <Gallery onStart={loadingFunctions.onStart} onEnd={loadingFunctions.onEnd} />
           </Route>
           <Route path="/gallery/:index">
-            <Series />
+            <Series onStart={loadingFunctions.onStart} onEnd={loadingFunctions.onEnd} />
           </Route>
           <Route path="/about">
-            <AboutPage />
+            <AboutPage onStart={loadingFunctions.onStart} onEnd={loadingFunctions.onEnd} />
           </Route>
           <Route path="/contact">
-            <ContactPage />
+            <ContactPage onStart={loadingFunctions.onStart} onEnd={loadingFunctions.onEnd} />
           </Route>
-          <NotFound />
+          <NotFound onStart={loadingFunctions.onStart} onEnd={loadingFunctions.onEnd} />
         </Switch>
         <Footer />
       </BrowserRouter>

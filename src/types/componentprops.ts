@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export type ButtonProps = {
     classes: string | string[] | void,
     id: string | undefined,
@@ -12,7 +13,6 @@ export type InputFieldProps = {
     inputType: string | undefined,
     placeholder: string,
     isRequired: boolean,
-    // eslint-disable-next-line no-unused-vars
     onChangeFcn: (event: any) => void
 }
 
@@ -28,6 +28,6 @@ export type SeriesCardProps = {
 }
 
 export type EffectHookFunctions = {
-    onStart: () => void,
-    onEnd: () => void
+    onStart: (event?: any) => void,
+    onEnd: (event?: any) => void
 }

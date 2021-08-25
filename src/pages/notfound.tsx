@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-filename-extension */
-import React from 'react';
+import React, { FunctionComponent, useEffect } from 'react';
 
 import { useHistory } from 'react-router';
 import utils from '../scripts/utilities';
@@ -7,8 +7,14 @@ import utils from '../scripts/utilities';
 import Button from '../components/button';
 
 import notFoundContent from '../content/not-found.json';
+import { EffectHookFunctions } from '../types/componentprops';
 
-const NotFound = () => {
+const NotFound: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
+  useEffect(() => {
+    document.title = '404 Not Found :P';
+    onStart();
+    return onEnd;
+  }, []);
   const history = useHistory();
   const { fadeUp } = utils;
   return (

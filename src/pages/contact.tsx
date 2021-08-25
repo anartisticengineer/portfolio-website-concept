@@ -5,10 +5,13 @@ import Social from '../components/social';
 import utils from '../scripts/utilities';
 
 import contactContent from '../content/contact.json';
+import { EffectHookFunctions } from '../types/componentprops';
 
-const ContactPage: FunctionComponent = () => {
+const ContactPage: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
   useEffect(() => {
     document.title = 'Contact - cyberart_by_justin';
+    onStart();
+    return onEnd;
   }, []);
 
   const { fadeUp } = utils;

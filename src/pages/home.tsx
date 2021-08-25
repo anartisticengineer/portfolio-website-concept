@@ -4,12 +4,15 @@ import { useHistory } from 'react-router';
 import Button from '../components/button';
 import bannerImg from '../images/banner-glitch.gif';
 import utils from '../scripts/utilities';
+import { EffectHookFunctions } from '../types/componentprops';
 
-const HomePage: FunctionComponent = () => {
+const HomePage: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
   const history = useHistory();
 
   useEffect(() => {
     document.title = 'cyberart_by_justin';
+    onStart();
+    return onEnd;
   }, []);
 
   return (

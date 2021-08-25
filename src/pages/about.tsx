@@ -8,10 +8,13 @@ import Features from '../components/features';
 import Button from '../components/button';
 
 import aboutContent from '../content/about.json';
+import { EffectHookFunctions } from '../types/componentprops';
 
-const AboutPage: FunctionComponent = () => {
+const AboutPage: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
   useEffect(() => {
     document.title = 'About Me - cyberart_by_justin';
+    onStart();
+    return onEnd;
   }, []);
   const { fadeUp } = utils;
   const { summary } = aboutContent;

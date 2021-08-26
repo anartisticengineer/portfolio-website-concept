@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
 import React, { FunctionComponent } from 'react';
 import { InputFieldProps } from '../types/componentprops';
 

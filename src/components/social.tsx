@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
 import React, { FunctionComponent } from 'react';
 import { faBehance, faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

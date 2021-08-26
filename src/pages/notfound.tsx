@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
 import React, { FunctionComponent, useEffect } from 'react';
 
 import { useHistory } from 'react-router';

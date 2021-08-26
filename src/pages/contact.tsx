@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
 import React, { useEffect, FunctionComponent } from 'react';
 import Form from '../components/form';
 import Social from '../components/social';

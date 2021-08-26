@@ -1,5 +1,3 @@
-/* eslint-disable react/no-danger */
-/* eslint-disable react/jsx-filename-extension */
 import React, { FunctionComponent, useEffect } from 'react';
 
 import SeriesCard from '../components/seriescard';

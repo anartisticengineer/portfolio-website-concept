@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-props-no-multi-spaces */
-/* eslint-disable react/jsx-filename-extension */
 import React, { FunctionComponent } from 'react';
 import utils from '../scripts/utilities';
 

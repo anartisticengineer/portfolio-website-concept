@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable react/jsx-filename-extension */
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import utils from '../scripts/utilities';
 import { FormData } from '../types/componentstates';

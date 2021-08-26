@@ -2,16 +2,18 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import utils from '../scripts/utilities';
+import { FormData } from '../types/componentstates';
 import Button from './button';
 import InputField from './inputfield';
 
 const Form: FunctionComponent = () => {
   const [submitDisabled, setSubmitDisabled] = useState(true);
-  const [formData, setFormData] = useState({
+  const initialData: FormData = {
     'form-name': '',
     'form-email': '',
     'form-message': '',
-  });
+  };
+  const [formData, setFormData] = useState(initialData);
 
   useEffect(() => {
     setSubmitDisabled(utils.allowSubmission(formData));
@@ -27,7 +29,13 @@ const Form: FunctionComponent = () => {
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit} id="submit-form" autoComplete="off">
+    <form
+      className="form"
+      onSubmit={handleSubmit}
+      id="submit-form"
+      autoComplete="off"
+      data-netlify="true"
+    >
       {/** First and last name */}
       <div className="form__block">
         <InputField

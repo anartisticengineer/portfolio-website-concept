@@ -30,6 +30,7 @@ const Form: FunctionComponent = () => {
 
   return (
     <form
+      name="contact-form"
       className="form"
       onSubmit={handleSubmit}
       id="submit-form"

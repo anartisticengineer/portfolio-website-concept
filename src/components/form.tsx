@@ -36,9 +36,12 @@ const Form: FunctionComponent = () => {
       id="submit-form"
       autoComplete="off"
       data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
     >
       {/** First and last name */}
       <div className="form__block">
+        <input type="hidden" name="form-name" value="contact-form" />
         <InputField
           labelId="name__label"
           inputId="form-name"

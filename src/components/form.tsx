@@ -92,7 +92,6 @@ const Form: FunctionComponent = () => {
           id="submit-btn"
           isSubmit
           isDisabled={!submitDisabled}
-          onClickFcn={() => { }}
         >
           Submit
         </Button>

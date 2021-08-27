@@ -1,20 +1,24 @@
 /* eslint-disable no-unused-vars */
-export type ButtonProps = {
+import HandlerFunc from './handlertypes';
+
+interface Button {
     classes: string | string[] | void,
     id: string | undefined,
     isSubmit: boolean,
     isDisabled: boolean,
-    onClickFcn: () => any
 }
 
-export type InputFieldProps = {
+interface InputField {
     labelId: string,
     inputId: string,
     inputType: string | undefined,
     placeholder: string,
     isRequired: boolean,
-    onChangeFcn: (event: any) => void
 }
+
+export type ButtonProps = Button & HandlerFunc;
+
+export type InputFieldProps = InputField & HandlerFunc;
 
 export type ArtworkProps = {
     name: string,

@@ -22,8 +22,21 @@ const Form: FunctionComponent = () => {
     setFormData({ ...formData, [target.id]: target.value });
   };
 
+  const encode = (data: FormData | any): string => Object.keys(data)
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&');
+
   const handleSubmit = (event: any) => {
     event.preventDefault();
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'contact-form': event.target.getAttribute('name'),
+        ...formData,
+      }),
+    }).then(() => console.log('Success!'))
+      .catch((e) => console.log(`Error${e}`));
   };
 
   return (
@@ -35,7 +48,7 @@ const Form: FunctionComponent = () => {
       autoComplete="off"
       data-netlify="true"
       netlify-honeypot="bot-field"
-      hidden
+      method="POST"
     >
       {/** First and last name */}
       <div className="form__block">

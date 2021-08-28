@@ -24,12 +24,19 @@
       width: 75%;
     }
     @include q.laptop {
-      width: 40%;
-      &:hover {
-        a svg {
-          color: c.$winter-sky;
-        }
-      }
+      width: 50%;
     }
+  }
+}
+
+#icon-fb,
+#icon-ig,
+#icon-behance,
+#icon-ello,
+#icon-github {
+  font-size: 20px;
+  color: c.$eerie-black;
+  &:hover {
+    color: c.$winter-sky;
   }
 }

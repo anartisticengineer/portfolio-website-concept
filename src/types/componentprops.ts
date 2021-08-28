@@ -31,6 +31,11 @@ export type SeriesCardProps = {
     previewPieceUrl: string
 }
 
+export type SMLinkProps = {
+    url: string,
+    label: string,
+}
+
 export type EffectHookFunctions = {
     onStart: (event?: any) => void,
     onEnd: (event?: any) => void

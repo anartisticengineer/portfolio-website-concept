@@ -15,6 +15,7 @@ import NotFound from './pages/notfound';
 import ErrorBoundary from './pages/errorboundary';
 import Loading from './components/loading';
 import { EffectHookFunctions } from './types/componentprops';
+import SubmitSuccess from './pages/submitsuccess';
 
 const App = () => {
   const [isLoading, setLoading] = useState(true);
@@ -43,8 +44,11 @@ const App = () => {
           <Route path="/about">
             <AboutPage onStart={loadingFunctions.onStart} onEnd={loadingFunctions.onEnd} />
           </Route>
-          <Route path="/contact">
+          <Route exact path="/contact">
             <ContactPage onStart={loadingFunctions.onStart} onEnd={loadingFunctions.onEnd} />
+          </Route>
+          <Route exact path="/contact/success">
+            <SubmitSuccess onStart={loadingFunctions.onStart} onEnd={loadingFunctions.onEnd} />
           </Route>
           <NotFound onStart={loadingFunctions.onStart} onEnd={loadingFunctions.onEnd} />
         </Switch>

@@ -1,4 +1,6 @@
+/* eslint-disable no-restricted-globals */
 import React, { FunctionComponent, useState } from 'react';
+import { useHistory } from 'react-router';
 import { FormData } from '../types/componentstates';
 import Button from './button';
 import InputField from './inputfield';
@@ -11,6 +13,8 @@ const Form: FunctionComponent = () => {
   };
   const [formData, setFormData] = useState(initialData);
 
+  const history = useHistory();
+
   const handleChange = (event: any) => {
     const { target } = event;
     setFormData({ ...formData, [target.id]: target.value });
@@ -21,11 +25,16 @@ const Form: FunctionComponent = () => {
     .join('&');
 
   const handleSubmit = (event: any) => {
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact-form', ...formData }),
-    }).then(() => alert('Success!')).catch((error) => alert(error));
+    const confirmSubmit = confirm('Submit Form?');
+    if (confirmSubmit) {
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({ 'form-name': 'contact-form', ...formData }),
+      }).then(() => {
+        history.push('/contact/success');
+      }).catch((error) => alert(error));
+    }
     event.preventDefault();
   };
 

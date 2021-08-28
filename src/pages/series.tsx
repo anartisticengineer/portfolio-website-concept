@@ -38,7 +38,7 @@ const Series: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
 
   return (
     <main className="container">
-      <h1>{fullSeries.seriesName}</h1>
+      <h1 className="container__title">{fullSeries.seriesName}</h1>
       <section className={`series ${fadeUp()}`}>
         {fullSeries.artworks.map((artwork) => <Artwork name={artwork.name} url={artwork.url} />)}
       </section>

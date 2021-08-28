@@ -8,7 +8,7 @@ const SeriesCard:FunctionComponent<SeriesCardProps> = ({ name, searchIndex, prev
   }, []);
 
   return (
-    <Link to={`/gallery/${searchIndex}`}>
+    <Link to={`/gallery/${searchIndex}`} aria-label={`Link to series: ${name}`}>
       <figure className="seriescard">
         <img className="seriescard__image" src={previewPieceUrl} alt={`Artwork: ${name}`} />
         <figcaption className="seriescard__caption">{name}</figcaption>

@@ -9,15 +9,18 @@
   width: max-content;
   justify-content: space-between;
   align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
   a {
     @include mix.nav-link-style(c.$platinum);
-    margin-left: 0.5em;
+    margin-left: 0.5rem;
     &:hover {
       color: c.$winter-sky;
       text-decoration: underline;
     }
     @include q.at-least-laptop {
-      margin-left: 2em;
+      margin-left: 2rem;
     }
   }
 }
@@ -28,12 +31,12 @@
   grid-template-areas: 'header' 'hidden-links';
   background-color: c.$eerie-black;
   font-family: type.$font-primary;
-  padding: 1em;
+  padding: 1rem;
   position: sticky;
   top: 0;
   z-index: 1;
   @include q.phone {
-    padding: 0.5em 1em;
+    padding: 0.5rem 1rem;
     z-index: 2;
   }
   @include q.at-least-tablet {
@@ -60,6 +63,8 @@
     display: block;
     width: fit-content;
     margin-left: auto;
+    background: none;
+    border: none;
     * {
       color: c.$platinum;
     }
@@ -71,6 +76,11 @@
     display: flex;
     flex-direction: column;
     grid-area: hidden-links;
+    list-style: none;
+    padding: 0;
+    li {
+      padding: 1rem 0;
+    }
     a {
       @include mix.nav-link-style(c.$platinum);
     }
@@ -86,6 +96,7 @@
   }
   .active {
     color: c.$winter-sky;
+    font-weight: bold;
   }
 }
 

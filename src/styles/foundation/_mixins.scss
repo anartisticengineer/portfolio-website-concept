@@ -7,6 +7,7 @@
 }
 
 @mixin nav-link-style($color) {
+  list-style: none;
   text-decoration: none;
   color: $color;
   padding: 1em 0;

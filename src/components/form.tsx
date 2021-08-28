@@ -1,11 +1,9 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
-import utils from '../scripts/utilities';
+import React, { FunctionComponent, useState } from 'react';
 import { FormData } from '../types/componentstates';
 import Button from './button';
 import InputField from './inputfield';
 
 const Form: FunctionComponent = () => {
-  const [submitDisabled, setSubmitDisabled] = useState(true);
   const initialData: FormData = {
     'form-name': '',
     'form-email': '',
@@ -13,41 +11,34 @@ const Form: FunctionComponent = () => {
   };
   const [formData, setFormData] = useState(initialData);
 
-  useEffect(() => {
-    setSubmitDisabled(utils.allowSubmission(formData));
-  }, [formData]);
-
   const handleChange = (event: any) => {
     const { target } = event;
     setFormData({ ...formData, [target.id]: target.value });
   };
 
-  const encode = (data: FormData | any): string => Object.keys(data)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join('&');
+  // const encode = (data: FormData | any): string => Object.keys(data)
+  //   .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+  //   .join('&');
 
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'contact-form': event.target.getAttribute('name'),
-        ...formData,
-      }),
-    }).then(() => console.log('Success!'))
-      .catch((e) => console.log(`Error${e}`));
-  };
+  // const handleSubmit = (event: any) => {
+  //   event.preventDefault();
+  //   fetch('/', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //     body: encode({
+  //       'contact-form': event.target.getAttribute('name'),
+  //       ...formData,
+  //     }),
+  //   }).then(() => console.log('Success!'))
+  //     .catch((e) => console.log(`Error${e}`));
+  // };
 
   return (
     <form
       name="contact-form"
       className="form"
-      onSubmit={handleSubmit}
       id="submit-form"
       autoComplete="off"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
       method="POST"
     >
       {/** First and last name */}
@@ -91,7 +82,7 @@ const Form: FunctionComponent = () => {
           classes="btn--submit"
           id="submit-btn"
           isSubmit
-          isDisabled={!submitDisabled}
+          isDisabled={false}
         >
           Submit
         </Button>

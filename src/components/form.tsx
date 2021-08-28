@@ -5,7 +5,7 @@ import InputField from './inputfield';
 
 const Form: FunctionComponent = () => {
   const initialData: FormData = {
-    'form-name': '',
+    'form-username': '',
     'form-email': '',
     'form-message': '',
   };
@@ -16,22 +16,18 @@ const Form: FunctionComponent = () => {
     setFormData({ ...formData, [target.id]: target.value });
   };
 
-  // const encode = (data: FormData | any): string => Object.keys(data)
-  //   .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-  //   .join('&');
+  const encode = (data: FormData | any): string => Object.keys(data)
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&');
 
-  // const handleSubmit = (event: any) => {
-  //   event.preventDefault();
-  //   fetch('/', {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  //     body: encode({
-  //       'contact-form': event.target.getAttribute('name'),
-  //       ...formData,
-  //     }),
-  //   }).then(() => console.log('Success!'))
-  //     .catch((e) => console.log(`Error${e}`));
-  // };
+  const handleSubmit = (event: any) => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact-form', ...formData }),
+    }).then(() => alert('Success!')).catch((error) => alert(error));
+    event.preventDefault();
+  };
 
   return (
     <form
@@ -39,7 +35,7 @@ const Form: FunctionComponent = () => {
       className="form"
       id="submit-form"
       autoComplete="off"
-      method="POST"
+      onSubmit={handleSubmit}
     >
       {/** First and last name */}
       <div className="form__block">

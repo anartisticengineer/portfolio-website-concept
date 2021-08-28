@@ -1,5 +1,5 @@
 export type FormData = {
-    'form-name': string,
+    'form-username': string,
     'form-email': string,
     'form-message': string
 };

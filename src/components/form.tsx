@@ -42,7 +42,7 @@ const Form: FunctionComponent = () => {
         <input type="hidden" name="form-name" value="contact-form" />
         <InputField
           labelId="name__label"
-          inputId="form-name"
+          inputId="form-username"
           inputType="text"
           placeholder="Name"
           onChangeFcn={handleChange}

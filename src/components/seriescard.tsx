@@ -7,10 +7,12 @@ const SeriesCard:FunctionComponent<SeriesCardProps> = ({ name, searchIndex, prev
 
   }, []);
 
+  const nfTransformUrl: string = `${previewPieceUrl}?nf_resize&w=800`;
+
   return (
     <Link to={`/gallery/${searchIndex}`} aria-label={`Link to series: ${name}`}>
       <figure className="seriescard">
-        <img className="seriescard__image" src={previewPieceUrl} alt={`Artwork: ${name}`} />
+        <img className="seriescard__image" src={nfTransformUrl} alt={`Artwork: ${name}`} />
         <figcaption className="seriescard__caption">{name}</figcaption>
       </figure>
     </Link>

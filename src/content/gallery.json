@@ -4,66 +4,66 @@
       "series-name": "GLITCHOBER 2020",
       "artworks": [
         {
-          "artwork-file": "/images/uploads/envy_1.jpg",
+          "artwork-file": "/images/uploads/envy.jpg",
           "artwork-name": "ENVY"
         },
         {
           "artwork-name": "SAVIOR",
-          "artwork-file": "/images/uploads/envy2_1.jpg"
+          "artwork-file": "/images/uploads/envy2.jpg"
         },
         {
           "artwork-name": "REFUGE",
-          "artwork-file": "/images/uploads/envy3_1.jpg"
+          "artwork-file": "/images/uploads/envy3.jpg"
         },
         {
           "artwork-name": "TRANQUILITY",
-          "artwork-file": "/images/uploads/envy4_1.jpg"
+          "artwork-file": "/images/uploads/envy4.jpg"
         },
         {
           "artwork-name": "VISTA",
-          "artwork-file": "/images/uploads/vista_1.jpg"
+          "artwork-file": "/images/uploads/vista.jpg"
         },
         {
           "artwork-name": "ERUPTION",
-          "artwork-file": "/images/uploads/eruption_1.jpg"
+          "artwork-file": "/images/uploads/eruption.jpg"
         }
       ]
     },
     {
       "artworks": [
         {
-          "artwork-file": "/images/uploads/zuma-01.jpg",
+          "artwork-file": "/images/uploads/zuma-01-72.jpg",
           "artwork-name": "ZUMA 01"
         },
         {
           "artwork-name": "ZUMA 02",
-          "artwork-file": "/images/uploads/zuma-02.jpg"
+          "artwork-file": "/images/uploads/zuma-02-72.jpg"
         },
         {
           "artwork-name": "ZUMA 03",
-          "artwork-file": "/images/uploads/zuma-03.jpg"
+          "artwork-file": "/images/uploads/zuma-03-72.jpg"
         },
         {
           "artwork-name": "ZUMA 04",
-          "artwork-file": "/images/uploads/zuma-04.jpg"
+          "artwork-file": "/images/uploads/zuma-04-72.jpg"
         }
       ],
       "series-name": "ZUMA"
     },
     {
-      "series-name": "YUME",
+      "series-name": "HYDRA",
       "artworks": [
         {
-          "artwork-file": "/images/uploads/dream-01.jpg",
-          "artwork-name": "YUME 01"
+          "artwork-file": "/images/uploads/hydra01-72.jpg",
+          "artwork-name": "HYDRA 01"
         },
         {
-          "artwork-name": "YUME 02",
-          "artwork-file": "/images/uploads/dream-02.jpg"
+          "artwork-name": "HYDRA 02",
+          "artwork-file": "/images/uploads/hydra02-72.jpg"
         },
         {
-          "artwork-name": "YUME 03",
-          "artwork-file": "/images/uploads/dream-03.jpg"
+          "artwork-name": "HYDRA 03",
+          "artwork-file": "/images/uploads/hydra3-72.jpg"
         }
       ]
     },
@@ -72,19 +72,19 @@
       "artworks": [
         {
           "artwork-name": "MXSA 01",
-          "artwork-file": "/images/uploads/mxsa-01.jpg"
+          "artwork-file": "/images/uploads/mxsa-01-72.jpg"
         },
         {
           "artwork-name": "MXSA 02",
-          "artwork-file": "/images/uploads/mxsa-02.jpg"
+          "artwork-file": "/images/uploads/mxsa-02-72.jpg"
         },
         {
           "artwork-name": "MXSA 03",
-          "artwork-file": "/images/uploads/mxsa-03.jpg"
+          "artwork-file": "/images/uploads/mxsa-03-72.jpg"
         },
         {
           "artwork-name": "MXSA 04",
-          "artwork-file": "/images/uploads/mxsa-04.jpg"
+          "artwork-file": "/images/uploads/mxsa-04-72.jpg"
         }
       ]
     },

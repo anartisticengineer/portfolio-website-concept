@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import Button from '../components/button';
-import bannerImg from '../images/banner-glitch.gif';
+import homeContent from '../content/homepage.json';
 import utils from '../scripts/utilities';
 import { EffectHookFunctions } from '../types/componentprops';
 
@@ -16,10 +16,14 @@ const HomePage: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) =>
 
   return (
     <main className="container homepage" id="home-page">
-      {/* <SketchHome /> */}
-      <img src={bannerImg} className="homepage__gif" alt="banner" id="home-banner" />
+      <img
+        src={homeContent['home-gif']['gif-image']}
+        className="homepage__gif"
+        alt={homeContent['home-gif']['gif-alt-text']}
+        id="home-banner"
+      />
       <section className={utils.fadeUp()}>
-        <h1 className="container__title">Welcome to the cyber art gallery!</h1>
+        <h1 className="container__title">{homeContent['welcome-text']}</h1>
         <Button
           classes="btn--home"
           id="see-latest"
@@ -27,7 +31,7 @@ const HomePage: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) =>
           isDisabled={false}
           onClickFcn={() => history.push('/gallery')}
         >
-          See my latest stuff
+          {homeContent['to-gallery-button-text']}
         </Button>
       </section>
     </main>

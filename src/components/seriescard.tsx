@@ -7,7 +7,7 @@ const SeriesCard:FunctionComponent<SeriesCardProps> = ({ name, searchIndex, prev
 
   }, []);
 
-  const nfTransformUrl: string = `${previewPieceUrl}?nf_resize&w=800`;
+  const nfTransformUrl: string = `${previewPieceUrl}?nf_resize=fit&w=800`;
 
   return (
     <Link to={`/gallery/${searchIndex}`} aria-label={`Link to series: ${name}`}>

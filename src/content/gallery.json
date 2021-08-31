@@ -51,15 +51,15 @@
       "series-name": "ZUMA"
     },
     {
-      "series-name": "YUME",
+      "series-name": "HYDRA",
       "artworks": [
         {
-          "artwork-file": "/images/uploads/dream-01.jpg",
-          "artwork-name": "YUME 01"
+          "artwork-file": "/images/uploads/hydra01-72.jpg",
+          "artwork-name": "HYDRA 01"
         },
         {
-          "artwork-name": "YUME 02",
-          "artwork-file": "/images/uploads/dream-02.jpg"
+          "artwork-name": "HYDRA 02",
+          "artwork-file": "/images/uploads/hydra02-72.jpg"
         },
         {
           "artwork-name": "YUME 03",

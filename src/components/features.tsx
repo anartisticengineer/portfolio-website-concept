@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
-import utils from '../scripts/utilities';
+import { nanoid } from 'nanoid';
 
+import utils from '../scripts/utilities';
 import aboutContent from '../content/about.json';
 
 const Features: FunctionComponent = () => {
@@ -11,7 +12,7 @@ const Features: FunctionComponent = () => {
     <div className={fadeUp()}>
       <h3 className="container__title">Features</h3>
       <ul>
-        {features.map((el) => <li>{el}</li>)}
+        {features.map((el) => <li key={nanoid(10)}>{el}</li>)}
       </ul>
     </div>
   );

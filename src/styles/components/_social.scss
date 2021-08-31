@@ -21,7 +21,7 @@
       margin: 0 auto;
     }
     @include q.tablet {
-      width: 75%;
+      width: 100%;
     }
     @include q.laptop {
       width: 50%;

@@ -1,9 +1,10 @@
 import React, { FunctionComponent, useEffect } from 'react';
+import { nanoid } from 'nanoid';
 
 import SeriesCard from '../components/seriescard';
-
 import utils from '../scripts/utilities';
 import { series } from '../content/gallery.json';
+
 import { EffectHookFunctions } from '../types/componentprops';
 
 const Gallery: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
@@ -19,7 +20,14 @@ const Gallery: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => 
     <main className="container">
       <h1 className={`container__title ${fadeUp()}`}>Gallery</h1>
       <section className={`gallery ${fadeUp()}`}>
-        {series.map((item, index) => <SeriesCard name={item['series-name']} searchIndex={index} previewPieceUrl={item.artworks[0]['artwork-file']} />)}
+        {series.map((item, index) => (
+          <SeriesCard
+            name={item['series-name']}
+            searchIndex={index}
+            previewPieceUrl={item.artworks[0]['artwork-file']}
+            key={nanoid(10)}
+          />
+        ))}
       </section>
     </main>
   );

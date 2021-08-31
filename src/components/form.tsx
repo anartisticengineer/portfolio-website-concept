@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable no-restricted-globals */
 import React, { FunctionComponent, useState } from 'react';
 import { useHistory } from 'react-router';

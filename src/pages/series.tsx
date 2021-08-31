@@ -1,10 +1,11 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { nanoid } from 'nanoid';
 
 import Artwork from '../components/artwork';
-
 import { series } from '../content/gallery.json';
 import utils from '../scripts/utilities';
+
 import { ArtworkProps, EffectHookFunctions } from '../types/componentprops';
 
 const Series: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
@@ -40,7 +41,13 @@ const Series: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
     <main className="container">
       <h1 className="container__title">{fullSeries.seriesName}</h1>
       <section className={`series ${fadeUp()}`}>
-        {fullSeries.artworks.map((artwork) => <Artwork name={artwork.name} url={artwork.url} />)}
+        {fullSeries.artworks.map((artwork) => (
+          <Artwork
+            name={artwork.name}
+            url={artwork.url}
+            key={nanoid(10)}
+          />
+        ))}
       </section>
     </main>
   );

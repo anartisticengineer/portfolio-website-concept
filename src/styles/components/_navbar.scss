@@ -54,8 +54,12 @@
     width: 20vw;
     @include q.phone {
       padding: 1em 0;
+      width: 30vw;
     }
-    @include q.at-least-tablet {
+    @include q.tablet {
+      width: 20vw;
+    }
+    @include q.laptop {
       width: 15vw;
     }
   }

@@ -15,9 +15,9 @@ const HomePage: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) =>
   }, []);
 
   return (
-    <main className="container" id="home-page">
+    <main className="container homepage" id="home-page">
       {/* <SketchHome /> */}
-      <img src={bannerImg} alt="banner" id="home-banner" />
+      <img src={bannerImg} className="homepage__gif" alt="banner" id="home-banner" />
       <section className={utils.fadeUp()}>
         <h1 className="container__title">Welcome to the cyber art gallery!</h1>
         <Button

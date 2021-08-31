@@ -25,26 +25,3 @@
     }
   }
 }
-
-#home-page {
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 273px);
-  @include q.at-least-tablet {
-    justify-content: space-around;
-    height: fit-content;
-  }
-  align-items: stretch;
-  padding: 0;
-  width: 100%;
-  background-color: c.$eerie-black;
-  color: c.$platinum;
-  border-bottom: 1px solid darken(c.$platinum, 20%);
-  overflow-x: clip;
-  section {
-    @include mix.flex-column-center;
-    justify-content: center;
-    padding-bottom: 2em;
-    margin: auto 0;
-  }
-}

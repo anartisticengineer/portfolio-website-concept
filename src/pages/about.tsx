@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 
+import { nanoid } from 'nanoid';
 import utils from '../scripts/utilities';
 
 import CV from '../components/cv';
@@ -28,9 +29,7 @@ const AboutPage: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) =
         <article className="about__article">
           <img className="about__article__photo" src={aboutImage.image} alt={aboutImage['alt-text']} id="about-profile-photo" />
           <h2 className="container__title">{summary.title}</h2>
-          <p>
-            {summary.body}
-          </p>
+          {summary.body.split('\n').map((paragraph) => <p key={nanoid(10)}>{ paragraph }</p>)}
         </article>
         {/** */}
         <article className="about__article">

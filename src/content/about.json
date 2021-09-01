@@ -10,13 +10,13 @@
   "cv": {
     "projects": [
       "This website! (obviously)",
-      "Glitch FX Generator"
+      "Glitch FX Generator (The OG Processing one + the more recent Python one)"
     ],
     "education": [
-      "2018 - B.S. in Electrical Engineering (with an emphasis in Digital Signal Processing) at CSU Long Beach",
-      "2020 - Software Developer Apprentice at Techtonic in Boulder Colorado"
+      "2018 - B.S. in Electrical Engineering w/ an emphasis in Digital Signal Processing @ CSU Long Beach",
+      "2020 - Software Developer Apprentice @ Techtonic in Boulder Colorado"
     ],
-    "objective": "To specialize in digital art and/or creative coding while continuously exploring ways to bring the two together!"
+    "objective": "To continuously experiment with different technologies and create new artworks in the process: fancy talk for \"keepin' it weird\""
   },
   "summary": {
     "title": "Who Am I?",

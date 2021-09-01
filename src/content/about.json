@@ -10,17 +10,17 @@
   "cv": {
     "projects": [
       "This website! (obviously)",
-      "Glitch FX Generator"
+      "Glitch FX Generator (The OG Processing one + the more recent Python one)"
     ],
     "education": [
-      "2018 - B.S. in Electrical Engineering (with an emphasis in Digital Signal Processing) at CSU Long Beach",
-      "2020 - Software Developer Apprentice at Techtonic in Boulder Colorado"
+      "2018 - B.S. in Electrical Engineering w/ an emphasis in Digital Signal Processing @ CSU Long Beach",
+      "2020 - Software Developer Apprentice @ Techtonic in Boulder Colorado"
     ],
-    "objective": "To specialize in digital art and/or creative coding while continuously exploring ways to bring the two together!"
+    "objective": "To continuously experiment with different technologies and create new artworks in the process: fancy talk for \"keepin' it weird\""
   },
   "summary": {
     "title": "Who Am I?",
-    "body": "I am a digital artist/creative coder currently based in Denver, Colorado. I've been doing digital art since about 2017 and creative coding since 2016. As I've grown as an artist over the years, I've been discovering more ways to combine art and technology.\nSpecializing primarily in glitch art, much of my best works come from destroying my photos on purpose. Datamoshing, breaking pixels, pixel sorting, all of that good stuff. I've used my creative coding skills to create my own tool for glitching artworks; a tool whose influence can be seen in much of my latest artworks."
+    "body": "So, I'm Justin: a 26-year old digital artist and (occasional) creative coder based in Denver, Colorado. I have a pretty extensive background in both art and technology: doing different types of art as a hobby, ranging from drawing to poetry to music production. Also graduating with a degree in electrical engineering/currently working as in software development gives me solid tech experience too (I'm all over the place lol). Bringing those together leads us to my love of digital art:\n\nAltogether, I've been into digital art for well over 5 years now, I've more recently started emphasizing in glitch art (around 2018)! This typically involves taking whatever photos I can find and \"break\" them by using various unconventional means: pixel sorting, using hex or audio editors to screw the image data up, or using my coding experience to make python/processing scripts...that also screw the image data up.\n\nI also like to think I have an occasional dry sense of humor, as in having hidden \"easter eggs\" on this site (sort of keeping with the theme here, it involves stuff not working as a hint)\n\nAnyways, have fun and keep it weird...\n-Justin"
   },
   "profile-image": {
     "image": "/images/uploads/new-profile-pic-oct-2019-smaller.jpg",

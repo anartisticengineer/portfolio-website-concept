@@ -108,6 +108,15 @@
           "artwork-file": "/images/uploads/yama-04.jpg"
         }
       ]
+    },
+    {
+      "artworks": [
+        {
+          "artwork-file": "/images/uploads/ride-to-nowhere-72.jpg",
+          "artwork-name": "ride to nowhere"
+        }
+      ],
+      "series-name": "MOTORCYCLE GLITCHES"
     }
   ]
 }

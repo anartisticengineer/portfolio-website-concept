@@ -120,8 +120,12 @@
           "artwork-name": "notoriety"
         },
         {
-          "artwork-name": "eventually you will...",
+          "artwork-name": "eventually you will",
           "artwork-file": "/images/uploads/eventually-you-will-72.jpg"
+        },
+        {
+          "artwork-file": "/images/uploads/wandered-72.jpg",
+          "artwork-name": "wandered"
         }
       ],
       "series-name": "MOTORCYCLE GLITCHES"

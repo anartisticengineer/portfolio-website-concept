@@ -116,5 +116,8 @@
     background: fixed;
     background-color: c.$eerie-black;
     opacity: 0.5;
+    &:focus {
+      outline: 1px solid c.$carolina-blue;
+    }
   }
 }

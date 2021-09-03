@@ -43,7 +43,6 @@ const Navbar: FunctionComponent = () => {
           type="button"
           className="mobile-navbar-filler"
           onClick={() => toggleHide(true)}
-          tabIndex={hidden ? -1 : 0}
         />
       ) : null}
     </>

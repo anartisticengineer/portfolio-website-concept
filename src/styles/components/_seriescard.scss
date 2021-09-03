@@ -19,7 +19,8 @@
     width: 100%;
     object-fit: contain;
     @include q.laptop {
-      &:hover {
+      &:hover,
+      &:focus {
         filter: blur(2px);
         outline: 1px solid c.$carolina-blue;
       }
@@ -35,6 +36,7 @@
       position: absolute;
       top: 50%;
       width: 100%;
+      background: none;
       color: c.$ghost-white;
       text-shadow: 2px 2px 2px c.$eerie-black;
     }

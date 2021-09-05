@@ -129,6 +129,15 @@
         }
       ],
       "series-name": "MOTORCYCLE GLITCHES"
+    },
+    {
+      "series-name": "FLORAL GLITCHES",
+      "artworks": [
+        {
+          "artwork-name": "DEFIANCE",
+          "artwork-file": "/images/uploads/defiance-72.jpg"
+        }
+      ]
     }
   ]
 }

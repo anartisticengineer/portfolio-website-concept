@@ -136,6 +136,14 @@
         {
           "artwork-file": "/images/uploads/archive-1.jpg",
           "artwork-name": "archive 01"
+        },
+        {
+          "artwork-file": "/images/uploads/archive-2.jpg",
+          "artwork-name": "archive 02"
+        },
+        {
+          "artwork-name": "archive 03",
+          "artwork-file": "/images/uploads/archive-3.jpg"
         }
       ]
     }

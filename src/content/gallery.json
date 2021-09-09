@@ -131,7 +131,13 @@
       "series-name": "MOTORCYCLE GLITCHES"
     },
     {
-      "series-name": "UNRELEASED ARCHIVES"
+      "series-name": "UNRELEASED ARCHIVES",
+      "artworks": [
+        {
+          "artwork-file": "/images/uploads/archive-1.jpg",
+          "artwork-name": "archive 01"
+        }
+      ]
     }
   ]
 }

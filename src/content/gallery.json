@@ -129,6 +129,40 @@
         }
       ],
       "series-name": "MOTORCYCLE GLITCHES"
+    },
+    {
+      "series-name": "UNRELEASED ARCHIVES",
+      "artworks": [
+        {
+          "artwork-file": "/images/uploads/archive-1.jpg",
+          "artwork-name": "archive 01"
+        },
+        {
+          "artwork-file": "/images/uploads/archive-2.jpg",
+          "artwork-name": "archive 02"
+        },
+        {
+          "artwork-name": "archive 03",
+          "artwork-file": "/images/uploads/archive-3.jpg"
+        },
+        {
+          "artwork-name": "archive 04",
+          "artwork-file": "/images/uploads/archive-4.jpg"
+        }
+      ]
+    },
+    {
+      "series-name": "FLORAL GLITCHES",
+      "artworks": [
+        {
+          "artwork-name": "DEFIANCE",
+          "artwork-file": "/images/uploads/defiance-72.jpg"
+        },
+        {
+          "artwork-name": "FATIGUE",
+          "artwork-file": "/images/uploads/fatigue-72.jpg"
+        }
+      ]
     }
   ]
 }

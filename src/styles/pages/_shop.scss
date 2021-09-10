@@ -1,0 +1,23 @@
+@use '../foundation/mixins' as mix;
+@use '../foundation/media-queries' as q;
+.shop {
+  @include mix.flex-column-center;
+  @include q.laptop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 4fr 1fr;
+    grid-template-areas: 'title title' 'description samples' 'foot foot';
+  }
+  h1 {
+    grid-area: title;
+  }
+  &__description {
+    grid-area: description;
+  }
+  &__sampleimages {
+    grid-area: samples;
+    img {
+      width: 100%;
+    }
+  }
+}

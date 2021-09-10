@@ -16,6 +16,7 @@ import ErrorBoundary from './pages/errorboundary';
 import Loading from './components/loading';
 import { EffectHookFunctions } from './types/componentprops';
 import SubmitSuccess from './pages/submitsuccess';
+import Shop from './pages/shop';
 
 const App = () => {
   const [isLoading, setLoading] = useState(true);
@@ -43,6 +44,9 @@ const App = () => {
           </Route>
           <Route path="/about">
             <AboutPage onStart={loadingFunctions.onStart} onEnd={loadingFunctions.onEnd} />
+          </Route>
+          <Route path="/shop">
+            <Shop onStart={loadingFunctions.onStart} onEnd={loadingFunctions.onEnd} />
           </Route>
           <Route exact path="/contact">
             <ContactPage onStart={loadingFunctions.onStart} onEnd={loadingFunctions.onEnd} />

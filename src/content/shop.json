@@ -1,0 +1,14 @@
+{
+  "to-shop-txt": "Shop For Prints",
+  "sample-images": [
+    {
+      "image": "/images/uploads/work-54145782-canvas-print.jpg",
+      "alt-txt": "blank beauty sample print"
+    },
+    {
+      "image": "/images/uploads/work-64667366-canvas-print.jpg",
+      "alt-txt": "vista sample image"
+    }
+  ],
+  "description": "I can finally put all of my shop links in one spot!\n\n* [Redbubble Prints](bit.ly/cyberArtShop)\n* [Phone Cases](bit.ly/cyberCaseShop)"
+}

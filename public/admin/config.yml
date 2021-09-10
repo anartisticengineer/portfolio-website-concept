@@ -115,10 +115,9 @@ collections:
           - label: 'Sample Images'
             name: 'sample-images'
             widget: 'list'
-            field:
-              - label: 'Image'
-                name: 'image'
-                widget: 'image'
+            fields:
+              - { label: 'Image', name: 'image', widget: 'image' }
+              - { label: 'Alt Text', name: 'alt-txt', widget: 'string' }
       # Not Found page
       - label: 'Page Not Found'
         name: 'not-found'

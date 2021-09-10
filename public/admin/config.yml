@@ -97,6 +97,28 @@ collections:
           - label: 'Social Media Dialog'
             name: 'sm-dialog'
             widget: 'string'
+      # Shop page
+      - label: 'Shop'
+        name: 'shop'
+        identifier_field: 'shop'
+        file: 'src/content/shop.json'
+        create: true
+        extension: 'json'
+        slug: 'shop'
+        fields:
+          - label: 'To Shop Button Text'
+            name: 'to-shop-txt'
+            widget: 'string'
+          - label: 'Description'
+            name: 'description'
+            widget: 'markdown'
+          - label: 'Sample Images'
+            name: 'sample-images'
+            widget: 'list'
+            field:
+              - label: 'Image'
+                name: 'image'
+                widget: 'image'
       # Not Found page
       - label: 'Page Not Found'
         name: 'not-found'

@@ -1,3 +1,4 @@
+@use '../foundation/colors' as c;
 @use '../foundation/mixins' as mix;
 @use '../foundation/media-queries' as q;
 .shop {
@@ -5,19 +6,43 @@
   @include q.laptop {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 4fr 1fr;
     grid-template-areas: 'title title' 'description samples' 'foot foot';
   }
   h1 {
     grid-area: title;
   }
+  button {
+    margin: 1rem auto;
+    grid-area: foot;
+  }
   &__description {
+    padding: 1rem;
+    margin: 1rem 0;
     grid-area: description;
+    ul > li a {
+      &:hover {
+        color: c.$winter-sky;
+      }
+      &:active {
+        color: c.$carolina-blue;
+      }
+    }
   }
   &__sampleimages {
+    padding: 1rem;
     grid-area: samples;
+    display: inline-flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    @include q.phone {
+      padding: 0.5rem;
+    }
     img {
-      width: 100%;
+      padding: 0.5rem;
+      width: 40%;
+      @include q.phone {
+        width: 100%;
+      }
     }
   }
 }

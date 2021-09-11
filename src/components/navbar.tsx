@@ -34,6 +34,7 @@ const Navbar: FunctionComponent = () => {
           <li><NavLink exact to="/">Home</NavLink></li>
           <li><NavLink to="/gallery">Gallery</NavLink></li>
           <li><NavLink to="/about">About</NavLink></li>
+          <li><NavLink to="/shop">Shop</NavLink></li>
           <li><NavLink to="/contact">Contact</NavLink></li>
           {/* End of dropdown */}
         </ul>

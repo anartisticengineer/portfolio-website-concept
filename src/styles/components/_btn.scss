@@ -8,9 +8,15 @@
   font-family: type.$font-primary;
   &:hover {
     background-color: c.$winter-sky;
+    color: c.$eerie-black;
+    cursor: pointer;
   }
   &:disabled {
     background-color: lighten(c.$eerie-black, 25%);
+  }
+  &--secondary {
+    background-color: c.$eerie-black;
+    color: c.$platinum;
   }
   &--submit {
     min-width: 100px;

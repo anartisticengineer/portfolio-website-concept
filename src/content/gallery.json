@@ -161,6 +161,10 @@
         {
           "artwork-name": "FATIGUE",
           "artwork-file": "/images/uploads/fatigue-72.jpg"
+        },
+        {
+          "artwork-name": "PEGASUS",
+          "artwork-file": "/images/uploads/pegasus-72.jpg"
         }
       ]
     }

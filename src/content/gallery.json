@@ -165,6 +165,10 @@
         {
           "artwork-name": "PEGASUS",
           "artwork-file": "/images/uploads/pegasus-72.jpg"
+        },
+        {
+          "artwork-name": "FROM THE ASHES",
+          "artwork-file": "/images/uploads/from-the-ashes-72.jpg"
         }
       ]
     }

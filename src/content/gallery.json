@@ -64,6 +64,10 @@
         {
           "artwork-name": "HYDRA 03",
           "artwork-file": "/images/uploads/hydra3-72.jpg"
+        },
+        {
+          "artwork-name": "HYDRA 04",
+          "artwork-file": "/images/uploads/hydra4-72.jpg"
         }
       ]
     },
@@ -161,6 +165,14 @@
         {
           "artwork-name": "FATIGUE",
           "artwork-file": "/images/uploads/fatigue-72.jpg"
+        },
+        {
+          "artwork-name": "PEGASUS",
+          "artwork-file": "/images/uploads/pegasus-72.jpg"
+        },
+        {
+          "artwork-name": "FROM THE ASHES",
+          "artwork-file": "/images/uploads/from-the-ashes-72.jpg"
         }
       ]
     }

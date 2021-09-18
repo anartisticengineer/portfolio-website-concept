@@ -4,7 +4,7 @@ backend:
 publish_mode: editorial_workflow
 media_folder: 'public/images/uploads' # Media files will be stored in the repo under public/images/uploads
 public_folder: '/images/uploads' # The src attribute for uploaded media will begin with /images/uploads
-site_url: https://cyberartbyjustin-beta.netlify.app/
+site_url: https://cyberartbyjustin.com/
 collections:
   - label: 'Pages'
     name: 'pages'

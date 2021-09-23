@@ -182,6 +182,14 @@
         {
           "artwork-name": "YUME 01",
           "artwork-file": "/images/uploads/dream-01.jpg"
+        },
+        {
+          "artwork-name": "YUME 02",
+          "artwork-file": "/images/uploads/dream-02.jpg"
+        },
+        {
+          "artwork-name": "YUME 03",
+          "artwork-file": "/images/uploads/dream-03.jpg"
         }
       ]
     }

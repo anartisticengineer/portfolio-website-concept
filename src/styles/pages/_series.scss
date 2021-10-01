@@ -8,7 +8,11 @@
   @include q.at-least-tablet {
     flex-flow: row wrap;
     flex-basis: 330px;
-    justify-content: space-around;
+    justify-content: space-evenly;
+  }
+  @include q.laptop {
+    width: 90%;
+    margin: 0 auto;
   }
   &__artwork {
     padding: 0;

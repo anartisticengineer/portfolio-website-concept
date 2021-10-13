@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useState, FunctionComponent } from 'react';
+import React, { useState, FunctionComponent, useEffect } from 'react';
+import { useLocation } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -10,6 +11,11 @@ import utils from '../scripts/utilities';
 const Navbar: FunctionComponent = () => {
   // toggle the dropdown menu on a mobile display using a state hook
   const [hidden, toggleHide] = useState(true);
+  const location = useLocation();
+
+  useEffect(() => {
+    toggleHide(true);
+  }, [location.pathname]);
 
   const { navLinksHidden } = utils;
 

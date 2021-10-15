@@ -39,7 +39,7 @@ const App = () => {
           <Route exact path="/gallery">
             <Gallery onStart={loadingFunctions.onStart} onEnd={loadingFunctions.onEnd} />
           </Route>
-          <Route path="/gallery/:index">
+          <Route path="/gallery/:title">
             <Series onStart={loadingFunctions.onStart} onEnd={loadingFunctions.onEnd} />
           </Route>
           <Route path="/about">

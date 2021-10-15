@@ -1,16 +1,18 @@
 import React, { FunctionComponent, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import utils from '../scripts/utilities';
 import { SeriesCardProps } from '../types/componentprops';
 
-const SeriesCard:FunctionComponent<SeriesCardProps> = ({ name, searchIndex, previewPieceUrl }) => {
+const SeriesCard:FunctionComponent<SeriesCardProps> = ({ name, previewPieceUrl }) => {
   useEffect(() => {
 
   }, []);
 
+  const { slugify } = utils;
   const nfTransformUrl: string = `${previewPieceUrl}?nf_resize=fit&w=800`;
 
   return (
-    <Link to={`/gallery/${searchIndex}`} aria-label={`Link to series: ${name}`}>
+    <Link to={`/gallery/${slugify(name)}`} aria-label={`Link to series: ${name}`}>
       <figure className="seriescard">
         <img className="seriescard__image" src={nfTransformUrl} alt={`Artwork: ${name}`} />
         <figcaption className="seriescard__caption">{name}</figcaption>

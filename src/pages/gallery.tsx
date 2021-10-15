@@ -20,10 +20,9 @@ const Gallery: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => 
     <main className="container">
       <h1 className={`container__title ${fadeUp()}`}>Gallery</h1>
       <section className={`gallery ${fadeUp()}`}>
-        {series.map((item, index) => (
+        {series.map((item) => (
           <SeriesCard
             name={item['series-name']}
-            searchIndex={index}
             previewPieceUrl={item.artworks[0]['artwork-file']}
             key={nanoid(10)}
           />

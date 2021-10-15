@@ -25,10 +25,14 @@ export type ArtworkProps = {
     url: string
 }
 
+export type FullSeriesContentProps = {
+    'series-name': string,
+    'artworks': ArtworkProps[]
+}
+
 export type SeriesCardProps = {
     name: string,
-    searchIndex: number,
-    previewPieceUrl: string
+    previewPieceUrl: string,
 }
 
 export type SMLinkProps = {

@@ -30,7 +30,7 @@ const NotFound: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) =>
           isSubmit={false}
           isDisabled={false}
           onClickFcn={() => {
-            history.goBack();
+            history.push('/');
           }}
         >
           {notFoundContent['button-dialog']}

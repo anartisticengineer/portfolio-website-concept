@@ -3,28 +3,23 @@ import { useParams } from 'react-router';
 import { nanoid } from 'nanoid';
 
 import Artwork from '../components/artwork';
-import { series } from '../content/gallery.json';
 import utils from '../scripts/utilities';
 
-import { ArtworkProps, EffectHookFunctions } from '../types/componentprops';
+import { ArtworkProps, EffectHookFunctions, FullSeriesContentProps } from '../types/componentprops';
+import { series } from '../content/gallery.json';
 
 const Series: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
-  const { index } = useParams<{ index: string }>();
+  const { title } = useParams<{ title: string }>();
 
-  const initSeriesArtworks: ArtworkProps[] = [];
+  const initSeriesArtworks: FullSeriesContentProps = {
+    'series-name': '',
+    artworks: [],
+  };
 
-  const [fullSeries, setFullSeries] = useState({
-    seriesName: '',
-    artworks: initSeriesArtworks,
-  });
+  const [fullSeries, setFullSeries] = useState(initSeriesArtworks);
 
   const { fadeUp } = utils;
-
-  useEffect(() => {
-    document.title = `SERIES - ${fullSeries.seriesName}`;
-    onStart();
-    return onEnd;
-  }, []);
+  // const history = useHistory();
 
   const convertToArtworkProps = (arr: any[]): ArtworkProps[] => arr.map((item) => {
     const artProps: ArtworkProps = { name: item['artwork-name'], url: item['artwork-file'] };
@@ -32,14 +27,23 @@ const Series: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
   });
 
   useEffect(() => {
-    const selectedSeries = series[parseInt(index, 10)];
+    onStart();
+    const regEx: RegExp = new RegExp(title.replace('-', ' '), 'i');
+    let selectedSeries: FullSeriesContentProps = { 'series-name': '', artworks: [] };
+    const seriesSet: Set<any> = new Set(series);
+    seriesSet.forEach((item) => {
+      if (item['series-name'].match(regEx)) {
+        selectedSeries = item;
+      }
+    });
     document.title = `Gallery - ${selectedSeries['series-name']}`;
-    setFullSeries({ seriesName: selectedSeries['series-name'], artworks: convertToArtworkProps(selectedSeries.artworks) });
+    setFullSeries({ ...selectedSeries, artworks: convertToArtworkProps(selectedSeries.artworks) });
+    return onEnd;
   }, []);
 
   return (
     <main className="container">
-      <h1 className="container__title">{fullSeries.seriesName}</h1>
+      <h1 className="container__title">{fullSeries['series-name']}</h1>
       <section className={`series ${fadeUp()}`}>
         {fullSeries.artworks.map((artwork) => (
           <Artwork

@@ -17,6 +17,8 @@ const utils = {
     return allClasses;
   },
 
+  slugify: (title: string): string => title.trim().replace(' ', '-').toLowerCase(),
+
   allowSubmission: (formData: {}): boolean => {
     const formValues: string[] = Object.values(formData);
     // eslint-disable-next-line eqeqeq

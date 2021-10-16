@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useParams, useHistory } from 'react-router';
 import { nanoid } from 'nanoid';
 
 import Artwork from '../components/artwork';
@@ -18,8 +18,11 @@ const Series: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
 
   const [fullSeries, setFullSeries] = useState(initSeriesArtworks);
 
-  const { fadeUp } = utils;
-  // const history = useHistory();
+  const history = useHistory();
+
+  const { fadeUp, slugify } = utils;
+
+  const regEx: RegExp = new RegExp(title.replace('-', ' '), 'i');
 
   const convertToArtworkProps = (arr: any[]): ArtworkProps[] => arr.map((item) => {
     const artProps: ArtworkProps = { name: item['artwork-name'], url: item['artwork-file'] };
@@ -28,16 +31,26 @@ const Series: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
 
   useEffect(() => {
     onStart();
-    const regEx: RegExp = new RegExp(title.replace('-', ' '), 'i');
     let selectedSeries: FullSeriesContentProps = { 'series-name': '', artworks: [] };
+
     const seriesSet: Set<any> = new Set(series);
-    seriesSet.forEach((item) => {
-      if (item['series-name'].match(regEx)) {
-        selectedSeries = item;
-      }
-    });
-    document.title = `Gallery - ${selectedSeries['series-name']}`;
-    setFullSeries({ ...selectedSeries, artworks: convertToArtworkProps(selectedSeries.artworks) });
+    const seriesNames: Set<string> = new Set(series.map((item) => slugify(item['series-name'])));
+
+    if (seriesNames.has(title)) {
+      seriesSet.forEach((item) => {
+        if (item['series-name'].match(regEx)) {
+          selectedSeries = item;
+        }
+      });
+      // set series
+      setFullSeries({
+        ...selectedSeries,
+        artworks: convertToArtworkProps(selectedSeries.artworks),
+      });
+      document.title = `Gallery - ${selectedSeries['series-name']}`;
+    } else {
+      history.replace('/not-found');
+    }
     return onEnd;
   }, []);
 

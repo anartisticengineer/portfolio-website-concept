@@ -2,6 +2,8 @@
 /* eslint-disable no-restricted-globals */
 import React, { FunctionComponent, useState } from 'react';
 import { useHistory } from 'react-router';
+import Recaptcha from 'react-recaptcha';
+
 import { FormData } from '../types/componentstates';
 import Button from './button';
 import InputField from './inputfield';
@@ -12,9 +14,13 @@ const Form: FunctionComponent = () => {
     'form-email': '',
     'form-message': '',
   };
+
   const [formData, setFormData] = useState(initialData);
+  const [captchaResponse, setCaptchaResponse] = useState(null);
 
   const history = useHistory();
+
+  const siteKey: string = `${process.env.REACT_APP_SITE_RECAPTCHA_KEY}`;
 
   const handleChange = (event: any) => {
     const { target } = event;
@@ -25,18 +31,27 @@ const Form: FunctionComponent = () => {
     .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join('&');
 
-  const handleSubmit = (event: any) => {
-    const confirmSubmit = confirm('Submit Form?');
-    if (confirmSubmit) {
+  const verify = (token: any) => {
+    setCaptchaResponse(token);
+  };
+
+  const handleSubmit = (event: any): void => {
+    event.preventDefault();
+    if (captchaResponse) {
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({ 'form-name': 'contact-form', ...formData }),
+        body: encode({
+          'form-name': 'contact-form',
+          'g-recaptcha-response': captchaResponse,
+          ...formData,
+        }),
       }).then(() => {
         history.push('/contact/success');
       }).catch((error) => alert(error));
+    } else {
+      alert('Please verify that you are a human >:(');
     }
-    event.preventDefault();
   };
 
   return (
@@ -47,7 +62,7 @@ const Form: FunctionComponent = () => {
       autoComplete="off"
       onSubmit={handleSubmit}
     >
-      {/** First and last name */}
+      {/** Name */}
       <div className="form__block">
         <input type="hidden" name="form-name" value="contact-form" />
         <InputField
@@ -92,6 +107,13 @@ const Form: FunctionComponent = () => {
         >
           Submit
         </Button>
+      </div>
+      <div className="form__block">
+        <Recaptcha
+          sitekey={siteKey}
+          verifyCallback={verify}
+          expiredCallback={() => setCaptchaResponse(null)}
+        />
       </div>
     </form>
   );

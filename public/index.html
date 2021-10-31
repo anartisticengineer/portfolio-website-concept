@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" />
     <!--Netlify Identity-->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!--Recaptcha-->  
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>Cyberart By Justin</title>
   </head>
   <body>
@@ -33,9 +35,10 @@
           data-netlify-recaptcha="true" 
           action="/" 
     hidden>
-      <input type="text" name="form-message">
+      <input type="text" name="form-username">
       <input type="email" name="form-email">
       <textarea name="form-message"></textarea>
+
     </form>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <!--REACT APP-->
@@ -52,6 +55,6 @@
           }
         });
       }
-    </script>
+    </script>   
   </body>
 </html>

@@ -16,11 +16,12 @@ const Form: FunctionComponent = () => {
   };
 
   const [formData, setFormData] = useState(initialData);
-  const [captchaResponse, setCaptchaResponse] = useState(null);
+  const [captchaResponse, setCaptchaResponse] = useState({});
 
   const history = useHistory();
 
   const siteKey: string = `${process.env.REACT_APP_SITE_RECAPTCHA_KEY}`;
+  const secretKey: string = `${process.env.REACT_APP_SITE_RECAPTCHA_SECRET}`;
 
   const handleChange = (event: any) => {
     const { target } = event;
@@ -32,7 +33,18 @@ const Form: FunctionComponent = () => {
     .join('&');
 
   const verify = (token: any) => {
-    setCaptchaResponse(token);
+    fetch('https://www.google.com/recaptcha/api/siteverify', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        secret: secretKey,
+        response: token,
+      }),
+    }).then((res) => res.json()).then((r) => {
+      setCaptchaResponse(r);
+    }).catch((err) => console.error(err));
   };
 
   const handleSubmit = (event: any): void => {
@@ -112,7 +124,7 @@ const Form: FunctionComponent = () => {
         <Recaptcha
           sitekey={siteKey}
           verifyCallback={verify}
-          expiredCallback={() => setCaptchaResponse(null)}
+          expiredCallback={() => setCaptchaResponse({})}
         />
       </div>
     </form>

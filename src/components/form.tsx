@@ -37,6 +37,7 @@ const Form: FunctionComponent = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': 'https://cyberartbyjustin.com',
       },
       body: JSON.stringify({
         secret: secretKey,

@@ -199,6 +199,10 @@
         {
           "artwork-name": "doomsday_exe",
           "artwork-file": "/images/uploads/doomsday_exe.jpg"
+        },
+        {
+          "artwork-name": "beneath_exe",
+          "artwork-file": "/images/uploads/beneath_exe.jpg"
         }
       ]
     }

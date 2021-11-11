@@ -192,6 +192,15 @@
           "artwork-file": "/images/uploads/dream-03.jpg"
         }
       ]
+    },
+    {
+      "series-name": "GLITCHTOBER 2021",
+      "artworks": [
+        {
+          "artwork-name": "doomsday_exe",
+          "artwork-file": "/images/uploads/doomsday_exe.jpg"
+        }
+      ]
     }
   ]
 }

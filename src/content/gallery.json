@@ -205,6 +205,15 @@
           "artwork-file": "/images/uploads/beneath_exe.jpg"
         }
       ]
+    },
+    {
+      "series-name": "ALBUM COVER CONCEPTS",
+      "artworks": [
+        {
+          "artwork-name": "APXNR",
+          "artwork-file": "/images/uploads/concept1_72.png"
+        }
+      ]
     }
   ]
 }

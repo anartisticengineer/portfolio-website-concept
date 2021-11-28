@@ -216,6 +216,10 @@
         {
           "artwork-name": "concept 2",
           "artwork-file": "/images/uploads/concept2_72.png"
+        },
+        {
+          "artwork-name": "concept 3",
+          "artwork-file": "/images/uploads/concept3_72.png"
         }
       ]
     }

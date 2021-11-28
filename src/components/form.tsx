@@ -2,7 +2,8 @@
 /* eslint-disable no-restricted-globals */
 import React, { FunctionComponent, useState } from 'react';
 import { useHistory } from 'react-router';
-import Recaptcha from 'react-recaptcha';
+
+import utils from '../scripts/utilities';
 
 import { FormData } from '../types/componentstates';
 import Button from './button';
@@ -16,54 +17,40 @@ const Form: FunctionComponent = () => {
   };
 
   const [formData, setFormData] = useState(initialData);
-  const [captchaResponse, setCaptchaResponse] = useState({});
 
   const history = useHistory();
 
-  const siteKey: string = `${process.env.REACT_APP_SITE_RECAPTCHA_KEY}`;
-  const secretKey: string = `${process.env.REACT_APP_SITE_RECAPTCHA_SECRET}`;
+  const { allowSubmission } = utils;
 
   const handleChange = (event: any) => {
     const { target } = event;
     setFormData({ ...formData, [target.id]: target.value });
   };
 
-  const encode = (data: FormData | any): string => Object.keys(data)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join('&');
-
-  const verify = (token: any) => {
-    fetch('https://www.google.com/recaptcha/api/siteverify', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-      },
-      body: JSON.stringify({
-        secret: secretKey,
-        response: token,
-      }),
-    }).then((res) => res.json()).then((r) => {
-      setCaptchaResponse(r);
-    }).catch((err) => console.error(err));
-  };
+  const encode = (data: FormData | any): string =>
+    // eslint-disable-next-line implicit-arrow-linebreak
+    Object.keys(data)
+      .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+      .join('&');
 
   const handleSubmit = (event: any): void => {
     event.preventDefault();
-    if (captchaResponse) {
+    const confirmSubmit: boolean = confirm('Submit Form?');
+    if (confirmSubmit) {
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({
           'form-name': 'contact-form',
-          'g-recaptcha-response': captchaResponse,
           ...formData,
         }),
-      }).then(() => {
-        history.push('/contact/success');
-      }).catch((error) => alert(error));
+      })
+        .then(() => {
+          history.push('/contact/success');
+        })
+        .catch((error) => alert(error));
     } else {
-      alert('Please verify that you are a human >:(');
+      alert('Form not submitted yet.');
     }
   };
 
@@ -116,17 +103,10 @@ const Form: FunctionComponent = () => {
           classes="btn--submit"
           id="submit-btn"
           isSubmit
-          isDisabled={false}
+          isDisabled={!allowSubmission(formData)}
         >
           Submit
         </Button>
-      </div>
-      <div className="form__block">
-        <Recaptcha
-          sitekey={siteKey}
-          verifyCallback={verify}
-          expiredCallback={() => setCaptchaResponse({})}
-        />
       </div>
     </form>
   );

@@ -210,8 +210,12 @@
       "series-name": "ALBUM COVER CONCEPTS",
       "artworks": [
         {
-          "artwork-name": "APXNR",
+          "artwork-name": "concept 1",
           "artwork-file": "/images/uploads/concept1_72.png"
+        },
+        {
+          "artwork-name": "concept 2",
+          "artwork-file": "/images/uploads/concept2_72.png"
         }
       ]
     }

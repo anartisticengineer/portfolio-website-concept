@@ -203,6 +203,31 @@
         {
           "artwork-name": "beneath_exe",
           "artwork-file": "/images/uploads/beneath_exe.jpg"
+        },
+        {
+          "artwork-name": "descent_exe",
+          "artwork-file": "/images/uploads/descent_exe.jpg"
+        },
+        {
+          "artwork-name": "cyclic_exe",
+          "artwork-file": "/images/uploads/cyclic_exe.jpg"
+        }
+      ]
+    },
+    {
+      "series-name": "ALBUM COVER CONCEPTS",
+      "artworks": [
+        {
+          "artwork-name": "concept 1",
+          "artwork-file": "/images/uploads/concept1_72.png"
+        },
+        {
+          "artwork-name": "concept 2",
+          "artwork-file": "/images/uploads/concept2_72.png"
+        },
+        {
+          "artwork-name": "concept 3",
+          "artwork-file": "/images/uploads/concept3_72.png"
         }
       ]
     }

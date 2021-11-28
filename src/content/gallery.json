@@ -203,6 +203,10 @@
         {
           "artwork-name": "beneath_exe",
           "artwork-file": "/images/uploads/beneath_exe.jpg"
+        },
+        {
+          "artwork-name": "descent_exe",
+          "artwork-file": "/images/uploads/descent_exe.jpg"
         }
       ]
     },

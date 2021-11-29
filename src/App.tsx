@@ -22,7 +22,10 @@ const App = () => {
   const [isLoading, setLoading] = useState(true);
 
   const loadingFunctions: EffectHookFunctions = {
-    onStart: () => setLoading(false),
+    onStart: () => {
+      window.scrollTo(0, 0);
+      setLoading(false);
+    },
     onEnd: () => setLoading(true),
   };
 

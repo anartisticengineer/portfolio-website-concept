@@ -3,6 +3,8 @@ const utils = {
 
   fadeUp: (): string => 'animate__animated animate__fadeInUp',
 
+  fadeInHorizontal: (direction: 'Left' | 'Right') => `animate__animated animate__fadeIn${direction}`,
+
   navLinksHidden: (isHidden: boolean): string => `navbar__links${isHidden ? '--hidden' : ''}`,
 
   btnClasses: (classNames: string | string[] | void): string => {
@@ -31,7 +33,6 @@ const utils = {
   },
 
   getSeriesDisplayUrl: (): string => 'sample',
-
 };
 
 export default utils;

@@ -37,20 +37,28 @@ const Navbar: FunctionComponent = () => {
         </section>
         {/* These should be hidden and collapsible in mobile view */}
         <ul className={navLinksHidden(hidden)} id="navbar-links">
-          <li><NavLink exact to="/">Home</NavLink></li>
-          <li><NavLink to="/gallery">Gallery</NavLink></li>
-          <li><NavLink to="/about">About</NavLink></li>
-          <li><NavLink to="/shop">Shop</NavLink></li>
-          <li><NavLink to="/contact">Contact</NavLink></li>
+          <li>
+            <NavLink exact to="/">
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/gallery">Gallery</NavLink>
+          </li>
+          <li>
+            <NavLink to="/about">About</NavLink>
+          </li>
+          <li>
+            <NavLink to="/shop">Shop</NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact">Contact</NavLink>
+          </li>
           {/* End of dropdown */}
         </ul>
       </nav>
       {!hidden ? (
-        <button
-          type="button"
-          className="mobile-navbar-filler"
-          onClick={() => toggleHide(true)}
-        />
+        <button type="button" className="mobile-navbar-filler" onClick={() => toggleHide(true)} />
       ) : null}
     </>
   );

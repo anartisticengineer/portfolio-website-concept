@@ -9,6 +9,7 @@
   padding: 2rem;
   font-family: type.$font-primary;
   height: auto;
+  overflow-x: hidden;
   &__title {
     text-align: center;
   }

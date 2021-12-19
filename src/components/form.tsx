@@ -1,7 +1,9 @@
 /* eslint-disable no-alert */
 /* eslint-disable no-restricted-globals */
-import React, { FunctionComponent, useState } from 'react';
+// eslint-disable-next-line object-curly-newline
+import React, { createRef, FunctionComponent, RefObject, useState } from 'react';
 import { useHistory } from 'react-router';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 import utils from '../scripts/utilities';
 
@@ -20,6 +22,8 @@ const Form: FunctionComponent = () => {
 
   const history = useHistory();
 
+  const recaptchaRef: RefObject<any> = createRef();
+
   const { allowSubmission } = utils;
 
   const handleChange = (event: any) => {
@@ -35,7 +39,10 @@ const Form: FunctionComponent = () => {
 
   const handleSubmit = (event: any): void => {
     event.preventDefault();
+    recaptchaRef.current.execute();
+
     const confirmSubmit: boolean = confirm('Submit Form?');
+
     if (confirmSubmit) {
       fetch('/', {
         method: 'POST',
@@ -55,13 +62,7 @@ const Form: FunctionComponent = () => {
   };
 
   return (
-    <form
-      name="contact-form"
-      className="form"
-      id="submit-form"
-      autoComplete="off"
-      onSubmit={handleSubmit}
-    >
+    <form name="contact-form" className="form" id="submit-form" autoComplete="off" onSubmit={handleSubmit}>
       {/** Name */}
       <div className="form__block">
         <input type="hidden" name="form-name" value="contact-form" />
@@ -99,15 +100,11 @@ const Form: FunctionComponent = () => {
         >
           Your Message:
         </InputField>
-        <Button
-          classes="btn--submit"
-          id="submit-btn"
-          isSubmit
-          isDisabled={!allowSubmission(formData)}
-        >
+        <Button classes="btn--submit" id="submit-btn" isSubmit isDisabled={!allowSubmission(formData)}>
           Submit
         </Button>
       </div>
+      <ReCAPTCHA ref={recaptchaRef} size="invisible" sitekey={`${process.env.REACT_APP_SITE_RECAPTCHA_KEY}`} />
     </form>
   );
 };

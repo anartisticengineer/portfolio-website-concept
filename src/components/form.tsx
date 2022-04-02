@@ -3,7 +3,6 @@
 // eslint-disable-next-line object-curly-newline
 import React, { createRef, FunctionComponent, RefObject, useState } from 'react';
 import { useHistory } from 'react-router';
-import ReCAPTCHA from 'react-google-recaptcha';
 
 import utils from '../scripts/utilities';
 
@@ -104,7 +103,6 @@ const Form: FunctionComponent = () => {
           Submit
         </Button>
       </div>
-      <ReCAPTCHA ref={recaptchaRef} size="invisible" sitekey={`${process.env.REACT_APP_SITE_RECAPTCHA_KEY}`} />
     </form>
   );
 };

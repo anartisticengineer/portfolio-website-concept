@@ -25,11 +25,14 @@ class ErrorBoundary extends React.Component<{}, any> {
     if (hasError) {
       return (
         <main className="container errorpage">
-          <h1>{ title }</h1>
-          <h2>{ subtitle }</h2>
+          <h1>{title}</h1>
+          <h2>{subtitle}</h2>
           <figure>
-            <img src={errorContent['funny-gif']} alt="gif showing an error" />
-            <figcaption>{ errorContent['funny-caption'] }</figcaption>
+            <img
+              src={errorContent['funny-gif']}
+              alt="gif showing an error"
+            />
+            <figcaption>{errorContent['funny-caption']}</figcaption>
           </figure>
         </main>
       );

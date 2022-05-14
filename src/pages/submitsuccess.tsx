@@ -1,13 +1,16 @@
 import React, { FunctionComponent, useEffect } from 'react';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { EffectHookFunctions } from '../types/componentprops';
 
-const SubmitSuccess: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
-  const history = useHistory();
+const SubmitSuccess: FunctionComponent<EffectHookFunctions> = ({
+  onStart,
+  onEnd,
+}) => {
+  const navigate = useNavigate();
   useEffect(() => {
     document.title = 'Success!';
     onStart();
-    setTimeout(() => history.push('/'), 3000);
+    setTimeout(() => navigate('/', { replace: true }), 3000);
     return onEnd;
   }, []);
 

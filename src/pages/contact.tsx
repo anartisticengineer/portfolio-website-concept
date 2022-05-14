@@ -6,7 +6,10 @@ import utils from '../scripts/utilities';
 import contactContent from '../content/contact.json';
 import { EffectHookFunctions } from '../types/componentprops';
 
-const ContactPage: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
+const ContactPage: FunctionComponent<EffectHookFunctions> = ({
+  onStart,
+  onEnd,
+}) => {
   useEffect(() => {
     document.title = 'Contact - cyberart_by_justin';
     onStart();
@@ -18,9 +21,7 @@ const ContactPage: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd })
   return (
     <main className="container container--contact">
       <h1 className={`container__title ${fadeUp()}`}>Contact</h1>
-      <p>
-        {contactContent['get-in-touch']}
-      </p>
+      <p>{contactContent['get-in-touch']}</p>
       <section className={fadeUp()}>
         <article>
           <Form />

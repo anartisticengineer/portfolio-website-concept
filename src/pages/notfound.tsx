@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect } from 'react';
-
-import { useHistory } from 'react-router';
+import { NavigateFunction } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import utils from '../scripts/utilities';
 
 import Button from '../components/button';
@@ -14,14 +14,16 @@ const NotFound: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) =>
     onStart();
     return onEnd;
   }, []);
-  const history = useHistory();
+
+  const navigate: NavigateFunction = useNavigate();
+
   const { fadeUp } = utils;
   return (
     <main className="container notfound">
       <h1 className={`container__title ${fadeUp()}`}>OOF</h1>
       <figure className="notfound__figure">
         <img className="notfound__image" src={notFoundContent['funny-gif']} alt="sample alt text" />
-        <figcaption className="notfound__caption">{ notFoundContent['funny-caption'] }</figcaption>
+        <figcaption className="notfound__caption">{notFoundContent['funny-caption']}</figcaption>
       </figure>
       <div className="notfound__goback">
         <Button
@@ -29,9 +31,7 @@ const NotFound: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) =>
           id="go-back-btn"
           isSubmit={false}
           isDisabled={false}
-          onClickFcn={() => {
-            history.push('/');
-          }}
+          onClickFcn={() => navigate('/', { replace: true })}
         >
           {notFoundContent['button-dialog']}
         </Button>

@@ -26,6 +26,8 @@
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     ],
-    "linebreak-style": 0
+    "linebreak-style": 0,
+    "implicit-arrow-linebreak": 0,
+    "jsx-wrap-multilines": 0
   }
 }

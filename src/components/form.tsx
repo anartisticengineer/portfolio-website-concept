@@ -1,8 +1,9 @@
 /* eslint-disable no-alert */
 /* eslint-disable no-restricted-globals */
 // eslint-disable-next-line object-curly-newline
-import React, { createRef, FunctionComponent, RefObject, useState } from 'react';
-import { useHistory } from 'react-router';
+import React, { FunctionComponent, useState } from 'react';
+import { NavigateFunction } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 import utils from '../scripts/utilities';
 
@@ -19,9 +20,7 @@ const Form: FunctionComponent = () => {
 
   const [formData, setFormData] = useState(initialData);
 
-  const history = useHistory();
-
-  const recaptchaRef: RefObject<any> = createRef();
+  const navigate: NavigateFunction = useNavigate();
 
   const { allowSubmission } = utils;
 
@@ -33,12 +32,13 @@ const Form: FunctionComponent = () => {
   const encode = (data: FormData | any): string =>
     // eslint-disable-next-line implicit-arrow-linebreak
     Object.keys(data)
-      .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+      .map(
+        (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`,
+      )
       .join('&');
 
   const handleSubmit = (event: any): void => {
     event.preventDefault();
-    recaptchaRef.current.execute();
 
     const confirmSubmit: boolean = confirm('Submit Form?');
 
@@ -52,7 +52,8 @@ const Form: FunctionComponent = () => {
         }),
       })
         .then(() => {
-          history.push('/contact/success');
+          // history.push('/contact/success');
+          navigate('/contact/success', { replace: true });
         })
         .catch((error) => alert(error));
     } else {
@@ -61,10 +62,20 @@ const Form: FunctionComponent = () => {
   };
 
   return (
-    <form name="contact-form" className="form" id="submit-form" autoComplete="off" onSubmit={handleSubmit}>
+    <form
+      name="contact-form"
+      className="form"
+      id="submit-form"
+      autoComplete="off"
+      onSubmit={handleSubmit}
+    >
       {/** Name */}
       <div className="form__block">
-        <input type="hidden" name="form-name" value="contact-form" />
+        <input
+          type="hidden"
+          name="form-name"
+          value="contact-form"
+        />
         <InputField
           labelId="name__label"
           inputId="form-username"
@@ -99,7 +110,12 @@ const Form: FunctionComponent = () => {
         >
           Your Message:
         </InputField>
-        <Button classes="btn--submit" id="submit-btn" isSubmit isDisabled={!allowSubmission(formData)}>
+        <Button
+          classes="btn--submit"
+          id="submit-btn"
+          isSubmit
+          isDisabled={!allowSubmission(formData)}
+        >
           Submit
         </Button>
       </div>

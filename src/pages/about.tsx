@@ -10,7 +10,10 @@ import Button from '../components/button';
 import aboutContent from '../content/about.json';
 import { EffectHookFunctions } from '../types/componentprops';
 
-const AboutPage: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
+const AboutPage: FunctionComponent<EffectHookFunctions> = ({
+  onStart,
+  onEnd,
+}) => {
   useEffect(() => {
     document.title = 'About Me - cyberart_by_justin';
     onStart();
@@ -22,14 +25,24 @@ const AboutPage: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) =
   const [page, changePage] = useState('cv');
 
   return (
-    <main className="container" id="about-page">
+    <main
+      className="container"
+      id="about-page"
+    >
       <h1 className={`container__title ${fadeUp()}`}>About Me</h1>
       <section className={`about ${fadeUp()}`}>
         {/** Grid 1 */}
         <article className="about__article">
-          <img className="about__article__photo" src={aboutImage.image} alt={aboutImage['alt-text']} id="about-profile-photo" />
+          <img
+            className="about__article__photo"
+            src={aboutImage.image}
+            alt={aboutImage['alt-text']}
+            id="about-profile-photo"
+          />
           <h2 className="container__title">{summary.title}</h2>
-          {summary.body.split('\n').map((paragraph) => <p key={nanoid(10)}>{ paragraph }</p>)}
+          {summary.body.split('\n').map((paragraph) => (
+            <p key={nanoid(10)}>{paragraph}</p>
+          ))}
         </article>
         {/** */}
         <article className="about__article">

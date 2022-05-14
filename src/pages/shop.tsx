@@ -21,7 +21,6 @@ const Shop: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
       <h1 className={`container__title ${fadeUp()}`}>Shop</h1>
       <section className={`shop__description ${fadeUp()}`}>
         <ReactMarkdown>{shopContent.description}</ReactMarkdown>
-
       </section>
       <section className={`shop__sampleimages ${fadeUp()}`}>
         {shopContent['sample-images'].map((im) => (

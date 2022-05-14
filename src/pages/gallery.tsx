@@ -3,11 +3,15 @@ import { nanoid } from 'nanoid';
 
 import SeriesCard from '../components/seriescard';
 import utils from '../scripts/utilities';
-import { series } from '../content/gallery.json';
+import seriesContent from '../content/gallery.json';
 
 import { EffectHookFunctions } from '../types/componentprops';
 
-const Gallery: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
+const Gallery: FunctionComponent<EffectHookFunctions> = ({
+  onStart,
+  onEnd,
+}) => {
+  const { series } = seriesContent;
   const { fadeUp } = utils;
 
   useEffect(() => {

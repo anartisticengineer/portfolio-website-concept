@@ -1,12 +1,13 @@
 import React, { FunctionComponent, useEffect } from 'react';
-import { useHistory } from 'react-router';
+import { NavigateFunction } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import Button from '../components/button';
 import homeContent from '../content/homepage.json';
 import utils from '../scripts/utilities';
 import { EffectHookFunctions } from '../types/componentprops';
 
 const HomePage: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
-  const history = useHistory();
+  const navigate: NavigateFunction = useNavigate();
 
   useEffect(() => {
     document.title = 'cyberart_by_justin';
@@ -29,7 +30,7 @@ const HomePage: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) =>
           id="see-latest"
           isSubmit={false}
           isDisabled={false}
-          onClickFcn={() => history.push('/gallery')}
+          onClickFcn={() => navigate('/gallery', { replace: true })}
         >
           {homeContent['to-gallery-button-text']}
         </Button>

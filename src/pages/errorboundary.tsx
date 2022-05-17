@@ -3,7 +3,7 @@ import React from 'react';
 
 import errorContent from '../content/error-occured.json';
 
-class ErrorBoundary extends React.Component<{}, any> {
+class ErrorBoundary extends React.Component<{ children: any }, any> {
   constructor(props: any) {
     super(props);
     this.state = { hasError: false };

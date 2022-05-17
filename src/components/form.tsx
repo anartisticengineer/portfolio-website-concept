@@ -1,12 +1,11 @@
 /* eslint-disable no-alert */
 /* eslint-disable no-restricted-globals */
-// eslint-disable-next-line object-curly-newline
+
 import React, { FunctionComponent, useState } from 'react';
 import { NavigateFunction } from 'react-router';
 import { useNavigate } from 'react-router-dom';
 
 import utils from '../scripts/utilities';
-
 import { FormData } from '../types/componentstates';
 import Button from './button';
 import InputField from './inputfield';
@@ -52,7 +51,6 @@ const Form: FunctionComponent = () => {
         }),
       })
         .then(() => {
-          // history.push('/contact/success');
           navigate('/contact/success', { replace: true });
         })
         .catch((error) => alert(error));

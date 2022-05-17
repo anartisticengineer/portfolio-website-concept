@@ -1,46 +1,54 @@
 /* eslint-disable no-unused-vars */
-import HandlerFunc from './handlertypes';
+// import HandlerFunc from './handlertypes';
 
 interface Button {
-    classes: string | string[] | void,
-    id: string | undefined,
-    isSubmit: boolean,
-    isDisabled: boolean,
+  classes?: string | string[];
+  id: string | undefined;
+  isSubmit: boolean;
+  isDisabled: boolean;
+  children: any;
 }
 
 interface InputField {
-    labelId: string,
-    inputId: string,
-    inputType: string | undefined,
-    placeholder: string,
-    isRequired: boolean,
+  labelId: string;
+  inputId: string;
+  placeholder: string;
+  isRequired: boolean;
+  inputType?: string;
+  children: any;
 }
 
-export type ButtonProps = Button & HandlerFunc;
+interface Handler {
+  onClickFcn?: () => any;
+  onChangeFcn?: (event: any) => void;
+}
 
-export type InputFieldProps = InputField & HandlerFunc;
+export type ButtonProps = Button & Handler;
+
+export type InputFieldProps = InputField & Handler;
 
 export type ArtworkProps = {
-    name: string,
-    url: string
-}
+  name: string;
+  url: string;
+};
 
 export type FullSeriesContentProps = {
-    'series-name': string,
-    'artworks': ArtworkProps[]
-}
+  'series-name': string;
+  artworks: ArtworkProps[];
+};
 
 export type SeriesCardProps = {
-    name: string,
-    previewPieceUrl: string,
-}
+  name: string;
+  previewPieceUrl: string;
+};
 
 export type SMLinkProps = {
-    url: string,
-    label: string,
-}
+  url: string;
+  label: string;
+  children: any;
+};
 
 export type EffectHookFunctions = {
-    onStart: (event?: any) => void,
-    onEnd: (event?: any) => void
-}
+  onStart: (event?: any) => void;
+  onEnd: (event?: any) => void;
+};

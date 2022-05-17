@@ -57,7 +57,6 @@ const AboutPage: FunctionComponent<EffectHookFunctions> = ({
               CV
             </Button>
             <Button
-              classes=""
               id="features-btn"
               isSubmit={false}
               isDisabled={false}

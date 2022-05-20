@@ -1,9 +1,10 @@
 /* eslint-disable no-alert */
 /* eslint-disable no-restricted-globals */
 
-import React, { FunctionComponent, useState } from 'react';
+import React, { createRef, FunctionComponent, useState } from 'react';
 import { NavigateFunction } from 'react-router';
 import { useNavigate } from 'react-router-dom';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 import utils from '../scripts/utilities';
 import { FormData } from '../types/componentstates';
@@ -21,6 +22,8 @@ const Form: FunctionComponent = () => {
 
   const navigate: NavigateFunction = useNavigate();
 
+  const recaptchaRef: React.RefObject<any> = createRef();
+
   const { allowSubmission } = utils;
 
   const handleChange = (event: any) => {
@@ -36,24 +39,32 @@ const Form: FunctionComponent = () => {
       )
       .join('&');
 
-  const handleSubmit = (event: any): void => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
+    const token = await recaptchaRef.current.executeAsync();
+    const data = await fetch(
+      `/.netlify/functions/verifyrecaptcha?token=${token}`,
+    );
+
+    const gRecaptchaResponse = await data.json();
 
     const confirmSubmit: boolean = confirm('Submit Form?');
 
     if (confirmSubmit) {
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({
-          'form-name': 'contact-form',
-          ...formData,
-        }),
-      })
-        .then(() => {
-          navigate('/contact/success', { replace: true });
-        })
-        .catch((error) => alert(error));
+      try {
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encode({
+            'form-name': 'contact-form',
+            'g-recaptcha-response': gRecaptchaResponse,
+            ...formData,
+          }),
+        });
+        navigate('/contact/success', { replace: true });
+      } catch (error) {
+        alert(error);
+      }
     } else {
       alert('Form not submitted yet.');
     }
@@ -117,6 +128,11 @@ const Form: FunctionComponent = () => {
           Submit
         </Button>
       </div>
+      <ReCAPTCHA
+        ref={recaptchaRef}
+        size="invisible"
+        sitekey={process.env.REACT_APP_SITE_RECAPTCHA_KEY || ''}
+      />
     </form>
   );
 };

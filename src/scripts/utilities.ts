@@ -10,7 +10,7 @@ const utils = {
   navLinksHidden: (isHidden: boolean): string =>
     `navbar__links${isHidden ? '--hidden' : ''}`,
 
-  btnClasses: (classNames: string | string[] | void): string => {
+  btnClasses: (classNames?: string | string[]): string => {
     let allClasses: string = 'btn';
     if (classNames) {
       if (typeof classNames === 'string') {
@@ -24,6 +24,14 @@ const utils = {
 
   slugify: (title: string): string =>
     title.trim().replace(' ', '-').toLowerCase(),
+
+  encode: (data: FormData | any): string =>
+    // eslint-disable-next-line implicit-arrow-linebreak
+    Object.keys(data)
+      .map(
+        (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`,
+      )
+      .join('&'),
 
   allowSubmission: (formData: {}): boolean => {
     const formValues: string[] = Object.values(formData);

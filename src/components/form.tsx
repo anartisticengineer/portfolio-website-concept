@@ -8,6 +8,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 
 import utils from '../scripts/utilities';
 import { FormData } from '../types/componentstates';
+
 import Button from './button';
 import InputField from './inputfield';
 
@@ -24,23 +25,16 @@ const Form: FunctionComponent = () => {
 
   const recaptchaRef: React.RefObject<any> = createRef();
 
-  const { allowSubmission } = utils;
+  const { allowSubmission, encode } = utils;
 
   const handleChange = (event: any) => {
     const { target } = event;
     setFormData({ ...formData, [target.id]: target.value });
   };
 
-  const encode = (data: FormData | any): string =>
-    // eslint-disable-next-line implicit-arrow-linebreak
-    Object.keys(data)
-      .map(
-        (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`,
-      )
-      .join('&');
-
   const handleSubmit = async (event: any) => {
     event.preventDefault();
+
     const token = await recaptchaRef.current.executeAsync();
     const data = await fetch(
       `/.netlify/functions/verifyrecaptcha?token=${token}`,
@@ -54,10 +48,13 @@ const Form: FunctionComponent = () => {
       try {
         await fetch('/', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Access-Control-Allow-Methods': 'POST',
+          },
           body: encode({
             'form-name': 'contact-form',
-            'g-recaptcha-response': gRecaptchaResponse,
+            'g-recaptcha-response': { ...gRecaptchaResponse },
             ...formData,
           }),
         });
@@ -75,7 +72,7 @@ const Form: FunctionComponent = () => {
       name="contact-form"
       className="form"
       id="submit-form"
-      autoComplete="off"
+      method="POST"
       onSubmit={handleSubmit}
     >
       {/** Name */}

@@ -28,8 +28,8 @@ const Form: FunctionComponent = () => {
   const { allowSubmission, encode } = utils;
 
   const handleChange = (event: any) => {
-    const { target } = event;
-    setFormData({ ...formData, [target.id]: target.value });
+    const { id, value } = event.target;
+    setFormData({ ...formData, [id]: value });
   };
 
   const handleSubmit = async (event: any) => {
@@ -42,28 +42,21 @@ const Form: FunctionComponent = () => {
 
     const gRecaptchaResponse = await data.json();
 
-    const confirmSubmit: boolean = confirm('Submit Form?');
-
-    if (confirmSubmit) {
-      try {
-        await fetch('/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Access-Control-Allow-Methods': 'POST',
-          },
-          body: encode({
-            'form-name': 'contact-form',
-            'g-recaptcha-response': { ...gRecaptchaResponse },
-            ...formData,
-          }),
-        });
-        navigate('/contact/success', { replace: true });
-      } catch (error) {
-        alert(error);
-      }
+    const res: Response = await fetch('/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: encode({
+        'g-recaptcha-response': encode(gRecaptchaResponse),
+        'form-name': 'contact-form',
+        ...formData,
+      }),
+    });
+    if (res.ok) {
+      navigate('/contact/success', { replace: true });
     } else {
-      alert('Form not submitted yet.');
+      alert(res.statusText);
     }
   };
 
@@ -72,10 +65,10 @@ const Form: FunctionComponent = () => {
       name="contact-form"
       className="form"
       id="submit-form"
-      method="POST"
+      method="post"
+      data-netlify="true"
       onSubmit={handleSubmit}
     >
-      {/** Name */}
       <div className="form__block">
         <input
           type="hidden"
@@ -92,7 +85,6 @@ const Form: FunctionComponent = () => {
         >
           Name:
         </InputField>
-        {/** Text area for email */}
         <InputField
           labelId="form-email__label"
           inputId="form-email"
@@ -104,7 +96,6 @@ const Form: FunctionComponent = () => {
           E-mail:
         </InputField>
       </div>
-      {/* Your message to me here */}
       <div className="form__block">
         <InputField
           labelId="message__label"

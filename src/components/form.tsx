@@ -6,7 +6,7 @@ import { NavigateFunction } from 'react-router';
 import { useNavigate } from 'react-router-dom';
 import ReCAPTCHA from 'react-google-recaptcha';
 
-import utils from '../scripts/utilities';
+import scripts from '../scripts';
 import { FormData } from '../types/componentstates';
 
 import Button from './button';
@@ -25,7 +25,7 @@ const Form: FunctionComponent = () => {
 
   const recaptchaRef: React.RefObject<any> = createRef();
 
-  const { allowSubmission, encode } = utils;
+  const { url, otherUtils } = scripts;
 
   const handleChange = (event: any) => {
     const { id, value } = event.target;
@@ -47,8 +47,8 @@ const Form: FunctionComponent = () => {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: encode({
-        'g-recaptcha-response': encode(gRecaptchaResponse),
+      body: url.encode({
+        'g-recaptcha-response': url.encode(gRecaptchaResponse),
         'form-name': 'contact-form',
         ...formData,
       }),
@@ -111,7 +111,7 @@ const Form: FunctionComponent = () => {
           classes="btn--submit"
           id="submit-btn"
           isSubmit
-          isDisabled={!allowSubmission(formData)}
+          isDisabled={!otherUtils.allowSubmission(formData)}
         >
           Submit
         </Button>

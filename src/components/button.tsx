@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import utils from '../scripts/utilities';
+import scripts from '../scripts';
 import { ButtonProps } from '../types/componentprops';
 
 const Button: FunctionComponent<ButtonProps> = ({
@@ -10,12 +10,12 @@ const Button: FunctionComponent<ButtonProps> = ({
   onClickFcn,
   children,
 }) => {
-  const { btnClasses } = utils;
+  const { css } = scripts;
 
   return (
     <button
       aria-disabled={isDisabled}
-      className={btnClasses(classes)}
+      className={css.btnClasses(classes)}
       type={isSubmit ? 'submit' : 'button'}
       id={id}
       onClick={onClickFcn}

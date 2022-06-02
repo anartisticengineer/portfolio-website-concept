@@ -3,10 +3,13 @@ import { NavigateFunction } from 'react-router';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/button';
 import homeContent from '../content/homepage.json';
-import utils from '../scripts/utilities';
+import scripts from '../scripts';
 import { EffectHookFunctions } from '../types/componentprops';
 
-const HomePage: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
+const HomePage: FunctionComponent<EffectHookFunctions> = ({
+  onStart,
+  onEnd,
+}) => {
   const navigate: NavigateFunction = useNavigate();
 
   useEffect(() => {
@@ -15,15 +18,20 @@ const HomePage: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) =>
     return onEnd;
   }, []);
 
+  const { css } = scripts;
+
   return (
-    <main className="container homepage" id="home-page">
+    <main
+      className="container homepage"
+      id="home-page"
+    >
       <img
         src={homeContent['home-gif']['gif-image']}
         className="homepage__gif"
         alt={homeContent['home-gif']['gif-alt-text']}
         id="home-banner"
       />
-      <section className={utils.fadeUp()}>
+      <section className={css.fadeUp()}>
         <h1 className="container__title">{homeContent['welcome-text']}</h1>
         <Button
           classes="btn--home"

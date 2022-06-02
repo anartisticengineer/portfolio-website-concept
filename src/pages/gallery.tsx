@@ -2,7 +2,7 @@ import React, { FunctionComponent, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 
 import SeriesCard from '../components/seriescard';
-import utils from '../scripts/utilities';
+import scripts from '../scripts';
 import seriesContent from '../content/gallery.json';
 
 import { EffectHookFunctions } from '../types/componentprops';
@@ -12,7 +12,7 @@ const Gallery: FunctionComponent<EffectHookFunctions> = ({
   onEnd,
 }) => {
   const { series } = seriesContent;
-  const { fadeUp } = utils;
+  const { css } = scripts;
 
   useEffect(() => {
     document.title = 'Gallery - cyberart_by_justin';
@@ -22,8 +22,8 @@ const Gallery: FunctionComponent<EffectHookFunctions> = ({
 
   return (
     <main className="container">
-      <h1 className={`container__title ${fadeUp()}`}>Gallery</h1>
-      <section className={`gallery ${fadeUp()}`}>
+      <h1 className={`container__title ${css.fadeUp()}`}>Gallery</h1>
+      <section className={`gallery ${css.fadeUp()}`}>
         {series.map((item) => (
           <SeriesCard
             name={item['series-name']}

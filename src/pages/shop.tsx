@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid';
 import { EffectHookFunctions } from '../types/componentprops';
 
 import shopContent from '../content/shop.json';
-import utils from '../scripts/utilities';
+import scripts from '../scripts';
 import Button from '../components/button';
 
 const Shop: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
@@ -14,15 +14,15 @@ const Shop: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
     return onEnd;
   }, []);
 
-  const { fadeUp } = utils;
+  const { css } = scripts;
 
   return (
     <main className="container shop">
-      <h1 className={`container__title ${fadeUp()}`}>Shop</h1>
-      <section className={`shop__description ${fadeUp()}`}>
+      <h1 className={`container__title ${css.fadeUp()}`}>Shop</h1>
+      <section className={`shop__description ${css.fadeUp()}`}>
         <ReactMarkdown>{shopContent.description}</ReactMarkdown>
       </section>
-      <section className={`shop__sampleimages ${fadeUp()}`}>
+      <section className={`shop__sampleimages ${css.fadeUp()}`}>
         {shopContent['sample-images'].map((im) => (
           <img
             src={im.image}

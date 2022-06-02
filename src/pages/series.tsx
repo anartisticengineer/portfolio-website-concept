@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { nanoid } from 'nanoid';
 
 import Artwork from '../components/artwork';
-import utils from '../scripts/utilities';
+import scripts from '../scripts';
 
 import {
   ArtworkProps,
@@ -27,7 +27,7 @@ const Series: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
 
   const navigate = useNavigate();
 
-  const { fadeUp, slugify } = utils;
+  const { css, url } = scripts;
 
   const regEx: RegExp | null = title
     ? new RegExp(title.replace('-', ' '), 'i')
@@ -51,7 +51,7 @@ const Series: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
 
     const seriesSet: Set<any> = new Set(series);
     const seriesNames: Set<string> = new Set(
-      series.map((item) => slugify(item['series-name'])),
+      series.map((item) => url.slugify(item['series-name'])),
     );
 
     if (typeof title === 'string' && seriesNames.has(title)) {
@@ -76,7 +76,7 @@ const Series: FunctionComponent<EffectHookFunctions> = ({ onStart, onEnd }) => {
   return (
     <main className="container">
       <h1 className="container__title">{fullSeries['series-name']}</h1>
-      <section className={`series ${fadeUp()}`}>
+      <section className={`series ${css.fadeUp()}`}>
         {fullSeries.artworks.map((artwork) => (
           <Artwork
             name={artwork.name}

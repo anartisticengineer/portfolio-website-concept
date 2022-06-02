@@ -1,7 +1,6 @@
 import React, { useEffect, FunctionComponent } from 'react';
-// import Form from '../components/form';
 import Social from '../components/social';
-import utils from '../scripts/utilities';
+import scripts from '../scripts';
 
 import contactContent from '../content/contact.json';
 import { EffectHookFunctions } from '../types/componentprops';
@@ -16,16 +15,13 @@ const ContactPage: FunctionComponent<EffectHookFunctions> = ({
     return onEnd;
   }, []);
 
-  const { fadeUp } = utils;
+  const { css } = scripts;
 
   return (
     <main className="container container--contact">
-      <h1 className={`container__title ${fadeUp()}`}>Contact</h1>
+      <h1 className={`container__title ${css.fadeUp()}`}>Contact</h1>
       <p>{contactContent['get-in-touch']}</p>
-      <section className={fadeUp()}>
-        {/* <article>
-          <Form />
-        </article> */}
+      <section className={css.fadeUp()}>
         <Social />
       </section>
     </main>

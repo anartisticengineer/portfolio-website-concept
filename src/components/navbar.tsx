@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import logo from '../images/cyberart_by_justin_name_1.png';
-import utils from '../scripts/utilities';
+import scripts from '../scripts';
 
 const Navbar: FunctionComponent = () => {
   // toggle the dropdown menu on a mobile display using a state hook
@@ -17,14 +17,19 @@ const Navbar: FunctionComponent = () => {
     toggleHide(true);
   }, [location.pathname]);
 
-  const { navLinksHidden } = utils;
+  const { css } = scripts;
 
   return (
     <>
       <nav className="navbar">
         {/* Visible in the mobile view */}
         <section className="navbar__header">
-          <img src={logo} className="navbar__logo" alt="cyberart_by_justin" id="nav-logo" />
+          <img
+            src={logo}
+            className="navbar__logo"
+            alt="cyberart_by_justin"
+            id="nav-logo"
+          />
           {/* Toggle hamburger button */}
           <button
             className="navbar__hamburger-btn"
@@ -36,7 +41,10 @@ const Navbar: FunctionComponent = () => {
           </button>
         </section>
         {/* These should be hidden and collapsible in mobile view */}
-        <ul className={navLinksHidden(hidden)} id="navbar-links">
+        <ul
+          className={css.navLinksHidden(hidden)}
+          id="navbar-links"
+        >
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
@@ -55,7 +63,13 @@ const Navbar: FunctionComponent = () => {
           {/* End of dropdown */}
         </ul>
       </nav>
-      {!hidden ? <button type="button" className="mobile-navbar-filler" onClick={() => toggleHide(true)} /> : null}
+      {!hidden ? (
+        <button
+          type="button"
+          className="mobile-navbar-filler"
+          onClick={() => toggleHide(true)}
+        />
+      ) : null}
     </>
   );
 };

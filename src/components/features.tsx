@@ -1,15 +1,15 @@
 import React, { FunctionComponent } from 'react';
 import { nanoid } from 'nanoid';
 
-import utils from '../scripts/utilities';
+import scripts from '../scripts';
 import aboutContent from '../content/about.json';
 
 const Features: FunctionComponent = () => {
-  const { fadeInHorizontal } = utils;
+  const { css } = scripts;
   const { features } = aboutContent;
 
   return (
-    <div className={fadeInHorizontal('Right')}>
+    <div className={css.fadeInHorizontal('Right')}>
       <h3 className="container__title">Features</h3>
       <ul>
         {features.map((el) => (

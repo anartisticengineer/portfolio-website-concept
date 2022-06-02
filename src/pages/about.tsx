@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 
 import { nanoid } from 'nanoid';
-import utils from '../scripts/utilities';
+import scripts from '../scripts';
 
 import CV from '../components/cv';
 import Features from '../components/features';
@@ -19,7 +19,8 @@ const AboutPage: FunctionComponent<EffectHookFunctions> = ({
     onStart();
     return onEnd;
   }, []);
-  const { fadeUp } = utils;
+
+  const { css } = scripts;
   const { summary } = aboutContent;
   const aboutImage = aboutContent['profile-image'];
   const [page, changePage] = useState('cv');
@@ -29,8 +30,8 @@ const AboutPage: FunctionComponent<EffectHookFunctions> = ({
       className="container"
       id="about-page"
     >
-      <h1 className={`container__title ${fadeUp()}`}>About Me</h1>
-      <section className={`about ${fadeUp()}`}>
+      <h1 className={`container__title ${css.fadeUp()}`}>About Me</h1>
+      <section className={`about ${css.fadeUp()}`}>
         {/** Grid 1 */}
         <article className="about__article">
           <img

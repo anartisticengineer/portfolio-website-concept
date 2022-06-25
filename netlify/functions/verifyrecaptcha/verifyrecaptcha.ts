@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { HandlerEvent } from '@netlify/functions';
-import utils from '../../../src/scripts/utilities';
+import scripts from '../../../src/scripts';
 
 const RECAPTCHA_URL: string = 'https://www.google.com/recaptcha/api/siteverify';
 
-const { encode } = utils;
+const { encode } = scripts.url;
 
 exports.handler = async (event: HandlerEvent) => {
   const { token }: any = event.queryStringParameters;

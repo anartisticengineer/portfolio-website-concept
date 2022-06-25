@@ -35,3 +35,6 @@
 //     }
 //   }
 // }
+Cypress.on('uncaught:exception', (err: Error, runnable) => {
+  return false;
+});
